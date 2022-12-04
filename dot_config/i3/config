@@ -195,4 +195,5 @@ bindsym --release Shift+Print exec scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'm
 #bindsym $MOD+l exec -n i3lock -d -c 000000
 bindsym $mod+x exec i3lock.sh
 
-
+# start polybar
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
