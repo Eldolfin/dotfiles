@@ -1,0 +1,24 @@
+Host pikmin.ga
+  HostName pikmin.ga
+  User ubuntu
+
+Host ssh.cri.epita.fr
+    GSSAPIAuthentication yes
+    GSSAPIDelegateCredentials yes
+
+
+Host github.com
+  HostName github.com
+  User OscarleBG
+  IdentityFile ~/.ssh/id_rsa
+
+
+Host github-pro
+  HostName github.com
+  User Eldolfin
+  IdentityFile ~/.ssh/id_rsa_pro
+
+Host git-epita
+    HostName git.forge.epita.fr
+    User Eldolfin
+    IdentityFile ~/.ssh/id_rsa_pro
