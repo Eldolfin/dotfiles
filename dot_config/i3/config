@@ -86,7 +86,7 @@ bindsym $mod+Shift+Right move right
 bindsym $mod+h split h
 
 # split in vertical orientation
-bindsym $mod+v split v
+# bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -189,7 +189,7 @@ bar {
 bindsym --release Print exec scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' # All screens
 
 # OSX-like area selection screenshots
-bindsym --release Shift+Print exec scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' # Area selection
+bindsym --release Shift+Print exec flameshot gui
 
 # i3lock on <mod>+L
 #bindsym $MOD+l exec -n i3lock -d -c 000000
@@ -198,5 +198,8 @@ bindsym $mod+x exec i3lock.sh
 # start polybar
 # exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
-# screen order
-sudo xrandr --output HDMI-1 --primary --left-of DVI-D-1 
+# screen ordere
+exec --no-startup-id sudo xrandr --output HDMI-1 --primary --left-of DVI-D-1 
+
+# diodon clipboard manager
+bindsym $mod+v exec --no-startup-id diodon
