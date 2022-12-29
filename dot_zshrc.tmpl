@@ -5,12 +5,17 @@ ZSH_THEME="robbyrussell"
 
 #ENABLE_CORRECTION="true"
 
-plugins=(git ubuntu)
+plugins=(
+    {{ if eq .chezmoi.osRelease.id "arch" -}}
+    archlinux 
+    {{ end -}}
+    git 
+    ubuntu)
 
 source $ZSH/oh-my-zsh.sh
 
 # autojump :
-source /usr/share/autojump/autojump.sh
+source /usr/share/autojump/autojump.zsh
 
 alias vim=nvim
 alias vi=nvim

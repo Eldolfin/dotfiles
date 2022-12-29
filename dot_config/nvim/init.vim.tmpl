@@ -19,7 +19,9 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " auto close brackets
 Plug 'tmsvg/pear-tree'
 
-Plug 'ThePrimeagen/vim-be-good'
+" Plug 'ThePrimeagen/vim-be-good'
+
+Plug 'williamboman/mason.nvim'
 
 call plug#end()
 
@@ -41,8 +43,7 @@ if has('mouse')
   set mouse=a
 endif
 
-set clipboard=unnamedplus
-
+set clipboard=unnamedplus,unnamed
 
 
 " set copilot to use node v16
