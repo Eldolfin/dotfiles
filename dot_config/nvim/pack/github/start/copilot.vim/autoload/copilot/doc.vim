@@ -12,12 +12,22 @@ function copilot#doc#UTF16Width(str) abort
 endfunction
 
 let s:language_normalization_map = {
+      \ "bash":            "shellscript",
+      \ "bst":             "bibtex",
+      \ "cs":              "csharp",
+      \ "cuda":            "cuda-cpp",
+      \ "dosbatch":        "bat",
+      \ "dosini":          "ini",
+      \ "gitcommit":       "git-commit",
+      \ "gitrebase":       "git-rebase",
+      \ "make":            "makefile",
+      \ "objc":            "objective-c",
+      \ "objcpp":          "objective-cpp",
+      \ "ps1":             "powershell",
+      \ "raku":            "perl6",
+      \ "sh":              "shellscript",
       \ "text":            "plaintext",
-      \ "javascriptreact": "javascript",
-      \ "jsx":             "javascript",
-      \ "typescriptreact": "typescript",
       \ }
-
 function copilot#doc#LanguageForFileType(filetype) abort
   let filetype = substitute(a:filetype, '\..*', '', '')
   return get(s:language_normalization_map, empty(filetype) ? "text" : filetype, filetype)
@@ -72,11 +82,13 @@ function! copilot#doc#Get() abort
   let col_byte = col('.') - (mode() =~# '^[iR]' || empty(line))
   let col_utf16 = copilot#doc#UTF16Width(strpart(line, 0, col_byte))
   let doc.position = {'line': line('.') - 1, 'character': col_utf16}
-  let lines = getline(1, '$')
-  if &eol
-    call add(lines, "")
+  if !has('nvim')
+    let lines = getline(1, '$')
+    if &eol
+      call add(lines, "")
+    endif
+    let doc.source = join(lines, "\n")
   endif
-  let doc.source = join(lines, "\n")
   return doc
 endfunction
 

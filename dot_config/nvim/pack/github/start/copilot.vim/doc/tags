@@ -13,6 +13,7 @@ copilot#Accept()	copilot.txt	/*copilot#Accept()*
 copilot-highlighting	copilot.txt	/*copilot-highlighting*
 copilot-i_<Tab>	copilot.txt	/*copilot-i_<Tab>*
 copilot-i_ALT-[	copilot.txt	/*copilot-i_ALT-[*
+copilot-i_ALT-\	copilot.txt	/*copilot-i_ALT-\\*
 copilot-i_ALT-]	copilot.txt	/*copilot-i_ALT-]*
 copilot-i_CTRL-]	copilot.txt	/*copilot-i_CTRL-]*
 copilot-maps	copilot.txt	/*copilot-maps*
@@ -20,3 +21,5 @@ copilot-options	copilot.txt	/*copilot-options*
 copilot.txt	copilot.txt	/*copilot.txt*
 g:copilot_filetypes	copilot.txt	/*g:copilot_filetypes*
 g:copilot_node_command	copilot.txt	/*g:copilot_node_command*
+g:copilot_proxy	copilot.txt	/*g:copilot_proxy*
+g:copilot_proxy_strict_ssl	copilot.txt	/*g:copilot_proxy_strict_ssl*

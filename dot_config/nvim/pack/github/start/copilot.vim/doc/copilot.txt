@@ -73,7 +73,23 @@ g:copilot_node_command  Tell Copilot what `node` binary to use with
 >
                         let g:copilot_node_command =
                               \ "~/.nodenv/versions/16.15.0/bin/node"
-
+<
+                                                *g:copilot_proxy*
+g:copilot_proxy         Tell Copilot what proxy server to use.  This is a
+                        string in the format of `hostname:port` or
+                        `username:password@host:port`.
+>
+                        let g:copilot_proxy = 'localhost:3128'
+<
+                                                *g:copilot_proxy_strict_ssl*
+g:copilot_proxy_strict_ssl
+                        Corporate proxies sometimes use a man-in-the-middle
+                        SSL certificate which is incompatible with GitHub
+                        Copilot.  To work around this, SSL certificate
+                        verification can be disabled:
+>
+                        let g:copilot_proxy_strict_ssl = v:false
+<
 MAPS                                            *copilot-maps*
 
                                                 *copilot-i_<Tab>*
@@ -105,6 +121,10 @@ Other Maps ~
                                                 *copilot-i_ALT-[*
 <M-[>                   Cycle to the previous suggestion.
 <Plug>(copilot-previous)
+
+                                                *copilot-i_ALT-\*
+<M-\>                   Explicitly request a suggestion, even if Copilot
+<Plug>(copilot-suggest) is disabled.
 
 SYNTAX HIGHLIGHTING                             *copilot-highlighting*
 

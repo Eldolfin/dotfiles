@@ -25,7 +25,7 @@ function! s:MapTab() abort
     return
   endif
   let tab_map = maparg('<Tab>', 'i', 0, 1)
-  if empty(tab_map)
+  if !has_key(tab_map, 'rhs')
     imap <script><silent><nowait><expr> <Tab> copilot#Accept()
   elseif tab_map.rhs !~# 'copilot'
     if tab_map.expr
@@ -72,11 +72,15 @@ if !get(g:, 'copilot_no_maps')
   endif
   imap <Plug>(copilot-next)     <Cmd>call copilot#Next()<CR>
   imap <Plug>(copilot-previous) <Cmd>call copilot#Previous()<CR>
+  imap <Plug>(copilot-suggest)  <Cmd>call copilot#Suggest()<CR>
   if empty(mapcheck('<M-]>', 'i'))
     imap <M-]> <Plug>(copilot-next)
   endif
   if empty(mapcheck('<M-[>', 'i'))
     imap <M-[> <Plug>(copilot-previous)
+  endif
+  if empty(mapcheck('<M-Bslash>', 'i'))
+    imap <M-Bslash> <Plug>(copilot-suggest)
   endif
 endif
 

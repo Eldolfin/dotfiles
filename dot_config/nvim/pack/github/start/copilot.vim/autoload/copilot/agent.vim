@@ -5,7 +5,7 @@ let g:autoloaded_copilot_agent = 1
 
 scriptencoding utf-8
 
-let s:plugin_version = '1.5.3'
+let s:plugin_version = '1.8.0'
 
 let s:error_exit = -1
 
@@ -166,11 +166,7 @@ endfunction
 
 function! s:OnMessage(agent, body, ...) abort
   call copilot#logger#Trace({ -> '<-- ' . a:body})
-  try
-    let response = json_decode(a:body)
-  catch
-    return copilot#logger#Exception()
-  endtry
+  let response = json_decode(a:body)
   if type(response) != v:t_dict
     return
   endif
@@ -336,22 +332,8 @@ function! copilot#agent#LspHandle(agent_id, response) abort
   call s:OnResponse(s:instances[a:agent_id], a:response)
 endfunction
 
-unlet! s:is_arm_macos
-function! s:IsArmMacOS() abort
-  if exists('s:is_arm_macos')
-    return s:is_arm_macos
-  elseif has('win32') || !isdirectory('/private')
-    let s:is_arm_macos = 0
-  else
-    let out = []
-    call copilot#job#Stream(['uname', '-s', '-p'], function('add', [out]), v:null)
-    let s:is_arm_macos = join(out, '') =~# '^Darwin arm'
-  endif
-  return s:is_arm_macos
-endfunction
-
 function! s:Command() abort
-  if !has('nvim-0.6') && v:version < 802
+  if !has('nvim-0.6') && v:version < 900
     return [v:null, '', 'Vim version too old']
   endif
   let node = get(g:, 'copilot_node_command', '')
@@ -371,28 +353,29 @@ function! s:Command() abort
   let err = []
   let status = copilot#job#Stream(node + ['--version'], function('add', [out]), function('add', [err]))
   if status != 0
-    return [v:null, 'Node.js exited with status ' . status]
+    return [v:null, '', 'Node.js exited with status ' . status]
   endif
   let node_version = matchstr(join(out, ''), '^v\zs\d\+\.[^[:space:]]*')
   let major = str2nr(node_version)
-  let too_new = major >= 18
   if !get(g:, 'copilot_ignore_node_version')
     if major == 0
       return [v:null, node_version, 'Could not determine Node.js version']
-    elseif (major < 16 || too_new) && s:IsArmMacOS()
-      return [v:null, node_version, 'Node.js version 16.x or 17.x required on Apple Silicon but found ' . node_version]
-    elseif major < 12 || too_new
-      return [v:null, node_version, 'Node.js version 12.x–17.x required but found ' . node_version]
+    elseif major < 16
+      return [v:null, node_version, 'Node.js version 16.x or newer required but found ' . node_version]
     endif
   endif
-  let agent = s:root . '/copilot/dist/agent.js'
-  if !filereadable(agent)
-    let agent = get(g:, 'copilot_agent_command', '')
+  let agent = get(g:, 'copilot_agent_command', '')
+  if empty(agent) || !filereadable(agent)
+    let agent = s:root . '/copilot/dist/agent.js'
     if !filereadable(agent)
       return [v:null, node_version, 'Could not find agent.js (bad install?)']
     endif
   endif
   return [node + [agent], node_version, '']
+endfunction
+
+function! s:UrlDecode(str) abort
+  return substitute(a:str, '%\(\x\x\)', '\=iconv(nr2char("0x".submatch(1)), "utf-8", "latin1")', 'g')
 endfunction
 
 function! copilot#agent#EditorInfo() abort
@@ -403,14 +386,37 @@ function! copilot#agent#EditorInfo() abort
       let s:editor_version = (v:version / 100) . '.' . (v:version % 100) . (exists('v:versionlong') ? printf('.%04d', v:versionlong % 1000) : '')
     endif
   endif
-  return {
+  let info = {
         \ 'editorInfo': {'name': has('nvim') ? 'Neovim': 'Vim', 'version': s:editor_version},
         \ 'editorPluginInfo': {'name': 'copilot.vim', 'version': s:plugin_version}}
+  if type(get(g:, 'copilot_proxy')) == v:t_string
+    let proxy = g:copilot_proxy
+  else
+    let proxy = ''
+  endif
+  let match = matchlist(proxy, '\c^\%([^:]\+://\)\=\%(\([^/:#]\+@\)\)\=\%(\([^/:#]\+\)\|\[\([[:xdigit:]:]\+\)\]\)\%(:\(\d\+\)\)\=\%(/\|$\|?strict_\=ssl=\(.*\)\)')
+  if !empty(match)
+    let info.networkProxy = {'host': match[2] . match[3], 'port': empty(match[4]) ? 80 : +match[4]}
+    if match[5] =~? '^[0f]'
+      let info.networkProxy.rejectUnauthorized = v:false
+    elseif match[5] =~? '^[1t]'
+      let info.networkProxy.rejectUnauthorized = v:true
+    elseif exists('g:copilot_proxy_strict_ssl')
+      let info.networkProxy.rejectUnauthorized = empty(g:copilot_proxy_strict_ssl) ? v:false : v:true
+    endif
+    if !empty(match[1])
+      let info.networkProxy.username = s:UrlDecode(matchstr(match[1], '^[^:]*'))
+      let info.networkProxy.password = s:UrlDecode(matchstr(match[1], ':\zs.*'))
+    endif
+  endif
+  return info
 endfunction
 
 function! s:GetCapabilitiesResult(result, agent) abort
   let a:agent.capabilities = get(a:result, 'capabilities', {})
-  call a:agent.Request('setEditorInfo', copilot#agent#EditorInfo())
+  let info = deepcopy(copilot#agent#EditorInfo())
+  let info.editorInfo.version .= ' + Node.js ' . a:agent.node_version
+  call a:agent.Request('setEditorInfo', extend({'editorConfiguration': a:agent.editorConfiguration}, info))
 endfunction
 
 function! s:GetCapabilitiesError(error, agent) abort
@@ -438,6 +444,7 @@ function! copilot#agent#New(...) abort
   let instance = {'requests': {},
         \ 'methods': get(opts, 'methods', {}),
         \ 'notifications': get(opts, 'notifications', {}),
+        \ 'editorConfiguration': get(opts, 'editorConfiguration', {}),
         \ 'Close': function('s:AgentClose'),
         \ 'Notify': function('s:AgentNotify'),
         \ 'Request': function('s:AgentRequest'),
