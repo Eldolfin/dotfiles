@@ -17,13 +17,21 @@ source $ZSH/oh-my-zsh.sh
 # autojump :
 source /usr/share/autojump/autojump.zsh
 
+alias neovide="neovide --multigrid"
+alias clone="alacritty -e zsh -c \"cd \$(pwd); zsh -i\"&!"
+neovide-tweaked () {
+    (neovide "$@" --nofork && clone)&!;exit
+}
+alias nvim=neovide-tweaked
 alias vim=nvim
-alias vi=nvim
+alias vi=vim
 alias htop=btop
 alias top=btop
 alias ls=exa
 alias tree='exa --tree'
 alias make="make -j"
+alias poly="./.apps/PolyMC-Linux-1.4.3-x86_64.AppImage"
+alias limt="curl http://192.168.0.23/\?m\=1\&o\=1 | grep -o \"[ONF]*\""
 
 # Created by `userpath` on 2022-11-05 04:24:40
 export PATH="$PATH:/home/oscar/.local/bin"
@@ -33,5 +41,3 @@ export PYTHONPATH="${PYTHONPATH}:/home/oscar/EPITA/algo/s3-2026-algo-tuto"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-alias poly="./.apps/PolyMC-Linux-1.4.3-x86_64.AppImage"
-alias limt="curl http://192.168.0.23/\?m\=1\&o\=1 | grep -o \"[ONF]*\""
