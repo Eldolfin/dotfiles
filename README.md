@@ -6,6 +6,7 @@ try:
 sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply git@github.com:Eldolfin/dotfiles.git
 ```
 except:
+
 if os=="arch":
 ```bash
 sudo pacman -S chezmoi && chezmoi init --apply git@github.com:Eldolfin/dotfiles.git
