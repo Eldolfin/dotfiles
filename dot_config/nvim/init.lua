@@ -68,6 +68,9 @@ require('packer').startup(function(use)
     
     -- nerdtree
     use 'preservim/nerdtree'
+    
+    -- colored brackets
+    use 'frazrepo/vim-rainbow'
 
 
   -- Add custom plugins to packer from ~/.config/nvim/lua/custom/plugins.lua
@@ -468,3 +471,6 @@ if vim.fn.exists("g:neovide") then
   vim.api.nvim_set_keymap('n', '<C-->', ':lua ChangeScaleFactor(1/1.25)<CR>', { noremap = true, silent = true })
 
 end
+
+-- enable colored brackets
+vim.g.rainbow_active = 1
