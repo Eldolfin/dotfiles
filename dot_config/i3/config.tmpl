@@ -226,7 +226,7 @@ bindsym --release Shift+Print exec flameshot gui
 
 # i3lock on <mod>+L
 #bindsym $MOD+l exec -n i3lock -d -c 000000
-bindsym $mod+x exec i3lock.sh
+bindsym $mod+x exec i3lock -d -c 000000
 
 # start polybar
 # exec_always --no-startup-id $HOME/.config/polybar/launch.sh
@@ -235,11 +235,24 @@ bindsym $mod+x exec i3lock.sh
 exec --no-startup-id sudo xrandr --output HDMI-1 --primary --left-of DVI-D-1 
 
 # diodon clipboard manager
+exec --no-startup-id diodon
 bindsym $mod+v exec --no-startup-id diodon
 
 # brightness
-bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl s -e +8%
-bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl s -e -8%
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl s -e 8%+
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl s -e 8%-
+
+# bluetooth applet
+exec --no-startup-id /usr/bin/blueman-applet
+
+# Media player controls
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioPause exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+# emoji picker
+exec --no-startup-id /usr/bin/emote
 
 # low battery pop-up
 exec --no-startup-id i3-battery-popup
