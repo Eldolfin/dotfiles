@@ -71,6 +71,8 @@ require('packer').startup(function(use)
     
     -- colored brackets
     use 'frazrepo/vim-rainbow'
+    
+    use 'alvan/vim-closetag'
 
 
   -- Add custom plugins to packer from ~/.config/nvim/lua/custom/plugins.lua
