@@ -72,6 +72,8 @@ require('packer').startup(function(use)
     -- colored brackets
     use 'frazrepo/vim-rainbow'
     
+    use 'manzeloth/live-server'
+
     use 'alvan/vim-closetag'
 
 
