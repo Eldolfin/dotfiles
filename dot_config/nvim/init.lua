@@ -76,6 +76,8 @@ require('packer').startup(function(use)
 
     use 'alvan/vim-closetag'
 
+    use 'mfussenegger/nvim-jdtls'
+
 
   -- Add custom plugins to packer from ~/.config/nvim/lua/custom/plugins.lua
   local has_plugins, plugins = pcall(require, 'custom.plugins')
