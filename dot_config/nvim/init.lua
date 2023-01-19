@@ -78,6 +78,11 @@ require('packer').startup(function(use)
 
     use 'mfussenegger/nvim-jdtls'
 
+    use {
+            "windwp/nvim-autopairs",
+        config = function() require("nvim-autopairs").setup {} end
+    }
+
 
   -- Add custom plugins to packer from ~/.config/nvim/lua/custom/plugins.lua
   local has_plugins, plugins = pcall(require, 'custom.plugins')
@@ -484,7 +489,6 @@ vim.g.rainbow_active = 1
 
 -- If you want insert `(` after select function or method item
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
-local cmp = require('cmp')
 cmp.event:on(
   'confirm_done',
   cmp_autopairs.on_confirm_done()
