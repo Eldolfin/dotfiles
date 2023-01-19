@@ -478,7 +478,3 @@ end
 
 -- enable colored brackets
 vim.g.rainbow_active = 1
-
--- java shit
--- init.lua
-require'lspconfig'.jdtls.setup{}
