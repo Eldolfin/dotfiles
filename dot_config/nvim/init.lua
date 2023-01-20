@@ -81,6 +81,14 @@ require('packer').startup(function(use)
     use 'windwp/nvim-autopairs'
     
     use "zbirenbaum/copilot.lua"
+ 
+    use {
+    "zbirenbaum/copilot-cmp",
+    after = { "copilot.lua" },
+    config = function ()
+      require("copilot_cmp").setup()
+    end
+}
 
 
   -- Add custom plugins to packer from ~/.config/nvim/lua/custom/plugins.lua
@@ -454,15 +462,13 @@ cmp.setup {
 vim.o.clipboard = 'unnamedplus,unnamed'
 vim.o.relativenumber = true
 
--- set copilot to use CTRL+J to autocomplete
-vim.api.nvim_set_keymap('i', '<C-J>', 'copilot#Accept("<CR>")', { noremap = true, silent = true, expr = true })
-vim.g.copilot_no_tab_map = true
-
 -- disable copilot on certain filetypes
 require("copilot").setup {
   filetypes = {
     hdl = false, -- disallow specific filetype
-  },
+  }, 
+  suggestion = { enabled = false },
+  panel = { enabled = false },
 }
 
 -- F5 to toggle nerdtree
