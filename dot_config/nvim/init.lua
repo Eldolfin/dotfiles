@@ -457,8 +457,10 @@ vim.api.nvim_set_keymap('i', '<C-J>', 'copilot#Accept("<CR>")', { noremap = true
 vim.g.copilot_no_tab_map = true
 
 -- disable copilot on certain filetypes
-vim.g.copilot_filetypes = {
-  "hdl" = 0,
+require("copilot").setup {
+  filetypes = {
+    hdl = false, -- disallow specific filetype
+  },
 }
 
 -- F5 to toggle nerdtree
