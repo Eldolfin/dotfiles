@@ -81,15 +81,6 @@ require('packer').startup(function(use)
     use 'windwp/nvim-autopairs'
     
     use "zbirenbaum/copilot.lua"
- 
-    use {
-    "zbirenbaum/copilot-cmp",
-    after = { "copilot.lua" },
-    config = function ()
-      require("copilot_cmp").setup()
-    end
-}
-
 
   -- Add custom plugins to packer from ~/.config/nvim/lua/custom/plugins.lua
   local has_plugins, plugins = pcall(require, 'custom.plugins')
@@ -467,8 +458,6 @@ require("copilot").setup {
   filetypes = {
     hdl = false, -- disallow specific filetype
   }, 
-  suggestion = { enabled = false },
-  panel = { enabled = false },
 }
 
 -- F5 to toggle nerdtree
