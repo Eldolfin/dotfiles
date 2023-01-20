@@ -79,6 +79,8 @@ require('packer').startup(function(use)
     use 'mfussenegger/nvim-jdtls'
 
     use 'windwp/nvim-autopairs'
+    
+    use "zbirenbaum/copilot.lua"
 
 
   -- Add custom plugins to packer from ~/.config/nvim/lua/custom/plugins.lua
