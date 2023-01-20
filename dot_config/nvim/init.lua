@@ -458,7 +458,7 @@ vim.g.copilot_no_tab_map = true
 
 -- disable copilot on certain filetypes
 vim.g.copilot_filetypes = {
-  hdl = false,
+  "hdl": 0,
 }
 
 -- F5 to toggle nerdtree
