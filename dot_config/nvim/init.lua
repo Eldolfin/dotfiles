@@ -456,6 +456,11 @@ vim.o.relativenumber = true
 vim.api.nvim_set_keymap('i', '<C-J>', 'copilot#Accept("<CR>")', { noremap = true, silent = true, expr = true })
 vim.g.copilot_no_tab_map = true
 
+-- disable copilot on certain filetypes
+vim.g.copilot_filetypes = {
+  hdl = false,
+}
+
 -- F5 to toggle nerdtree
 vim.api.nvim_set_keymap('n', '<F5>', ':NERDTreeToggle<CR>', { noremap = true, silent = true })
 
