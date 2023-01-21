@@ -456,7 +456,6 @@ vim.o.relativenumber = true
 -- disable copilot on certain filetypes
 require("copilot").setup {
   filetypes = {
-    hdl = false, -- disallow specific filetype
   }, 
 }
 
