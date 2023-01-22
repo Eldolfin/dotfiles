@@ -456,7 +456,12 @@ vim.o.relativenumber = true
 -- disable copilot on certain filetypes
 require("copilot").setup {
   filetypes = {
+    ["*"] = true,
   }, 
+suggestion = {
+    enabled = true,
+    auto_trigger = true,
+  },
 }
 
 -- F5 to toggle nerdtree
