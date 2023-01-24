@@ -1,0 +1,10 @@
+configuration {
+	drun {
+		display-name: "Run : ";
+	}
+	modi: "window,drun,ssh,combi";
+	font: "inconsolata 30";
+	combi-modi: "window,drun,ssh";
+    show-icons: true;
+}
+@theme "~/.config/rofi/themes/centered.rasi"

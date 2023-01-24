@@ -1,0 +1,94 @@
+/**
+*
+*
+*
+*
+*/
+
+
+* {
+    background-color:           #282421;
+    border-color:               #31322f;
+    text-color:                 #bbc2cf;
+    font:                       "Inconsolata 13";
+    prompt-font:                "Ubuntu Bold 12";
+    prompt-background:          #d25710;
+    prompt-foreground:          #cccccc;
+    prompt-padding:             10px;
+    selected-normal-background: #282421;
+    selected-normal-foreground: #d54010;
+}
+
+/*window {
+    anchor: center;
+    location: center;
+    width: 40%;
+    padding: 0px;
+    children: [ overlay, mainbox ];
+}*/
+
+mainbox {
+        orientation: vertical;
+        children: [ inputbar, message, listview ];
+        border: 1px 2px 2px 2px;
+        border-radius: 3px;
+}
+
+message {
+        border: 0px 0px 1px 0px;
+}
+
+inputbar {
+    orientation: horizontal;
+    children: [ prompt, entry, num-filtered-rows];
+    border: 1px 0 1px 0;
+    //padding: 15px;
+    //border-color: #555252;
+    cursor: text;
+}
+
+num-filtered-rows {
+    vertical-align: 0.5;
+    text-color: #727272;
+}
+
+prompt {
+    padding:          @prompt-padding;
+    background-color: @prompt-background;
+    text-color:       @prompt-foreground;
+    font:             @prompt-font;
+}
+
+listview {
+    layout: vertical;
+    lines: 10;
+    children: [ scrollbar ];
+}
+
+entry {
+    padding: 2px;
+    placeholder-color: #727272;
+    vertical-align: 0.5;
+    expand: true;
+    width: 20em;
+    placeholder: "Search symbol / command...";
+}
+
+element {
+    padding: 7px 8px;
+    border: 0 0 1 dash 0;
+    //border-color: #555252;
+    spacing: 5px;
+    orientation: horizontal;
+    childreb: [ element-text, element-icon ];
+}
+
+element.selected {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+}
+
+element-text {
+    background-color: inherit;
+    text-color:       inherit;
+}
