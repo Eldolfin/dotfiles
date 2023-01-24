@@ -501,3 +501,6 @@ cmp.event:on(
   'confirm_done',
   cmp_autopairs.on_confirm_done()
 )
+
+-- don't continue comments when pressing enters
+vim.o.formatoptions = vim.o.formatoptions:gsub('cro', '')
