@@ -408,7 +408,7 @@ require('fidget').setup()
 local cmp = require 'cmp'
 local luasnip = require 'luasnip'
 
-require("luasnip.loaders.from_vscode").lazy_load({ include = { "javascript", "typescript", "html", "css", "json", "lua" } })
+require("luasnip.loaders.from_vscode").lazy_load({ include = { "javascript", "typescript", "html", "css", "json", "lua", "java" } })
 
 cmp.setup {
   snippet = {
