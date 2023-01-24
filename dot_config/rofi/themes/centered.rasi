@@ -10,8 +10,8 @@
     background-color:           #282421;
     border-color:               #31322f;
     text-color:                 #bbc2cf;
-    font:                       "Inconsolata 13";
-    prompt-font:                "Ubuntu Bold 12";
+    font:                       "Inconsolata 25";
+    prompt-font:                "Ubuntu Bold 22";
     prompt-background:          #d25710;
     prompt-foreground:          #cccccc;
     prompt-padding:             10px;
