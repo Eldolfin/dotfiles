@@ -503,4 +503,5 @@ cmp.event:on(
 )
 
 -- don't continue comments when pressing enters
-vim.o.formatoptions = vim.o.formatoptions:gsub('cro', '')
+vim.cmd("autocmd BufEnter * set formatoptions-=cro")
+vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
