@@ -45,8 +45,8 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 bindsym XF86AudioPrev exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
 
 # in the same way, my tilde key is broken, so I use F6 instead
-bindsym XF86AudioNext exec --no-startup-id xdotool type "~"
-bindsym Shift+XF86AudioNext exec --no-startup-id xdotool type "~"
+bindsym --release  XF86AudioNext exec --no-startup-id xdotool key 0x0060
+bindsym --release Shift+XF86AudioNext exec --no-startup-id xdotool key 0xfe53
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
