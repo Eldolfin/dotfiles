@@ -126,6 +126,7 @@ vim.wo.number = true
 
 -- Enable mouse mode
 vim.o.mouse = ''
+-- vim.o.mouse = 'a'
 
 -- Enable break indent
 vim.o.breakindent = true
@@ -505,3 +506,10 @@ cmp.event:on(
 -- don't continue comments when pressing enters
 vim.cmd("autocmd BufEnter * set formatoptions-=cro")
 vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
+
+
+-- disable arrow keys
+vim.api.nvim_set_keymap('n', '<Up>', '<NOP>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Down>', '<NOP>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Left>', '<NOP>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Right>', '<NOP>', { noremap = true, silent = true })
