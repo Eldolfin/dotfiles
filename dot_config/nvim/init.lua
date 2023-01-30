@@ -84,7 +84,7 @@ require('packer').startup(function(use)
     use "zbirenbaum/copilot.lua"
 
     -- css colors previewer
-    use 'ap/vim-css-color'
+    use 'norcalli/nvim-colorizer.lua'
 
   -- Add custom plugins to packer from ~/.config/nvim/lua/custom/plugins.lua
   local has_plugins, plugins = pcall(require, 'custom.plugins')
@@ -524,3 +524,4 @@ vim.cmd("autocmd FileType html setlocal shiftwidth=2 tabstop=2")
 -- css
 vim.cmd("autocmd FileType css setlocal shiftwidth=2 tabstop=2")
 
+lua require'colorizer'.setup()
