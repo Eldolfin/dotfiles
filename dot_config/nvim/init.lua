@@ -525,5 +525,8 @@ vim.cmd("autocmd FileType html setlocal shiftwidth=2 tabstop=2")
 vim.cmd("autocmd FileType css setlocal shiftwidth=2 tabstop=2")
 
 require('colorizer').setup({
-  css = {css = true},
+  css = {
+    css = true;
+    css_fn = true;
+  };
 })
