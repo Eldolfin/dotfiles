@@ -513,3 +513,7 @@ vim.api.nvim_set_keymap('n', '<Up>', '<NOP>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Down>', '<NOP>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Left>', '<NOP>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Right>', '<NOP>', { noremap = true, silent = true })
+
+
+-- custom indent with for specific filetypes
+vim.cmd("autocmd FileType html setlocal shiftwidth=2 tabstop=2")
