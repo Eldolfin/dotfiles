@@ -75,7 +75,8 @@ require('packer').startup(function(use)
     
     use 'manzeloth/live-server'
 
-    use 'alvan/vim-closetag'
+    -- use 'alvan/vim-closetag'
+    use 'windwp/nvim-ts-autotag'
 
     use 'mfussenegger/nvim-jdtls'
 
@@ -530,3 +531,5 @@ require('colorizer').setup({
     css_fn = true;
   };
 })
+
+require('nvim-ts-autotag').setup()
