@@ -507,6 +507,11 @@ cmp.event:on(
   cmp_autopairs.on_confirm_done()
 )
 
+local npairs = require('nvim-autopairs')
+npairs.setup({
+  check_ts = true,
+})
+
 -- don't continue comments when pressing enters
 vim.cmd("autocmd BufEnter * set formatoptions-=cro")
 vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
