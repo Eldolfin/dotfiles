@@ -73,9 +73,6 @@ require('packer').startup(function(use)
     -- colored brackets
     use 'frazrepo/vim-rainbow'
     
-    use 'manzeloth/live-server'
-
-    -- use 'alvan/vim-closetag'
     use 'windwp/nvim-ts-autotag'
 
     use 'mfussenegger/nvim-jdtls'
