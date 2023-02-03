@@ -232,7 +232,7 @@ bindsym --release Print exec scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~
 bindsym --release Shift+Print exec flameshot gui
 
 # i3lock on <mod>+L
-bindsym $mod+x exec --no-startup-id sleep 0.1 && xset dpms force suspend
+bindsym $mod+x exec --no-startup-id i3lock -c 000000
 
 # start polybar
 # exec_always --no-startup-id $HOME/.config/polybar/launch.sh
