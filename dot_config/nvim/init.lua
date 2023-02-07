@@ -84,6 +84,8 @@ require('packer').startup(function(use)
     -- css colors previewer
     use 'norcalli/nvim-colorizer.lua'
 
+    use 'jbyuki/instant.nvim'
+    
   -- Add custom plugins to packer from ~/.config/nvim/lua/custom/plugins.lua
   local has_plugins, plugins = pcall(require, 'custom.plugins')
   if has_plugins then
