@@ -134,6 +134,7 @@ vim.o.mouse = ''
 -- Enable break indent
 -- disabled because I hate word wrap
 -- vim.o.breakindent = true
+vim.o.wrap = false
 
 -- use side scrolling instead of wrapping
 vim.o.sidescroll = 1
