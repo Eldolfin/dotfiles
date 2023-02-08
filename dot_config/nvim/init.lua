@@ -132,7 +132,11 @@ vim.o.mouse = ''
 -- vim.o.mouse = 'a'
 
 -- Enable break indent
-vim.o.breakindent = true
+-- disabled because I hate word wrap
+-- vim.o.breakindent = true
+
+-- use side scrolling instead of wrapping
+vim.o.sidescroll = 1
 
 -- Save undo history
 vim.o.undofile = true
