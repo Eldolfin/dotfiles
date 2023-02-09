@@ -86,7 +86,11 @@ require('packer').startup(function(use)
 
     use 'jbyuki/instant.nvim'
 
-   use 'mg979/vim-visual-multi' 
+    use 'mg979/vim-visual-multi' 
+
+    -- for flexing on discord 
+    use 'andweeb/presence.nvim'
+
   -- Add custom plugins to packer from ~/.config/nvim/lua/custom/plugins.lua
   local has_plugins, plugins = pcall(require, 'custom.plugins')
   if has_plugins then
