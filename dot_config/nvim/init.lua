@@ -470,6 +470,7 @@ vim.o.relativenumber = true
 require("copilot").setup {
   filetypes = {
     ["*"] = true,
+    ["asm"] = false,
   }, 
 suggestion = {
     enabled = true,
