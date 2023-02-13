@@ -386,10 +386,8 @@ local servers = {
   --     telemetry = { enable = false },
   --   },
   -- },
-  haskell = {
-    languageServerHaskell = {
+  haskell_language_server = {
       singleFileSupport = true,
-    },
   },
 }
 
