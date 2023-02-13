@@ -388,13 +388,14 @@ local servers = {
   -- },
 
   -- enables haskell single file support
-  hls = {
-    settings = {
-      haskell = {
-        single_file_support = true,
-      },
-    },
-  }
+  -- (not working)
+  -- hls = {
+  --   settings = {
+  --     haskell = {
+  --       single_file_support = true,
+  --     },
+  --   },
+  -- }
 }
 
 -- Setup neovim lua configuration
