@@ -386,6 +386,11 @@ local servers = {
   --     telemetry = { enable = false },
   --   },
   -- },
+  haskell = {
+    languageServerHaskell = {
+      singleFileSupport = true,
+    },
+  },
 }
 
 -- Setup neovim lua configuration
