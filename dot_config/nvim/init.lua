@@ -386,6 +386,15 @@ local servers = {
   --     telemetry = { enable = false },
   --   },
   -- },
+  
+  -- enables haskell single file support
+  hls {
+    settings = {
+      haskell = {
+        singleFileSupport = true,
+      }
+    }
+  }
 }
 
 -- Setup neovim lua configuration
@@ -549,9 +558,3 @@ require('colorizer').setup({
 
 require('nvim-ts-autotag').setup()
 vim.g.instant_username = "Eldolfin"
-
-
--- enable haskell single file support
-require('lspconfig')['hls'].setup{
-  single_file_support = true,
-}
