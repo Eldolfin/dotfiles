@@ -386,14 +386,10 @@ local servers = {
   --     telemetry = { enable = false },
   --   },
   -- },
-  
+
   -- enables haskell single file support
   hls = {
-    settings = {
-      haskell = {
         singleFileSupport = true,
-      }
-    }
   }
 }
 
