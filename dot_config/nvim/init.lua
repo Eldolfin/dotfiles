@@ -389,7 +389,11 @@ local servers = {
 
   -- enables haskell single file support
   hls = {
+    settings = {
+      haskell = {
         single_file_support = true,
+      },
+    },
   }
 }
 
