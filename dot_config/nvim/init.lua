@@ -388,7 +388,7 @@ local servers = {
   -- },
   
   -- enables haskell single file support
-  hls {
+  hls = {
     settings = {
       haskell = {
         singleFileSupport = true,
