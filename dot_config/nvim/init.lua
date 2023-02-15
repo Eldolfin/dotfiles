@@ -582,3 +582,5 @@ require('colorizer').setup({
 
 require('nvim-ts-autotag').setup()
 vim.g.instant_username = "Eldolfin"
+
+require('leap').add_default_mappings()
