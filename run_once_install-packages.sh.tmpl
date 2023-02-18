@@ -2,7 +2,6 @@
 {{ if eq .chezmoi.osRelease.id "arch" -}}
     sudo pacman -S alacritty \
                    zsh btop \
-                   firefox \
                    neofetch \
                    exa \
                    git \
@@ -23,7 +22,7 @@
     makepkg -si
 
     # install paru packages
-    paru -S autojump diodon
+    paru -S autojump diodon librewolf-bin
 
 {{ end -}}
 
