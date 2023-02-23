@@ -571,6 +571,8 @@ vim.api.nvim_set_keymap('n', '<Right>', '<NOP>', { noremap = true, silent = true
 vim.cmd("autocmd FileType html setlocal shiftwidth=2 tabstop=2")
 -- css
 vim.cmd("autocmd FileType css setlocal shiftwidth=2 tabstop=2")
+-- java
+vim.cmd("autocmd FileType java setlocal shiftwidth=2 tabstop=2")
 
 require('colorizer').setup({
   css = {
