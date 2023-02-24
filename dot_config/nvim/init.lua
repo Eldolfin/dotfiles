@@ -522,9 +522,12 @@ suggestion = {
   },
 }
 
--- F5 to toggle nerdtree
--- vim.api.nvim_set_keymap('n', '<F5>', ':NERDTreeToggle<CR>', { noremap = true, silent = true })
+-- disable netr
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+-- F5 to toggle filetree 
 vim.api.nvim_set_keymap('n', '<F5>', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
+require("nvim-tree").setup()
 
 -- Run make with F9
 vim.api.nvim_set_keymap('n', '<F9>', ':w | terminal make<CR>:startinsert<CR>', { noremap = true, silent = true })
