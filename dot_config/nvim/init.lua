@@ -535,18 +535,14 @@ vim.api.nvim_set_keymap('n', '<F9>', ':w | terminal make<CR>:startinsert<CR>', {
 -- neovide config
 if vim.fn.exists("g:neovide") then
   vim.o.guifont = "Source Code Pro:h8"
-  --[[ let g:neovide_scale_factor=1.0
-    function! ChangeScaleFactor(delta)
-      let g:neovide_scale_factor = g:neovide_scale_factor * a:delta
-    endfunction
-  nnoremap <expr><C-=> ChangeScaleFactor(1.25)
-  nnoremap <expr><C--> ChangeScaleFactor(1/1.25) ]]
   vim.g.neovide_scale_factor = 1.0
   function ChangeScaleFactor(delta)
     vim.g.neovide_scale_factor = vim.g.neovide_scale_factor * delta
   end
   vim.api.nvim_set_keymap('n', '<C-=>', ':lua ChangeScaleFactor(1.25)<CR>', { noremap = true, silent = true })
   vim.api.nvim_set_keymap('n', '<C-->', ':lua ChangeScaleFactor(1/1.25)<CR>', { noremap = true, silent = true })
+  vim.g.neovide_cursor_animation_length = 0.05
+  vim.g.neovide_cursor_antialiasing = false
 
 end
 
