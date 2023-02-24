@@ -30,7 +30,7 @@ alias clone="alacritty -e zsh -c \"cd \$(pwd); zsh -i\"&!"
 neovide-tweaked () {
     (neovide "$@" --nofork && clone)&!;exit
 }
-#alias nvim=neovide-tweaked
+alias nvim=neovide-tweaked
 alias vim=nvim
 alias vi=vim
 alias v=vim
