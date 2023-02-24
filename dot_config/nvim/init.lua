@@ -68,7 +68,15 @@ require('packer').startup(function(use)
     --use 'jiangmiao/auto-pairs'
     
     -- nerdtree
-    use 'preservim/nerdtree'
+    -- use 'preservim/nerdtree'
+    -- replaced by nvim-tree.lua
+    use {
+      'nvim-tree/nvim-tree.lua',
+      requires = {
+        'nvim-tree/nvim-web-devicons', -- optional, for file icons
+      },
+      tag = 'nightly' -- optional, updated every week. (see issue #1193)
+    }
     
     -- colored brackets
     use 'frazrepo/vim-rainbow'
@@ -515,7 +523,8 @@ suggestion = {
 }
 
 -- F5 to toggle nerdtree
-vim.api.nvim_set_keymap('n', '<F5>', ':NERDTreeToggle<CR>', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', '<F5>', ':NERDTreeToggle<CR>', { noremap = true, silent = true })
+
 
 -- Run make with F9
 vim.api.nvim_set_keymap('n', '<F9>', ':w | terminal make<CR>:startinsert<CR>', { noremap = true, silent = true })
