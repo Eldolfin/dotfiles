@@ -524,7 +524,7 @@ suggestion = {
 
 -- F5 to toggle nerdtree
 -- vim.api.nvim_set_keymap('n', '<F5>', ':NERDTreeToggle<CR>', { noremap = true, silent = true })
-
+vim.api.nvim_set_keymap('n', '<F5>', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
 
 -- Run make with F9
 vim.api.nvim_set_keymap('n', '<F9>', ':w | terminal make<CR>:startinsert<CR>', { noremap = true, silent = true })
