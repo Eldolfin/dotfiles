@@ -87,7 +87,7 @@ require('packer').startup(function(use)
 
     use 'windwp/nvim-autopairs'
     
-    use "zbirenbaum/copilot.lua"
+    -- use "zbirenbaum/copilot.lua"
 
     -- css colors previewer
     use 'norcalli/nvim-colorizer.lua'
