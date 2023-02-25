@@ -411,7 +411,6 @@ local servers = {
       },
     },
   },
-},
   -- tsserver = {},
 
   -- sumneko_lua = {
