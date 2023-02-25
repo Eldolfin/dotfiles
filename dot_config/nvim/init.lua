@@ -403,7 +403,15 @@ local servers = {
   -- clangd = {},
   -- gopls = {},
   -- pyright = {},
-  -- rust_analyzer = {},
+  rust_analyzer = {
+    diagnostics = {
+      enable = true,
+      experimental = {
+        enable = true,
+      },
+    },
+  },
+},
   -- tsserver = {},
 
   -- sumneko_lua = {
