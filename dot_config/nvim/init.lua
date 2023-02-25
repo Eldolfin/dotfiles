@@ -539,7 +539,7 @@ require("nvim-tree").setup()
 vim.api.nvim_set_keymap('n', '<F6>', '::Telescope find_files<CR>', { noremap = true, silent = true })
 
 -- Run make with F9
-vim.api.nvim_set_keymap('n', '<F9>', ':w | terminal make<CR>:startinsert<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<F9>', ':w | vert sp | terminal make<CR>:startinsert<CR>', { noremap = true, silent = true })
 
 -- neovide config
 if vim.fn.exists("g:neovide") then
