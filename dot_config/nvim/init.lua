@@ -511,16 +511,16 @@ vim.o.clipboard = 'unnamedplus,unnamed'
 vim.o.relativenumber = true
 
 -- disable copilot on certain filetypes
-require("copilot").setup {
-  filetypes = {
-    ["*"] = true,
-    ["asm"] = false,
-  }, 
-suggestion = {
-    enabled = true,
-    auto_trigger = true,
-  },
-}
+-- require("copilot").setup {
+--   filetypes = {
+--     ["*"] = true,
+--     ["asm"] = false,
+--   }, 
+-- suggestion = {
+--     enabled = true,
+--     auto_trigger = true,
+--   },
+-- }
 
 -- disable netr
 vim.g.loaded_netrw = 1
