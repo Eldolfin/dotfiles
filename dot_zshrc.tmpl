@@ -25,7 +25,7 @@ source $ZSH/oh-my-zsh.sh
 # autojump :
 source /usr/share/autojump/autojump.zsh
 
-alias neovide="neovide --multigrid"
+#alias neovide="neovide --multigrid"
 alias clone="alacritty -e zsh -c \"cd \$(pwd); zsh -i\"&!"
 neovide-tweaked () {
     (neovide "$@" --nofork && clone)&!;exit
