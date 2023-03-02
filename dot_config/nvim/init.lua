@@ -373,6 +373,24 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
 
+
+-- rust tools config
+
+local rt = require('rust-tools')
+
+rt.setup({
+  server = {
+    -- on_attach = function(_, bufnr)
+    --   -- Hover actions
+    --   vim.keymap.set("n", "<Leader>c", rt.hover_actions.hover_actions, { buffer = bufnr })
+    --   -- Code action groups
+    --   vim.keymap.set("n", "<Leader>b", rt.code_action_group.code_action_group, { buffer = bufnr })
+    -- end,
+  },
+})
+
+rt.inlay_hints.set()
+
 -- LSP settings.
 --  This function gets run when an LSP connects to a particular buffer.
 local on_attach = function(_, bufnr)
@@ -601,7 +619,7 @@ npairs.setup({
 local Rule = require('nvim-autopairs.rule')
 local ts_conds = require('nvim-autopairs.ts-conds')
 npairs.add_rules({
-  Rule("<", ">", "rust"),
+  -- Rule("<", ">", "rust"), -- this is shite (when using the shift operator <<)
   Rule("%", "%", "htmldjango")
 })
 
@@ -638,9 +656,4 @@ vim.g.instant_username = "Eldolfin"
 
 require('leap').add_default_mappings()
 
-
-local rt = require('rust-tools')
-
-rt.setup({})
-rt.inlay_hints.set()
 
