@@ -597,6 +597,15 @@ npairs.setup({
   check_ts = true,
 })
 
+-- custom autopairs rules
+local Rule = require('nvim-autopairs.rule')
+local ts_conds = require('nvim-autopairs.ts-conds')
+npairs.add_rules({
+  Rule("<", ">", "rust"),
+  Rule("%", "%", "htmldjango")
+})
+
+
 -- don't continue comments when pressing enters
 vim.cmd("autocmd BufEnter * set formatoptions-=cro")
 vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
