@@ -116,6 +116,12 @@ require('packer').startup(function(use)
     
     use "ray-x/lsp_signature.nvim"
 
+    -- rust things
+    use 'simrat39/rust-tools.nvim'
+    -- Debugging
+    use 'nvim-lua/plenary.nvim'
+    use 'mfussenegger/nvim-dap'
+
   -- Add custom plugins to packer from ~/.config/nvim/lua/custom/plugins.lua
   local has_plugins, plugins = pcall(require, 'custom.plugins')
   if has_plugins then
@@ -402,14 +408,14 @@ local servers = {
   -- clangd = {},
   -- gopls = {},
   -- pyright = {},
-  rust_analyzer = {
-    diagnostics = {
-      enable = true,
-      experimental = {
-        enable = true,
-      },
-    },
-  },
+  -- rust_analyzer = {
+  --   diagnostics = {
+  --     enable = true,
+  --     experimental = {
+  --       enable = true,
+  --     },
+  --   },
+  -- },
   -- tsserver = {},
 
   -- sumneko_lua = {
