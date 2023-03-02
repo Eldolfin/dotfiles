@@ -125,6 +125,15 @@ require('packer').startup(function(use)
     --for path autocompletions
     use 'hrsh7th/cmp-path'
 
+    -- autocompletes cargo versions
+    use {
+        'saecki/crates.nvim',
+        tag = 'v0.3.0',
+        requires = { 'nvim-lua/plenary.nvim' },
+        config = function()
+            require('crates').setup()
+        end,
+    }
 
   -- Add custom plugins to packer from ~/.config/nvim/lua/custom/plugins.lua
   local has_plugins, plugins = pcall(require, 'custom.plugins')
