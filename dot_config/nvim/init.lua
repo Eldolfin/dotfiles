@@ -121,6 +121,10 @@ require('packer').startup(function(use)
     -- Debugging
     use 'nvim-lua/plenary.nvim'
     use 'mfussenegger/nvim-dap'
+    
+    --for path autocompletions
+    use 'hrsh7th/cmp-path'
+
 
   -- Add custom plugins to packer from ~/.config/nvim/lua/custom/plugins.lua
   local has_plugins, plugins = pcall(require, 'custom.plugins')
@@ -153,6 +157,12 @@ vim.api.nvim_create_autocmd('BufWritePost', {
   group = packer_group,
   pattern = vim.fn.expand '$MYVIMRC',
 })
+
+-- theme setup
+require('onedark').setup {
+  style = 'dark',
+  transparent = true,  -- Show/hide background
+}
 
 -- [[ Setting options ]]
 -- See `:help vim.o`
@@ -223,7 +233,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 -- See `:help lualine.txt`
 require('lualine').setup {
   options = {
-    icons_enabled = false,
+    icons_enabled = true,
     theme = 'onedark',
     component_separators = '|',
     section_separators = '',
@@ -512,6 +522,7 @@ cmp.setup {
   sources = {
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
+    { name = 'path' },
   },
 }
 
@@ -613,3 +624,4 @@ local rt = require('rust-tools')
 
 rt.setup({})
 rt.inlay_hints.set()
+
