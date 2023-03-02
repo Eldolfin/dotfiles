@@ -374,23 +374,6 @@ vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
 
 
--- rust tools config
-
-local rt = require('rust-tools')
-
-rt.setup({
-  server = {
-    -- on_attach = function(_, bufnr)
-    --   -- Hover actions
-    --   vim.keymap.set("n", "<Leader>c", rt.hover_actions.hover_actions, { buffer = bufnr })
-    --   -- Code action groups
-    --   vim.keymap.set("n", "<Leader>b", rt.code_action_group.code_action_group, { buffer = bufnr })
-    -- end,
-  },
-})
-
-rt.inlay_hints.set()
-
 -- LSP settings.
 --  This function gets run when an LSP connects to a particular buffer.
 local on_attach = function(_, bufnr)
@@ -511,7 +494,7 @@ require('fidget').setup()
 local cmp = require 'cmp'
 local luasnip = require 'luasnip'
 
-require("luasnip.loaders.from_vscode").lazy_load({ include = { "javascript", "typescript", "html", "css", "json", "lua", "java" } })
+require("luasnip.loaders.from_vscode").lazy_load({ include = { "javascript", "typescript", "html", "css", "json", "lua", "java", "rust" } })
 
 cmp.setup {
   snippet = {
@@ -656,4 +639,20 @@ vim.g.instant_username = "Eldolfin"
 
 require('leap').add_default_mappings()
 
+-- rust tools config
+
+local rt = require('rust-tools')
+
+rt.setup({
+  -- server = {
+  --   on_attach = function(_, bufnr)
+  --     -- Hover actions
+  --     vim.keymap.set("n", "<Leader>c", rt.hover_actions.hover_actions, { buffer = bufnr })
+  --     -- Code action groups
+  --     vim.keymap.set("n", "<Leader>b", rt.code_action_group.code_action_group, { buffer = bufnr })
+  --   end,
+  -- },
+})
+
+rt.inlay_hints.set()
 
