@@ -283,3 +283,6 @@ set $volumestep 5
 # volume keys are shifted right because F2 is broken on my laptop
 bindsym XF86AudioPrev        exec --no-startup-id $volumepath/volume -n -t $statuscmd -u $statussig up $volumestep
 bindsym XF86AudioRaiseVolume exec --no-startup-id $volumepath/volume -n -t $statuscmd -u $statussig down $volumestep
+
+# stars picom composite manager
+picom -b
