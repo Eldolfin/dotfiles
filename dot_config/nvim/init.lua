@@ -183,8 +183,9 @@ vim.o.hlsearch = false
 vim.wo.number = true
 
 -- Enable mouse mode
-vim.o.mouse = ''
--- vim.o.mouse = 'a'
+vim.o.mouse = 'a'
+-- Disable mouse mode
+-- vim.o.mouse = ''
 
 -- Enable break indent
 -- disabled because I hate word wrap
