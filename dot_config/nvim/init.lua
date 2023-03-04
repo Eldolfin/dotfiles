@@ -533,8 +533,16 @@ cmp.setup {
     { name = 'path' },
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
-    { name = "crates" },
+    { name = 'crates' },
   },
+  -- disables completions in comments (very annoying)
+  enabled = function()
+    if require"cmp.config.context".in_treesitter_capture("comment")==true or require"cmp.config.context".in_syntax_group("Comment") then
+      return false
+    else
+      return true
+    end
+  end
 }
 
 -- The line beneath this is called `modeline`. See `:help modeline`
