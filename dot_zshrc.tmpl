@@ -13,7 +13,6 @@ plugins=(
     tmux
     zsh-syntax-highlighting
     pip
-    vim-interaction
     )
 ZSH_TMUX_AUTOSTART=true
 ZSH_TMUX_AUTOCONNECT=false
@@ -22,8 +21,8 @@ source $ZSH/oh-my-zsh.sh
 # autojump :
 source /usr/share/autojump/autojump.zsh
 
-function v{
-  if [ -z "$1" ]; then
+v() {
+  if [[ -z "$1" ]]; then
       fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs -r nvim
   else
     nvim $1
@@ -38,7 +37,7 @@ neovide-tweaked () {
 #alias nvim=neovide-tweaked
 alias vim=nvim
 alias vi=vim
-alias v='fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs -r nvim'
+# alias v='fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs -r nvim'
 alias hx=helix
 alias htop=btop
 alias top=btop
