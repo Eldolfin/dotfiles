@@ -1,34 +1,34 @@
-return function (use)
-	use {
+return {
+	{
 		'nvim-tree/nvim-tree.lua',
-		requires = {
+		dependencies = {
 			'nvim-tree/nvim-web-devicons', -- optional, for file icons
 		},
 		tag = 'nightly' -- optional, updated every week. (see issue #1193)
-	}
+	},
 
 	-- colored brackets
-	use 'frazrepo/vim-rainbow'
+	'frazrepo/vim-rainbow',
 
-	use 'windwp/nvim-ts-autotag'
+	'windwp/nvim-ts-autotag',
 
-	use 'mfussenegger/nvim-jdtls'
+	'mfussenegger/nvim-jdtls',
 
-	use 'windwp/nvim-autopairs'
+	'windwp/nvim-autopairs',
 
-	-- use "zbirenbaum/copilot.lua"
+	-- "zbirenbaum/copilot.lua",
 
 	-- css colors previewer
-	use 'norcalli/nvim-colorizer.lua'
+	'norcalli/nvim-colorizer.lua',
 
-	use 'jbyuki/instant.nvim'
+	'jbyuki/instant.nvim',
 
-	use 'mg979/vim-visual-multi' 
+	'mg979/vim-visual-multi', 
 
 	-- for flexing on discord 
-	-- use 'andweeb/presence.nvim'
+	-- 'andweeb/presence.nvim',
 
-	use {
+	{
 		"folke/which-key.nvim",
 		config = function()
 			vim.o.timeout = true
@@ -39,34 +39,34 @@ return function (use)
 				-- refer to the configuration section below
 			}
 		end
-	}
+	},
 
-	use 'ggandor/leap.nvim'
+	'ggandor/leap.nvim',
 
-	use "ray-x/lsp_signature.nvim"
+	"ray-x/lsp_signature.nvim",
 
 	-- rust things
-	use 'simrat39/rust-tools.nvim'
+	'simrat39/rust-tools.nvim',
 	-- Debugging
-	use 'nvim-lua/plenary.nvim'
-	use 'mfussenegger/nvim-dap'
+	'nvim-lua/plenary.nvim',
+	'mfussenegger/nvim-dap',
 
 	--for path autocompletions
-	use 'hrsh7th/cmp-path'
+	'hrsh7th/cmp-path',
 
 	-- autocompletes cargo versions
-	use {
+	{
 		'saecki/crates.nvim',
 		event = { "BufRead Cargo.toml" },
-		requires = { { 'nvim-lua/plenary.nvim' } },
+		dependencies = { 'nvim-lua/plenary.nvim' },
 		config = function()
 			require('crates').setup()
 		end,
-	}
+	},
 
-	use {'stevearc/dressing.nvim'}
+	'stevearc/dressing.nvim',
 
-	use {
+	{
 		'glepnir/dashboard-nvim',
 		event = 'VimEnter',
 		config = function()
@@ -74,6 +74,6 @@ return function (use)
 				-- config
 			}
 		end,
-		requires = {'nvim-tree/nvim-web-devicons'}
-	}
-end
+		dependencies = {'nvim-tree/nvim-web-devicons' }
+	},
+}
