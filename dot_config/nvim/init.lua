@@ -97,13 +97,13 @@ require('packer').startup(function(use)
     use 'mg979/vim-visual-multi' 
 
     -- for flexing on discord 
-    use 'andweeb/presence.nvim'
+    -- use 'andweeb/presence.nvim'
 
     use {
       "folke/which-key.nvim",
       config = function()
         vim.o.timeout = true
-        vim.o.timeoutlen = 300
+        vim.o.timeoutlen = 600
         require("which-key").setup {
           -- your configuration comes here
           -- or leave it empty to use the default settings
@@ -134,6 +134,8 @@ require('packer').startup(function(use)
             require('crates').setup()
         end,
     }
+
+    use {'stevearc/dressing.nvim'}
 
   -- Add custom plugins to packer from ~/.config/nvim/lua/custom/plugins.lua
   local has_plugins, plugins = pcall(require, 'custom.plugins')
@@ -426,35 +428,6 @@ end
 --  Add any additional override configuration in the following tables. They will be passed to
 --  the `settings` field of the server config. You must look up that documentation yourself.
 local servers = {
-  -- clangd = {},
-  -- gopls = {},
-  -- pyright = {},
-  -- rust_analyzer = {
-  --   diagnostics = {
-  --     enable = true,
-  --     experimental = {
-  --       enable = true,
-  --     },
-  --   },
-  -- },
-  -- tsserver = {},
-
-  -- sumneko_lua = {
-  --   Lua = {
-  --     workspace = { checkThirdParty = false },
-  --     telemetry = { enable = false },
-  --   },
-  -- },
-
-  -- enables haskell single file support
-  -- (not working)
-  -- hls = {
-  --   settings = {
-  --     haskell = {
-  --       single_file_support = true,
-  --     },
-  --   },
-  -- }
   html = {
     -- enable for djangohtml
     filetypes = { "html", "djangohtml" },
@@ -655,13 +628,15 @@ local rt = require('rust-tools')
 rt.setup({
   server = {
     on_attach = function(_, bufnr)
+      on_attach(0, bufnr)
       -- Hover actions
       vim.keymap.set("n", "K", rt.hover_actions.hover_actions, { buffer = bufnr })
       -- Code action groups
-        vim.keymap.set("n", "<Leader>ca", rt.code_action_group.code_action_group, { buffer = bufnr })
+      vim.keymap.set("n", "<Leader>ca", rt.code_action_group.code_action_group, { buffer = bufnr })
     end,
+    standalone = false,
   },
 })
 
 rt.inlay_hints.set()
-
+rt.runnables.runnables()
