@@ -432,6 +432,10 @@ local servers = {
     -- enable for djangohtml
     filetypes = { "html", "djangohtml" },
   },
+
+  -- bash_language_server = {
+  --   filetypes = { ".zshrc" },
+  -- }
 }
 
 -- Setup neovim lua configuration
