@@ -22,13 +22,13 @@ source $ZSH/oh-my-zsh.sh
 # autojump :
 source /usr/share/autojump/autojump.zsh
 
-# function v {
-#     if $2; then
-#         nvim $1
-#     else
-#         fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs -r nvim
-#     fi
-# }
+v(){
+  if [ -z "$1" ]; then
+      fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs -r nvim
+  else
+    nvim $1
+  fi
+}
 
 alias neovide="neovide --multigrid"
 alias clone="alacritty -e zsh -c \"cd \$(pwd); zsh -i\"&!"
