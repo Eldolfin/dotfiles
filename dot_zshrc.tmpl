@@ -1,3 +1,7 @@
+# auto launch tmux
+if [ "$TMUX" = "" ]; then tmux; fi
+
+
 export PATH=$HOME/bin:/usr/local/bin:/home/oscar/.cargo/bin/:$PATH
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -33,7 +37,8 @@ neovide-tweaked () {
 #alias nvim=neovide-tweaked
 alias vim=nvim
 alias vi=vim
-alias v=vim
+## alias v=vim
+alias v='fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs -r nvim'
 alias hx=helix
 alias htop=btop
 alias top=btop
