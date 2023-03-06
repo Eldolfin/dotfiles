@@ -433,9 +433,9 @@ local servers = {
     filetypes = { "html", "djangohtml" },
   },
 
-  -- bash_language_server = {
-  --   filetypes = { ".zshrc" },
-  -- }
+  bashls = {
+    filetypes = { ".zshrc" },
+  }
 }
 
 -- Setup neovim lua configuration
