@@ -1,7 +1,9 @@
 #!/bin/sh
 {{ if eq .chezmoi.osRelease.id "arch" -}}
-    sudo pacman -S alacritty \
-                   zsh btop \
+    sudo pacman -S \
+                   alacritty \
+                   zsh \
+                   btop \
                    neofetch \
                    exa \
                    git \
@@ -13,6 +15,10 @@
                    wireguard-tools \
                    mpv \
                    mpv-mpris \
+                   ripgrep \
+                   fzf \
+                   redshift \
+                   fd \
 
 
     # install paru
@@ -30,7 +36,3 @@
 cd ~/
 git clone https://github.com/nvm-sh/nvm.git .nvm
 cd ~/.nvm
-
-# install vim-plug
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
