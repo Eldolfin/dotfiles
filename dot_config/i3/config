@@ -117,8 +117,6 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
-{{- if eq .chezmoi.hostname "archlinuxoscar" }}
-
 # kill focused window
 bindsym $mod+Shift+Q kill
 
@@ -145,37 +143,6 @@ bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
-
-{{- else }}
-
-# kill focused window
-bindsym $mod+Shift+A kill
-
-# switch to workspace
-bindsym $mod+ampersand workspace number $ws1
-bindsym $mod+eacute workspace number $ws2
-bindsym $mod+quotedbl workspace number $ws3
-bindsym $mod+apostrophe workspace number $ws4
-bindsym $mod+parenleft workspace number $ws5
-bindsym $mod+minus workspace number $ws6
-bindsym $mod+egrave workspace number $ws7
-bindsym $mod+underscore workspace number $ws8
-bindsym $mod+ccedilla workspace number $ws9
-bindsym $mod+agrave workspace number $ws10
-
-# move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace number $ws1
-bindsym $mod+Shift+eacute move container to workspace number $ws2
-bindsym $mod+Shift+3 move container to workspace number $ws3
-bindsym $mod+Shift+4 move container to workspace number $ws4
-bindsym $mod+Shift+5 move container to workspace number $ws5
-bindsym $mod+Shift+6 move container to workspace number $ws6
-bindsym $mod+Shift+egrave move container to workspace number $ws7
-bindsym $mod+Shift+8 move container to workspace number $ws8
-bindsym $mod+Shift+ccedilla move container to workspace number $ws9
-bindsym $mod+Shift+agrave move container to workspace number $ws10
-
-{{- end}}
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -272,13 +239,6 @@ set $statussig SIGUSR1
 # Amount to increase/decrease volume as a percentage
 set $volumestep 5
 
-# pulseaudio-utils settings
-#
-# Symbolic name for sink (numeric index not supported)
-#   Recommended: comment out this setting and omit the -s option to use default sink
-#   List sink names: pacmd list-sinks | awk -F "[<>]" '/^\s+name: <.*>/{print $2}'
-#set $sinkname alsa_output.pci-0000_00_1b.0.analog-stereo
-
 # Using pulseaudio-utils (append "-s $sinkname" without quotes to override default sink)
 # volume keys are shifted right because F2 is broken on my laptop
 bindsym XF86AudioPrev        exec --no-startup-id $volumepath/volume -n -t $statuscmd -u $statussig up $volumestep
@@ -286,7 +246,12 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id $volumepath/volume -n -t $stat
 
 # stars picom composite manager
 exec --no-startup-id picom -b
+
+# puts a random background
 exec --no-startup-id ~/.config/i3/update_background.sh
 
 # hide window decorations
 default_border none
+
+# start redshift
+exec --no-startup-id redshift-gtk
