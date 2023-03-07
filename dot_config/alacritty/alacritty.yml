@@ -1,0 +1,19 @@
+window:
+  opacity: 0.95
+font:
+  normal:
+    family: UbuntuMono Nerd Font
+    style: Light
+  bold:
+    family: UbuntuMono Nerd Font
+    style: Medium
+  italic:
+    family: UbuntuMono Nerd Font
+    style: "Light Italic"
+
+bell:
+  command:
+    program: aplay
+    args: ["/home/oscar/Music/sounds/Tink.wav"]
+  duration: 30
+  color: '#555555'
