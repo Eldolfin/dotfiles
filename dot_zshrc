@@ -1,0 +1,46 @@
+export PATH=$HOME/bin:/usr/local/bin:/home/oscar/.cargo/bin/:/home/oscar/.local/bin:$PATH
+export ZSH="$HOME/.oh-my-zsh"
+
+ZSH_THEME="robbyrussell"
+
+plugins=(
+    archlinux 
+    git 
+    ubuntu
+    zsh-autosuggestions
+    cp
+    fancy-ctrl-z
+    tmux
+    zsh-syntax-highlighting
+    pip
+    # vi-mode
+    )
+ZSH_TMUX_AUTOSTART=true
+ZSH_TMUX_AUTOCONNECT=false
+source $ZSH/oh-my-zsh.sh
+
+# autojump :
+source /usr/share/autojump/autojump.zsh
+
+v() {
+    fd --type f --hidden --exclude .git | 
+        fzf-tmux -p --reverse -q "$*" -1 -0 | 
+        xargs -r nvim
+}
+
+alias neovide="neovide --multigrid"
+alias clone="alacritty -e zsh -c \"cd \$(pwd); zsh -i\"&!"
+neovide-tweaked () {
+    (neovide "$@" --nofork && clone)&!;exit
+}
+#alias nvim=neovide-tweaked
+alias vim=nvim
+alias vi=vim
+alias hx=helix
+alias htop=btop
+alias top=btop
+alias ls=exa
+alias tree='exa --tree'
+alias make="make -j"
+alias poly="./.apps/PolyMC-Linux-1.4.3-x86_64.AppImage"
+alias gupd="git add .; git commit -m \"update\"; git push"
