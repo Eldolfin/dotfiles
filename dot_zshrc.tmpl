@@ -24,7 +24,7 @@ source /usr/share/autojump/autojump.zsh
 
 v() {
     fd --type f --hidden --exclude .git --size -100k | 
-        fzf-tmux -p --reverse -q "$*" -1 -0 --preview='bat --color=always {}' | 
+        fzf-tmux -p 80%,80% --reverse -q "$*" -1 -0 --preview='bat --color=always --plain {}' --preview-window=down | 
         xargs -r nvim
 }
 
