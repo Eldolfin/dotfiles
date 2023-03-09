@@ -1,4 +1,4 @@
-export PATH=$HOME/bin:/usr/local/bin:/home/oscar/.cargo/bin/:/home/oscar/.local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:{{ .chezmoi.homeDir }}/.cargo/bin/:{{ .chezmoi.homeDir }}/.local/bin:$PATH
 export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="robbyrussell"
@@ -23,8 +23,8 @@ source $ZSH/oh-my-zsh.sh
 source /usr/share/autojump/autojump.zsh
 
 v() {
-    fd --type f --hidden --exclude .git | 
-        fzf-tmux -p --reverse -q "$*" -1 -0 | 
+    fd --type f --hidden --exclude .git --size -100k | 
+        fzf-tmux -p --reverse -q "$*" -1 -0 --preview='bat --color=always {}' | 
         xargs -r nvim
 }
 
@@ -42,5 +42,5 @@ alias top=btop
 alias ls=exa
 alias tree='exa --tree'
 alias make="make -j"
-alias poly="./.apps/PolyMC-Linux-1.4.3-x86_64.AppImage"
+alias poly="./.apps/PolyMC-{{ .chezmoi.kernel.ostype }}-1.4.3-x86_64.AppImage"
 alias gupd="git add .; git commit -m \"update\"; git push"
