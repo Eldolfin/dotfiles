@@ -1,0 +1,3 @@
+[build]
+# speedup compilation times with caching
+rustc-wrapper = "/home/oscar/.cargo/bin/sccache"
