@@ -10,13 +10,11 @@ plugins=(
     zsh-autosuggestions
     cp
     fancy-ctrl-z
-    tmux
     zsh-syntax-highlighting
     pip
     # vi-mode
     )
-ZSH_TMUX_AUTOSTART=true
-ZSH_TMUX_AUTOCONNECT=false
+
 source $ZSH/oh-my-zsh.sh
 
 # autojump :
@@ -24,7 +22,7 @@ source /usr/share/autojump/autojump.zsh
 
 v() {
     choice=$(fd --type f --hidden --exclude .git --size -100k | 
-        fzf-tmux -p 80%,80% --reverse -q "$*" -1 -0 --preview='bat --color=always --plain {}' --preview-window=down)
+        fzf-tmux -p 80%,80% --reverse -q "$*" -1 -0 --preview='bat --color=always --plain {}' --preview-window=down --scheme=history)
     if [ -n "$choice" ]; then
         nvim $choice
     fi
@@ -46,3 +44,9 @@ alias tree='exa --tree'
 alias make="make -j"
 alias poly="./.apps/PolyMC-{{ .chezmoi.kernel.ostype }}-1.4.3-x86_64.AppImage"
 alias gupd="git add .; git commit -m \"update\"; git push"
+
+# autostart zellij
+if [[ -z "$ZELLIJ" ]]; then
+    zellij
+    exit
+fi
