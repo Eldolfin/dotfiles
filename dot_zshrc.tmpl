@@ -19,6 +19,8 @@ source $ZSH/oh-my-zsh.sh
 
 # autojump :
 source /usr/share/autojump/autojump.zsh
+# zoxide (better autojump)
+eval "$(zoxide init zsh)"
 
 v() {
     choice=$(fd --type f --hidden --exclude .git --size -100k | 
