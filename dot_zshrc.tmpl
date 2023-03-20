@@ -59,11 +59,11 @@ fi
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('{{ .chezmoi.homeDir }}/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-    if [ -f "{{ .chezmoi.homeDir }}/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "{{ .chezmoi.homeDir }}/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="{{ .chezmoi.homeDir }}/miniconda3/bin:$PATH"
-    fi
+if [ -f "{{ .chezmoi.homeDir }}/miniconda3/etc/profile.d/conda.sh" ]; then
+    . "{{ .chezmoi.homeDir }}/miniconda3/etc/profile.d/conda.sh"
+else
+    export PATH="{{ .chezmoi.homeDir }}/miniconda3/bin:$PATH"
+fi
 unset __conda_setup
 # <<< conda initialize <<<
 
