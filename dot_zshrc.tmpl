@@ -45,7 +45,7 @@ alias ls=exa
 alias tree="exa --tree"
 alias make="make -j"
 alias poly="./.apps/PolyMC-{{ .chezmoi.kernel.ostype }}-1.4.3-x86_64.AppImage"
-alias gupd="git add .; git commit -m \"update\"; git push"
+alias gupd="git {{ .chezmoi.command }} .; git commit -m \"update\"; git push"
 alias bell="tput bel"
 
 # autostart zellij
@@ -53,3 +53,19 @@ if [[ -z "$ZELLIJ" ]]; then
     zellij
     exit
 fi
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('{{ .chezmoi.homeDir }}/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "{{ .chezmoi.homeDir }}/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "{{ .chezmoi.homeDir }}/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="{{ .chezmoi.homeDir }}/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
