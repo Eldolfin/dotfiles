@@ -280,7 +280,8 @@ local servers = {
   },
 
   bashls = {
-    filetypes = { ".zshrc" },
+    filetypes = { "sh", "zsh" },
+    single_file_support = true,
   }
 }
 
@@ -376,17 +377,11 @@ cmp.setup {
 vim.o.clipboard = 'unnamedplus,unnamed'
 vim.o.relativenumber = true
 
--- disable copilot on certain filetypes
--- require("copilot").setup {
---   filetypes = {
---     ["*"] = true,
---     ["asm"] = false,
---   }, 
--- suggestion = {
---     enabled = true,
---     auto_trigger = true,
---   },
--- }
+require("copilot").setup {
+suggestion = {
+    enabled = true,
+  },
+}
 
 -- disable netr
 vim.g.loaded_netrw = 1
@@ -458,6 +453,10 @@ vim.cmd("autocmd FileType html setlocal shiftwidth=2 tabstop=2")
 vim.cmd("autocmd FileType css setlocal shiftwidth=2 tabstop=2")
 -- java
 vim.cmd("autocmd FileType java setlocal shiftwidth=2 tabstop=2")
+-- C
+vim.cmd("autocmd FileType c setlocal shiftwidth=2 tabstop=2")
+-- groovy
+vim.cmd("autocmd FileType groovy setlocal shiftwidth=2 tabstop=2")
 
 require('colorizer').setup({
   css = {

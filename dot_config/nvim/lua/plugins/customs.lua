@@ -16,7 +16,7 @@ return {
 
 	'windwp/nvim-autopairs',
 
-	-- "zbirenbaum/copilot.lua",
+	"zbirenbaum/copilot.lua",
 
 	-- css colors previewer
 	'norcalli/nvim-colorizer.lua',
@@ -64,5 +64,11 @@ return {
 		end,
 	},
 
+	-- better nvim menus
 	'stevearc/dressing.nvim',
+
+	'iamcco/markdown-preview.nvim',
+
+	-- when opening a file: go back to previous locations
+	'farmergreg/vim-lastplace'
 }

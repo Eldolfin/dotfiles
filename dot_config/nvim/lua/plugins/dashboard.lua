@@ -104,7 +104,14 @@ return {
 						desc = 'Open File Tree',
 						desc_hl = 'String',
 						key = 't',
-						action = 'NvimTreeOpen'
+						action = 'NvimTreeToggle'
+					},
+					{
+						icon = '📄 ',
+						desc = 'Open Config Folder',
+						desc_hl = 'String',
+						key = 'c',
+						action = 'cd ~/.config/nvim | Telescope find_files'
 					},
 					{
 						icon = '💻 ',
@@ -118,7 +125,7 @@ return {
 						desc = 'Quit neovim',
 						desc_hl = 'String',
 						key = 'q',
-						action = 'q'
+						action = 'qall'
 					},
 				},
 				footer = random_cowsay_footer(),
