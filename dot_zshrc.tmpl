@@ -39,6 +39,7 @@ neovide-tweaked () {
 #alias nvim=neovide-tweaked
 alias vim=nvim
 alias vi=vim
+alias vimdiff="nvim -d"
 alias hx=helix
 alias htop=btop
 alias top=btop
@@ -59,10 +60,14 @@ fi
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('{{ .chezmoi.homeDir }}/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ -f "{{ .chezmoi.homeDir }}/miniconda3/etc/profile.d/conda.sh" ]; then
-    . "{{ .chezmoi.homeDir }}/miniconda3/etc/profile.d/conda.sh"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
 else
-    export PATH="{{ .chezmoi.homeDir }}/miniconda3/bin:$PATH"
+    if [ -f "{{ .chezmoi.homeDir }}/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "{{ .chezmoi.homeDir }}/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="{{ .chezmoi.homeDir }}/miniconda3/bin:$PATH"
+    fi
 fi
 unset __conda_setup
 # <<< conda initialize <<<
