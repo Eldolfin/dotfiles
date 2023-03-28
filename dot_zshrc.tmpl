@@ -13,7 +13,6 @@ plugins=(
     fancy-ctrl-z
     zsh-syntax-highlighting
     pip
-    # vi-mode
     )
 
 source $ZSH/oh-my-zsh.sh
@@ -30,6 +29,7 @@ v() {
         nvim $choice
     fi
 }
+
 
 alias neovide="neovide --multigrid"
 alias clone="alacritty -e zsh -c \"cd \$(pwd); zsh -i\"&!"
@@ -50,6 +50,9 @@ alias poly="./.apps/PolyMC-{{ .chezmoi.kernel.ostype }}-1.4.3-x86_64.AppImage"
 alias gupd="git {{ .chezmoi.command }} .; git commit -m \"update\"; git push"
 alias bell="tput bel"
 alias ll="ls -alh"
+
+# activate vim mode
+bindkey -v
 
 # autostart zellij
 if [[ -z "$ZELLIJ" ]]; then
