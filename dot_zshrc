@@ -37,7 +37,7 @@ neovide-tweaked () {
 #alias nvim=neovide-tweaked
 alias vim=nvim
 alias vi=vim
-alias svi=sudo -E -s nvim
+alias svi="sudo -E -s nvim"
 alias vimdiff="nvim -d"
 alias hx=helix
 alias htop=btop
