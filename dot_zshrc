@@ -37,7 +37,7 @@ neovide-tweaked () {
 #alias nvim=neovide-tweaked
 alias vim=nvim
 alias vi=vim
-alias svi="sudo -E -s nvim"
+alias svi=sudo -E -s nvim
 alias vimdiff="nvim -d"
 alias hx=helix
 alias htop=btop
@@ -49,6 +49,7 @@ alias poly="./.apps/PolyMC-Linux-1.4.3-x86_64.AppImage"
 alias gupd="git add .; git commit -m \"update\"; git push"
 alias bell="tput bel"
 alias ll="ls -alh"
+alias cat="bat --plain"
 
 # activate vim mode
 bindkey -v

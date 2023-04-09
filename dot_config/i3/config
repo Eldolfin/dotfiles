@@ -200,8 +200,7 @@ bindsym $mod+x exec --no-startup-id i3lock -c 000000
 exec --no-startup-id sudo xrandr --output HDMI-1 --primary --left-of DVI-D-1 
 
 # diodon clipboard manager
-exec --no-startup-id diodon
-bindsym $mod+v exec --no-startup-id diodon
+exec --no-startup-id clipit
 
 # brightness
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl s -e 8%+
