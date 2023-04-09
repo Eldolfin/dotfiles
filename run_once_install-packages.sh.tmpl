@@ -1,41 +1,43 @@
 #!/bin/sh
 {{ if eq .chezmoi.osRelease.id "arch" -}}
-    sudo pacman -S \
-                   alacritty \
-                   zsh \
-                   btop \
-                   neofetch \
-                   exa \
-                   git \
-                   xclip \
-                   blueman \
-                   bluez \
-                   unzip \
-                   man-db \
-                   wireguard-tools \
-                   mpv \
-                   mpv-mpris \
-                   ripgrep \
-                   fzf \
-                   redshift \
-                   fd \
-                   zoxide \
-                   zellij \
-                   flameshot \
+  sudo pacman -S \
+                  alacritty \
+                  zsh \
+                  btop \
+                  neofetch \
+                  exa \
+                  git \
+                  xclip \
+                  blueman \
+                  bluez \
+                  unzip \
+                  man-db \
+                  wireguard-tools \
+                  mpv \
+                  mpv-mpris \
+                  ripgrep \
+                  fzf \
+                  redshift \
+                  fd \
+                  zoxide \
+                  zellij \
+                  flameshot \
 
 
-    # install paru
-    sudo pacman -S --needed base-devel
-    git clone https://aur.archlinux.org/paru.git ~/Desktop/paru
-    cd ~/Desktop/paru
-    makepkg -si
+# install paru
+  sudo pacman -S --needed base-devel
+  git clone https://aur.archlinux.org/paru.git ~/Desktop/paru
+  cd ~/Desktop/paru
+  makepkg -si
 
-    # install paru packages
-    paru -S clipit librewolf-bin ttf-ubuntu-mono-nerd emote
+# install paru packages
+  paru -S clipit librewolf-bin ttf-ubuntu-mono-nerd emote
 
 {{ else if eq .chezmoi.osRelease.id "nixos" -}}
-    nix-shell -p git --run "sudo -E -s git clone git@github.com:Eldolfin/nixos-config.git /etc/nixos"
-    sudo nixos-rebuild switch
+  nix-shell -p git --run "git clone git@github.com:Eldolfin/nixos-config.git ~/nixos-config"
+  sudo rm -i /etc/nixos/configuration.nix
+  sudo ln -s ~/nixos-config/configuration.nix /etc/nixos/configuration.nix
+  sudo nixos-rebuild switch
 {{ end -}}
 
 # install oh my zsh
