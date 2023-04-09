@@ -36,7 +36,7 @@
 {{ else if eq .chezmoi.osRelease.id "nixos" -}}
   nix-shell -p git --run "git clone git@github.com:Eldolfin/nixos-config.git ~/nixos-config"
   sudo rm -i /etc/nixos/configuration.nix
-  sudo ln -s ~/nixos-config/configuration.nix /etc/nixos/configuration.nix
+  sudo ln ~/nixos-config/configuration.nix /etc/nixos/configuration.nix
   sudo nixos-rebuild switch
 {{ end -}}
 
