@@ -43,6 +43,9 @@
 # install oh my zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
+# put back the zshrc
+mv -v .zshrc.pre-oh-my-zsh .zshrc
+
 # download backgrounds
 git clone git@github.com:Eldolfin/windows_backgrounds.git .backgrounds
 
