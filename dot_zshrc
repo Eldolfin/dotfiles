@@ -8,17 +8,15 @@ plugins=(
     archlinux 
     git 
     ubuntu
-    zsh-autosuggestions
+    # zsh-autosuggestions
     cp
     fancy-ctrl-z
-    zsh-syntax-highlighting
+    # zsh-syntax-highlighting
     pip
     )
 
 source $ZSH/oh-my-zsh.sh
 
-# autojump :
-source /usr/share/autojump/autojump.zsh
 # zoxide (better autojump)
 eval "$(zoxide init zsh)"
 
@@ -39,6 +37,7 @@ neovide-tweaked () {
 #alias nvim=neovide-tweaked
 alias vim=nvim
 alias vi=vim
+alias svi=sudo -E -s nvim
 alias vimdiff="nvim -d"
 alias hx=helix
 alias htop=btop
