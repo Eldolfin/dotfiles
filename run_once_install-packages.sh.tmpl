@@ -34,6 +34,9 @@
   paru -S clipit librewolf-bin ttf-ubuntu-mono-nerd emote
 
 {{ else if eq .chezmoi.osRelease.id "nixos" -}}
+  # this is to prevent the `Are you sure you want to continue connecting` message
+  ssh-keyscan github.com
+
   nix-shell -p git --run "git clone git@github.com:Eldolfin/nixos-config.git ~/nixos-config"
   sudo mv -v /etc/nixos/configuration.nix /etc/nixos/configuration.nix.before-chezmoi-install
   sudo ln ~/nixos-config/configuration.nix /etc/nixos/configuration.nix
