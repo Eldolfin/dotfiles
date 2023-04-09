@@ -1,3 +1,1 @@
-keybinds {
-	unbind "Ctrl o"
-}
+pane_frames false

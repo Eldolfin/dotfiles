@@ -19,6 +19,8 @@
                    fzf \
                    redshift \
                    fd \
+                   zoxide \
+                   zellij \
 
 
     # install paru
@@ -28,11 +30,12 @@
     makepkg -si
 
     # install paru packages
-    paru -S autojump diodon librewolf-bin
+    paru -S diodon librewolf-bin
 
 {{ end -}}
 
-#install nvm
-cd ~/
-git clone https://github.com/nvm-sh/nvm.git .nvm
-cd ~/.nvm
+# install oh my zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# download backgrounds
+git clone git@github.com:Eldolfin/windows_backgrounds.git .backgrounds
