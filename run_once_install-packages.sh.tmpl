@@ -35,7 +35,7 @@
 
 {{ else if eq .chezmoi.osRelease.id "nixos" -}}
   nix-shell -p git --run "git clone git@github.com:Eldolfin/nixos-config.git ~/nixos-config"
-  sudo rm -i /etc/nixos/configuration.nix
+  sudo mv -v /etc/nixos/configuration.nix /etc/nixos/configuration.nix.before-chezmoi-install
   sudo ln ~/nixos-config/configuration.nix /etc/nixos/configuration.nix
   sudo nixos-rebuild switch
 {{ end -}}
@@ -51,3 +51,6 @@ git clone git@github.com:Eldolfin/windows_backgrounds.git .backgrounds
 
 # download sounds
 git clone git@github.com:Eldolfin/sounds.git Music/sounds
+
+# install cargo toolchain
+rustup default stable
