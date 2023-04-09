@@ -11,7 +11,7 @@ sudo snap install chezmoi --classic && chezmoi init --apply git@github.com:Eldol
 ```
 elif os == "nixos":
 ```bash
-nix-shell -p chezmoi --run "chezmoi init --apply git@github.com:Eldolfin/dotfiles.git"
+nix-shell -p chezmoi git --run "chezmoi init --apply git@github.com:Eldolfin/dotfiles.git"
 ```
 else: # build from source
 ```
