@@ -1,8 +1,6 @@
 #!/bin/sh
-
-# this is to prevent the `Are you sure you want to continue connecting` message when git cloning
-ssh-keyscan github.com
-
+echo -e '\033[0;32mAsking for sudo now so that it's not needed later\033[0m'
+sudo echo -e '\033[0;32mOk\033[0m'
 {{ if eq .chezmoi.osRelease.id "arch" -}}
   sudo pacman -S \
                   alacritty \
@@ -50,18 +48,18 @@ RUNZSH=no KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.githubusercontent.com/o
 mv -v .zshrc.pre-oh-my-zsh .zshrc
 
 # download backgrounds
-echo -e '\033[0;32mDownloading backgrounds'
+echo -e '\033[0;32mDownloading backgrounds\033[0m'
 git clone git@github.com:Eldolfin/windows_backgrounds.git .backgrounds
 
 # download sounds
-echo -e '\033[0;32mDownloading sounds'
+echo -e '\033[0;32mDownloading sounds\033[0m'
 git clone git@github.com:Eldolfin/sounds.git Music/sounds
 
 # install cargo toolchain
 rustup default stable
 
 # install sccache for faster rust compilation
-echo -e '\033[0;32mInstalling sccache for faster rust compilation'
+echo -e '\033[0;32mInstalling sccache for faster rust compilation\033[0m'
 mv .cargo/config.toml .cargo/config.toml.bak
 {{ if eq .chezmoi.osRelease.id "nixos" -}}
 nix-shell -p pkgconfig openssl --run "cargo install sccache"
@@ -71,9 +69,9 @@ cargo install sccache
 mv .cargo/config.toml.bak .cargo/config.toml
 
 # install nvim plugins
-echo -e '\033[0;32mInstalling nvim plugins'
+echo -e '\033[0;32mInstalling nvim plugins\033[0m'
 nvim --headless +"\!sleep 1" +qall
 
 # install atuin
-echo -e '\033[0;32mSetting up atuin for shell history syncing'
+echo -e '\033[0;32mSetting up atuin for shell history syncing\033[0m'
 bash <(curl https://raw.githubusercontent.com/ellie/atuin/main/install.sh)
