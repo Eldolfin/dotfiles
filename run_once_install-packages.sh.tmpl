@@ -60,6 +60,16 @@ git clone git@github.com:Eldolfin/sounds.git Music/sounds
 # install cargo toolchain
 rustup default stable
 
+# install sccache for faster rust compilation
+echo -e '\033[0;32mInstalling sccache for faster rust compilation'
+mv .cargo/config.toml .cargo/config.toml.bak
+{{ if eq .chezmoi.osRelease.id "nixos" -}}
+nix-shell -p pkgconfig openssl --run "cargo install sccache"
+{{ else -}}
+cargo install sccache
+{{ end -}}
+mv .cargo/config.toml.bak .cargo/config.toml
+
 # install nvim plugins
 echo -e '\033[0;32mInstalling nvim plugins'
 nvim --headless +"\!sleep 1" +qall
