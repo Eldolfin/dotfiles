@@ -190,7 +190,7 @@ bindsym --release Print exec scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~
 # OSX-like area selection screenshots
 bindsym --release Shift+Print exec flameshot gui
 
-# i3lock on <mod>+L
+# i3lock on <mod>+x
 bindsym $mod+x exec --no-startup-id i3lock -c 000000
 
 # start polybar
@@ -199,7 +199,7 @@ bindsym $mod+x exec --no-startup-id i3lock -c 000000
 # screen ordere
 exec --no-startup-id sudo xrandr --output HDMI-1 --primary --left-of DVI-D-1 
 
-# diodon clipboard manager
+# clipboard manager
 exec --no-startup-id clipit
 
 # brightness
@@ -214,7 +214,7 @@ bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioPause exec playerctl play-pause
 
 # emoji picker
-exec --no-startup-id /usr/bin/emote
+exec --no-startup-id emote
 
 # low battery pop-up
 exec --no-startup-id i3-battery-popup

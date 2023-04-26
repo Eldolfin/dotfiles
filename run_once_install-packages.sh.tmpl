@@ -1,6 +1,6 @@
 #!/bin/sh
-echo -e '\033[0;32mAsking for sudo now so that it's not needed later\033[0m'
-sudo echo -e '\033[0;32mOk\033[0m'
+echo -e "\033[0;32mAsking for sudo now so that it's not needed later\033[0m"
+sudo echo -e "\033[0;32mOk\033[0m"
 {{ if eq .chezmoi.osRelease.id "arch" -}}
   sudo pacman -S \
                   alacritty \
@@ -36,9 +36,11 @@ sudo echo -e '\033[0;32mOk\033[0m'
   paru -S clipit librewolf-bin ttf-ubuntu-mono-nerd emote
 
 {{ else if eq .chezmoi.osRelease.id "nixos" -}}
-  nix-shell -p git --run "git clone git@github.com:Eldolfin/nixos-config.git ~/nixos-config"
+  sudo mkdir /etc/nixos/git-repo
+  sudo chown oscar /etc/nixos/git-repo
+  nix-shell -p git --run "git clone git@github.com:Eldolfin/nixos-config.git /etc/nixos/git-repo"
   sudo mv -v /etc/nixos/configuration.nix /etc/nixos/configuration.nix.before-chezmoi-install
-  sudo ln ~/nixos-config/configuration.nix /etc/nixos/configuration.nix
+  sudo ln /etc/nixos/git-repo/configuration.nix /etc/nixos/configuration.nix
   sudo nixos-rebuild switch
 {{ end -}}
 
@@ -48,32 +50,32 @@ RUNZSH=no KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.githubusercontent.com/o
 mv -v .zshrc.pre-oh-my-zsh .zshrc
 
 # download backgrounds
-echo -e '\033[0;32mDownloading backgrounds\033[0m'
+echo -e "\033[0;32mDownloading backgrounds\033[0m"
 git clone git@github.com:Eldolfin/windows_backgrounds.git .backgrounds
 
 # download sounds
-echo -e '\033[0;32mDownloading sounds\033[0m'
+echo -e "\033[0;32mDownloading sounds\033[0m"
 git clone git@github.com:Eldolfin/sounds.git Music/sounds
 
 # install cargo toolchain
 rustup default stable
 
 # install sccache for faster rust compilation
-echo -e '\033[0;32mInstalling sccache for faster rust compilation\033[0m'
-mv .cargo/config.toml .cargo/config.toml.bak
+echo -e "\033[0;32mInstalling sccache for faster rust compilation\033[0m"
+mv ~/.cargo/config.toml ~/.cargo/config.toml.bak
 {{ if eq .chezmoi.osRelease.id "nixos" -}}
 nix-shell -p pkgconfig openssl --run "cargo install sccache"
 {{ else -}}
 cargo install sccache
 {{ end -}}
-mv .cargo/config.toml.bak .cargo/config.toml
+mv ~/.cargo/config.toml.bak ~/.cargo/config.toml
 
 # install nvim plugins
-echo -e '\033[0;32mInstalling nvim plugins\033[0m'
+echo -e "\033[0;32mInstalling nvim plugins\033[0m"
 nvim --headless +"\!sleep 1" +qall
 
 # install atuin
-echo -e '\033[0;32mSetting up atuin for shell history syncing\033[0m'
+echo -e "\033[0;32mSetting up atuin for shell history syncing\033[0m"
 bash <(curl https://raw.githubusercontent.com/ellie/atuin/main/install.sh)
 
 
