@@ -32,7 +32,11 @@ in
 
   home.packages = with pkgs; [
     # stable packages
-    tldr
+    tealdeer
+    skim
+    hyperfine
+    sumneko-lua-language-server
+    mypy
   ] ++ (with unstable; [
     # unstable packages
     ruff

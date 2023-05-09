@@ -17,3 +17,13 @@ local opt = vim.opt
 opt.foldmethod = "expr"
 opt.foldexpr = "nvim_treesitter#foldexpr()"
 opt.foldlevelstart = 99
+
+-- manual lsp installs, because nix
+local nvim_lsp = require("lspconfig")
+nvim_lsp['pylsp'].setup {
+  cmd = { 'pylsp' },
+}
+
+nvim_lsp['lua_ls'].setup {
+  cmd = {'lua-language-server'},
+}
