@@ -32,13 +32,30 @@ in
 
   home.packages = with pkgs; [
     # stable packages
+
+    # cli tools
     tealdeer
     skim
     hyperfine
+
+    # graphical programs
+    jellyfin-media-player
+
+    # Language servers
     sumneko-lua-language-server
     mypy
+
+    # libraries
+    gnumake
+    clang
+    boost
+    armadillo
+    pkgconfig
+    stdenv.cc.cc.lib
   ] ++ (with unstable; [
     # unstable packages
+
+    # Language servers
     ruff
     python3Packages.python-lsp-server
   ]);

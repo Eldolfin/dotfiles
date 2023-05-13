@@ -27,3 +27,8 @@ nvim_lsp['pylsp'].setup {
 nvim_lsp['lua_ls'].setup {
   cmd = {'lua-language-server'},
 }
+
+
+nvim_lsp['clangd'].setup {
+  cmd = { 'clangd' },
+}
