@@ -197,9 +197,8 @@ bindsym $mod+x exec --no-startup-id i3lock -c 000000
 # exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # screen ordere
-{{- if eq .chezmoi.hostname }}
 exec --no-startup-id sudo xrandr --output HDMI-1 --primary --left-of DVI-D-1 
-xrandr --output HDMI-0 --primary --mode 1920x1080 --pos 0x0 --rotate normal --rate 144 --output DVI-D-0 --mode 1920x1200 --pos 1920x0 --rotate normal
+# xrandr --output HDMI-0 --primary --mode 1920x1080 --pos 0x0 --rotate normal --rate 144 --output DVI-D-0 --mode 1920x1200 --pos 1920x0 --rotate normal
 
 # clipboard manager
 exec --no-startup-id clipit
