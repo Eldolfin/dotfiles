@@ -40,6 +40,7 @@ in
 
     # graphical programs
     jellyfin-media-player
+    prismlauncher
 
     # Language servers
     sumneko-lua-language-server
@@ -52,6 +53,9 @@ in
     armadillo
     pkgconfig
     stdenv.cc.cc.lib
+
+    # font
+    meslo-lgs-nf
   ] ++ (with unstable; [
     # unstable packages
 

@@ -33,9 +33,7 @@ zstyle ':z4h:direnv:success' notify 'yes'
 
 # Enable ('yes') or disable ('no') automatic teleportation of z4h over
 # SSH when connecting to these hosts.
-# zstyle ':z4h:ssh:example-hostname1'   enable 'yes'
-# The default value if none of the overrides above match the hostname.
-# zstyle ':z4h:ssh:*'                   enable 'yes'
+zstyle ':z4h:ssh:*'                   enable yes
 
 # Send these files over to the remote host when connecting over SSH to the
 # enabled hosts.
@@ -128,6 +126,7 @@ alias tlr="tldr --list | sk --preview 'tldr {1} --color=always' --preview-window
 # git
 alias gl='git pull'
 alias gp="git push --verbose"
+alias gcl='git clone --recurse-submodules'
 alias gst="git status --short"
 alias gup="git pull --rebase"
 alias gsta"git stash push"

@@ -9,3 +9,10 @@ vim.api.nvim_set_keymap(
   ":w | topleft vs | terminal make<CR>:startinsert<CR>",
   { noremap = true, silent = true }
 )
+
+require("which-key").register({
+  c = {
+    p = { "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "Projects symbols" },
+    o = { "<cmd>Telescope lsp_document_symbols<cr>", "File symbols" },
+  },
+}, { prefix = "<leader>" })
