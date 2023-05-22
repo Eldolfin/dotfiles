@@ -22,13 +22,22 @@ in
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  programs.neovim.enable = true;
+  # bluetooth media control
+  systemd.user.services.mpris-proxy = {
+    Unit.Description = "Mpris proxy";
+    Unit.After = [ "network.target" "sound.target" ];
+    Service.ExecStart = "${pkgs.bluez}/bin/mpris-proxy";
+    Install.WantedBy = [ "default.target" ];
+  };
 
-  nixpkgs.overlays = [
-    (import (fetchTarball {
-      url = "https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz";
-    }))
-  ];
+  # neovim nightly (rebuilds everytime so it's too slow)
+  #  programs.neovim.enable = true;
+  #
+  #  nixpkgs.overlays = [
+  #    (import (fetchTarball {
+  #      url = "https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz";
+  #    }))
+  #  ];
 
   home.packages = with pkgs; [
     # stable packages
@@ -37,31 +46,45 @@ in
     tealdeer
     skim
     hyperfine
+    conda
+    speedcrunch
+    pciutils
 
     # graphical programs
     jellyfin-media-player
     prismlauncher
+    virt-manager
+    gparted
+    signal-desktop
 
     # Language servers
     sumneko-lua-language-server
     mypy
 
     # libraries
+    python37
     gnumake
     clang
     boost
     armadillo
     pkgconfig
     stdenv.cc.cc.lib
+    pre-commit
+    graalvm17-ce
 
     # font
     meslo-lgs-nf
   ] ++ (with unstable; [
     # unstable packages
 
+    # graphical programs
+    chromium
+
     # Language servers
     ruff
     python3Packages.python-lsp-server
+
+    neovim
   ]);
 
 }

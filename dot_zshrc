@@ -137,6 +137,10 @@ cpv() {
     rsync -pogbr -hhh --backup-dir="/tmp/rsync-${USERNAME}" -e /dev/null --progress "$@"
 }
 
+# pacman
+alias pacin="sudo pacman -S"
+alias pacupd="sudo pacman -Syu"
+
 # fancy ctrl z for switching between vim/terminal
 fancy-ctrl-z () {
   if [[ $#BUFFER -eq 0 ]]; then
@@ -152,7 +156,12 @@ bindkey '^Z' fancy-ctrl-z
 
 
 # home manager
-. "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
+
+FILE="$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
+
+if test -f "$FILE"; then
+. "$FILE"
+fi
 
 
 # zoxide (better autojump)
