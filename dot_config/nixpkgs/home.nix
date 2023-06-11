@@ -2,8 +2,20 @@
 
 let
   unstable = import <unstable> { };
+
+  flake-compat = builtins.fetchTarball "https://github.com/edolstra/flake-compat/archive/master.tar.gz";
+
+  hyprland = (import flake-compat {
+    src = builtins.fetchTarball "https://github.com/hyprwm/Hyprland/archive/master.tar.gz";
+  }).defaultNix;
 in
 {
+  #  imports = [
+  #    hyprland.homeManagerModules.default
+  #  ];
+  #
+  #  wayland.windowManager.hyprland.enable = true;
+
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = "oscar";
@@ -39,8 +51,22 @@ in
   #    }))
   #  ];
 
+  # fix for something
+  nixpkgs.overlays = [
+    (self: super: {
+      fcitx-engines = pkgs.fcitx5;
+    })
+  ];
+
+  # allowUnfree :(
+  nixpkgs.config.allowUnfree = true;
+
   home.packages = with pkgs; [
     # stable packages
+
+    # DE
+    i3blocks
+    picom
 
     # cli tools
     tealdeer
@@ -49,6 +75,12 @@ in
     conda
     speedcrunch
     pciutils
+    zip
+    appimage-run
+    nmap
+    ntfs3g
+    wireguard-tools
+    scrcpy
 
     # graphical programs
     jellyfin-media-player
@@ -56,13 +88,21 @@ in
     virt-manager
     gparted
     signal-desktop
+    rofi
+    ckb-next
+    noisetorch
+    corectrl
+    android-studio
+    rofi-bluetooth
+    lutris
 
     # Language servers
     sumneko-lua-language-server
     mypy
 
     # libraries
-    python37
+    python310
+    flutter37
     gnumake
     clang
     boost
@@ -70,7 +110,12 @@ in
     pkgconfig
     stdenv.cc.cc.lib
     pre-commit
-    graalvm17-ce
+    openjdk17
+    cudatoolkit
+    luajit
+    wine
+    stylua
+    gpp
 
     # font
     meslo-lgs-nf
@@ -79,6 +124,7 @@ in
 
     # graphical programs
     chromium
+    blender
 
     # Language servers
     ruff

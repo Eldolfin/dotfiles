@@ -32,3 +32,22 @@ nvim_lsp['lua_ls'].setup {
 nvim_lsp['clangd'].setup {
   cmd = { 'clangd' },
 }
+
+
+nvim_lsp['dartls'].setup {
+  cmd = { 'dart', 'language-server', '--protocol=lsp' },
+  -- filetypes = { 'dart' },
+  -- init_options = {
+  --   onlyAnalyzeProjectsWithOpenFiles = true,
+  --   suggestFromUnimportedLibraries = true,
+  --   closingLabels = true,
+  --   outline = true,
+  --   flutterOutline = true,
+  -- },
+  -- settings = {
+  --   dart = {
+  --     completeFunctionCalls = true,
+  --     showTodos = true,
+  --   },
+  -- },
+}
