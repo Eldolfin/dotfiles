@@ -81,6 +81,7 @@ in
     ntfs3g
     wireguard-tools
     scrcpy
+    xdotool
 
     # graphical programs
     jellyfin-media-player
@@ -95,6 +96,7 @@ in
     android-studio
     rofi-bluetooth
     lutris
+    copyq
 
     # Language servers
     sumneko-lua-language-server
