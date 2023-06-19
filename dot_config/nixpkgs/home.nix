@@ -89,14 +89,17 @@ in
     virt-manager
     gparted
     signal-desktop
-    rofi
     ckb-next
     noisetorch
     corectrl
     android-studio
+    rofi
     rofi-bluetooth
+    rofi-power-menu
     lutris
     copyq
+    godot_4
+    gimp
 
     # Language servers
     sumneko-lua-language-server
@@ -104,7 +107,7 @@ in
 
     # libraries
     python310
-    flutter37
+    python310Packages.psutil
     gnumake
     clang
     boost
@@ -132,7 +135,10 @@ in
     ruff
     python3Packages.python-lsp-server
 
-    neovim
-  ]);
 
+    neovim
+
+    # libraries
+    flutter
+  ]);
 }
