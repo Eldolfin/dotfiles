@@ -102,19 +102,21 @@ v() {
 neovide-tweaked () {
     (neovide "$@" --nofork --multigrid && clone)&!;exit
 }
-
-if [[ $(hostname) == "nixos-tour" ]]; then
-  # this is only ran on my machines
 alias clone="alacritty -e zsh -c \"cd \$(pwd); zsh -i\"&!"
 #alias nvim=neovide-tweaked
 alias vim=nvim
 alias vi=vim
+alias svi="sudo -E -s nvim"
+alias vimdiff="nvim -d"
 alias htop=btop
 alias top=btop
 alias ls=exa
 alias tree="exa --tree"
 alias make="make -j"
+alias poly="./.apps/PolyMC-Linux-1.4.3-x86_64.AppImage"
 alias gupd="git add .; git commit -m \"update\"; git push"
+alias bell="tput bel"
+alias ll="ls -alh"
 alias cat="bat --plain"
 alias la="curl 'http://192.168.1.31/cm?cmnd=POWER+TOGGLE'"
 alias tlr="tldr --list | sk --preview 'tldr {1} --color=always' --preview-window right:75% | xargs tldr -q"
@@ -122,16 +124,13 @@ dodo() {
   # wait for network to be available
   while ! ifconfig | grep -F "192.168.1." > /dev/null; do;done
   # shutdown computer and lamp
-  ssh oscar@192.168.1.7 'sudo shutdown 0' & curl 'http://192.168.1.31/cm?cmnd=POWER+OFF'
+  ssh -o ConnectTimeout=5 oscar@192.168.1.7 'sudo shutdown 0' & curl 'http://192.168.1.31/cm?cmnd=POWER+OFF'
+  wait
+  exit
 }
-fi
 
-alias svi="sudo -E -s nvim"
-alias vimdiff="nvim -d"
-alias bell="tput bel"
-alias ll="ls -alh"
+# alias from plugins
 
-# aliases from plugins
 # git
 alias gl='git pull'
 alias gp="git push --verbose"
@@ -165,6 +164,7 @@ bindkey '^Z' fancy-ctrl-z
 
 
 # home manager
+
 FILE="$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
 
 if test -f "$FILE"; then
@@ -173,11 +173,12 @@ fi
 
 
 # zoxide (better autojump)
-if command -v zoxide &> /dev/null
-then
-  eval "$(zoxide init zsh)"
-fi
+eval "$(zoxide init zsh)"
 
 # Set shell options: http://zsh.sourceforge.net/Doc/Release/Options.html.
 setopt glob_dots     # no special treatment for file names with a leading dot
 setopt no_auto_menu  # require an extra TAB press to open the completion menu
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)

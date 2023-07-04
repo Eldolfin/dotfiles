@@ -58,6 +58,7 @@ in
     })
   ];
 
+
   # allowUnfree :(
   nixpkgs.config.allowUnfree = true;
 
@@ -90,7 +91,6 @@ in
     gparted
     signal-desktop
     ckb-next
-    noisetorch
     corectrl
     android-studio
     rofi
@@ -100,14 +100,18 @@ in
     copyq
     godot_4
     gimp
+    mumble
+    rustdesk
+    chromium
 
     # Language servers
     sumneko-lua-language-server
     mypy
+    python3Packages.python-lsp-server
+
 
     # libraries
     python310
-    python310Packages.psutil
     gnumake
     clang
     boost
@@ -121,6 +125,9 @@ in
     wine
     stylua
     gpp
+    gamemode
+    mangohud
+    deno
 
     # font
     meslo-lgs-nf
@@ -128,13 +135,10 @@ in
     # unstable packages
 
     # graphical programs
-    chromium
     blender
 
     # Language servers
     ruff
-    python3Packages.python-lsp-server
-
 
     neovim
 
