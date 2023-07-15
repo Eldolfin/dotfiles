@@ -2,17 +2,11 @@
 
 let
   unstable = import <unstable> { };
-
-  flake-compat = builtins.fetchTarball "https://github.com/edolstra/flake-compat/archive/master.tar.gz";
-
-  hyprland = (import flake-compat {
-    src = builtins.fetchTarball "https://github.com/hyprwm/Hyprland/archive/master.tar.gz";
-  }).defaultNix;
 in
 {
-  #  imports = [
-  #    hyprland.homeManagerModules.default
-  #  ];
+  imports = builtins.concatMap import [
+    ./services
+  ];
   #
   #  wayland.windowManager.hyprland.enable = true;
 
@@ -83,6 +77,8 @@ in
     wireguard-tools
     scrcpy
     xdotool
+    mosquitto
+    dig
 
     # graphical programs
     jellyfin-media-player
@@ -103,6 +99,7 @@ in
     mumble
     rustdesk
     chromium
+    barrier
 
     # Language servers
     sumneko-lua-language-server
@@ -113,7 +110,7 @@ in
     # libraries
     python310
     gnumake
-    clang
+    # clang
     boost
     armadillo
     pkgconfig
@@ -128,6 +125,7 @@ in
     gamemode
     mangohud
     deno
+    gccgo
 
     # font
     meslo-lgs-nf
@@ -140,7 +138,9 @@ in
     # Language servers
     ruff
 
+    # cli
     neovim
+    podman-compose
 
     # libraries
     flutter
