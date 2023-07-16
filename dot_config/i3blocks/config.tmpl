@@ -89,12 +89,18 @@ interval=5
 # interval=10
 # seperator=true
 
+
+{{ if eq .chezmoi.hostname "nixos-portable" -}}
 # Battery indicator
 #
 # The battery instance defaults to 0.
-# [battery]
-# command=~/scripts/i3battery
-# interval=30
+[battery]
+command=~/.config/i3blocks/scripts/battery
+interval=30
+LABEL=BAT
+#LABEL=⚡
+#BAT_NUMBER=0
+{{ end -}}
 
 # Volume indicator
 #
