@@ -1,0 +1,126 @@
+# i3blocks config file
+#
+# Please see man i3blocks for a complete reference!
+# The man page is also hosted at http://vivien.github.io/i3blocks
+#
+# List of valid properties:
+#
+# align
+# color
+# command
+# full_text
+# instance
+# interval
+# label
+# min_width
+# name
+# separator
+# separator_block_width
+# short_text
+# signal
+# urgent
+
+# Global properties
+#
+# The top properties below are applied to every block, but can be overridden.
+# Each block command defaults to the script name to avoid boilerplate.
+command=/usr/lib/i3blocks/$BLOCK_NAME
+separator_block_width=15
+markup=none
+
+
+# Display any packages to install
+[packages]
+command=echo "📦 $(nix-store --query --requisites /run/current-system | wc -l)"
+separator=true
+interval=1800
+signal=3
+
+# Memory usage
+#
+# The type defaults to "mem" if the instance is not specified.
+[memory]
+interval=30
+command=echo "MEM $(~/.config/i3/scripts/i3memory)"
+
+# Disk usage
+#
+# The directory defaults to $HOME if the instance is not specified.
+# The script may be called with a optional argument to set the alert
+# (defaults to 10 for 10%).
+[disk]
+interval=30
+command=echo "HOME $(~/.config/i3/scripts/i3disk)"
+
+# Wifi connectivity level
+[wifi]
+command=echo "📡 $(~/.config/i3/scripts/i3wifi wlp4s0)"
+interval=5
+
+
+[eth]
+command=echo "📡 $(~/.config/i3blocks/scripts/ethernet)"
+interval=5
+
+[bandwidth]
+command=~/.config/i3blocks/scripts/bandwidth
+interval=persist
+markup=pango
+LABEL=
+#INTERFACE=(checks all interfaces)
+#USE_BITS=0
+#USE_BYTES=1
+#WARN_RX=0
+#WARN_TX=0
+#CRIT_RX=0
+#CRIT_TX=0
+#USE_SI=0
+
+# CPU usage
+#
+# The script may be called with -w and -c switches to specify thresholds,
+# see the script for details.
+[cpu_usage]
+command=echo "CPU $(~/.config/i3blocks/scripts/i3cpu.py)"
+interval=5
+
+# [temp]
+# command=~/scripts/i3temp
+# interval=10
+# seperator=true
+
+# Battery indicator
+#
+# The battery instance defaults to 0.
+# [battery]
+# command=~/scripts/i3battery
+# interval=30
+
+# Volume indicator
+#
+# Displays both the master and the headphone volume
+[i3volume]
+label=
+command=~/.config/i3/scripts/i3-volume/volume output i3blocks
+interval=once
+signal=10
+color=#b8bb26
+separator_block_width=10
+markup=pango
+
+# Backlight Level
+# [light]
+# command=echo "☀️️ $(light -G)%"
+# interval=once
+# signal=4
+
+## Weather
+# [weather]
+# command=~/scripts/i3weather
+# interval=1800
+
+# Date Time
+#
+[time]
+command=date '+%d/%m/%Y %H:%M:%S'
+interval=1
