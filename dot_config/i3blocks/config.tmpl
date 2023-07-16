@@ -52,10 +52,13 @@ command=echo "MEM $(~/.config/i3/scripts/i3memory)"
 interval=30
 command=echo "HOME $(~/.config/i3/scripts/i3disk)"
 
+
+{{ if eq .chezmoi.hostname "nixos-portable" -}}
 # Wifi connectivity level
 [wifi]
 command=echo "📡 $(~/.config/i3/scripts/i3wifi wlp4s0)"
 interval=5
+{{ end -}}
 
 
 [eth]
