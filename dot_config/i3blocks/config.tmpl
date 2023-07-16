@@ -41,7 +41,7 @@ signal=3
 # The type defaults to "mem" if the instance is not specified.
 [memory]
 interval=30
-command=echo "MEM $(~/.config/i3/scripts/i3memory)"
+command=echo "MEM $(~/.config/i3blocks/scripts/i3memory)"
 
 # Disk usage
 #
@@ -50,7 +50,7 @@ command=echo "MEM $(~/.config/i3/scripts/i3memory)"
 # (defaults to 10 for 10%).
 [disk]
 interval=30
-command=echo "HOME $(~/.config/i3/scripts/i3disk)"
+command=echo "HOME $(~/.config/i3blocks/scripts/i3disk)"
 
 
 
@@ -63,7 +63,7 @@ interval=5
 {{ else if eq .chezmoi.hostname "nixos-portable" -}}
 
 [wifi]
-command=echo "📡 $(~/.config/i3/scripts/i3wifi wlp59s0)"
+command=echo "📡 $(~/.config/i3blocks/scripts/i3wifi wlp59s0)"
 interval=5
 
 {{ end -}}
