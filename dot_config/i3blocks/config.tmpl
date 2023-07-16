@@ -53,17 +53,21 @@ interval=30
 command=echo "HOME $(~/.config/i3/scripts/i3disk)"
 
 
-{{ if eq .chezmoi.hostname "nixos-portable" -}}
-# Wifi connectivity level
-[wifi]
-command=echo "📡 $(~/.config/i3/scripts/i3wifi wlp4s0)"
-interval=5
-{{ end -}}
 
+{{ if eq .chezmoi.hostname "nixos-tour" -}}
 
 [eth]
 command=echo "📡 $(~/.config/i3blocks/scripts/ethernet)"
 interval=5
+
+{{ else if eq .chezmoi.hostname "nixos-portable" -}}
+
+[wifi]
+command=echo "📡 $(~/.config/i3/scripts/i3wifi wlp59s0)"
+interval=5
+
+{{ end -}}
+
 
 [bandwidth]
 command=~/.config/i3blocks/scripts/bandwidth
