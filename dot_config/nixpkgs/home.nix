@@ -100,6 +100,7 @@ in
     rustdesk
     chromium
     barrier
+    waydroid
 
     # Language servers
     sumneko-lua-language-server
@@ -110,7 +111,6 @@ in
     # libraries
     python310
     gnumake
-    # clang
     boost
     armadillo
     pkgconfig
