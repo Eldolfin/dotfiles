@@ -233,10 +233,16 @@ bindsym --release Shift+Print exec flameshot gui
 # i3lock on <mod>+x
 bindsym $mod+x exec --no-startup-id $scripts/lock.sh
 
-# screen ordere
 
 {{ if eq .chezmoi.hostname "nixos-tour" -}}
+
+# screen ordere
 exec --no-startup-id xrandr --output HDMI-0 --primary --mode 1920x1080 --pos 0x0 --rotate normal --rate 144 --output DVI-D-0 --mode 1920x1200 --pos 1920x0 --rotate normal
+
+# adjust workspace too
+i3-msg "workspace 1; move workspace to output $primary_mon"
+i3-msg "workspace 2; move workspace to output $other_mon"
+
 {{ end -}}
 
 
