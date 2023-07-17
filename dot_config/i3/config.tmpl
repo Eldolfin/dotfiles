@@ -328,4 +328,4 @@ bindsym $mod+y exec timeout 0.5 mosquitto_pub -h 192.168.1.1 -t 'cmnd/tasmota_C1
 # kde connect
 exec --no-startup-id kdeconnect-indicator
 # the daemon for kdeconnect :(
-dbus-daemon --session --address="unix:path=$XDG_RUNTIME_DIR/bus" & 
+exec --no-startup-id dbus-daemon --session --address="unix:path=$XDG_RUNTIME_DIR/bus" & 
