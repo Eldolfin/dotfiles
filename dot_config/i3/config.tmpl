@@ -243,6 +243,8 @@ exec --no-startup-id xrandr --output $primary_mon --primary --mode 1920x1080 --p
 exec --no-startup-id i3-msg 'workspace 2; move workspace to output $other_mon'
 exec --no-startup-id i3-msg 'workspace 1; move workspace to output $primary_mon'
 
+bindsym $mod+Shift+s exec $scripts/i3-display-swap.sh
+
 {{ end -}}
 
 
