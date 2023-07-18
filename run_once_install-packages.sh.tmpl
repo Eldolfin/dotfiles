@@ -47,6 +47,8 @@ sudo echo -e "\033[0;32mOk\033[0m"
   nix-channel --add https://github.com/nix-community/home-manager/archive/release-23.05.tar.gz home-manager
   sudo nix-channel --add https://nixos.org/channels/nixpkgs-unstable unstable
   nix-channel --update
+  nix-shell '<home-manager>' -A install
+  home-manager switch
 {{ end -}}
 
 # install oh my zsh
