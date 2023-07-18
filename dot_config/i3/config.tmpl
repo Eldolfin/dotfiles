@@ -284,8 +284,8 @@ bindsym XF86AudioRaiseVolume        exec --no-startup-id $volumepath/volume $vol
 bindsym XF86AudioLowerVolume exec --no-startup-id $volumepath/volume $volumeargs down $volumestep -y
 bindsym XF86AudioMute        exec --no-startup-id $volumepath/volume $volumeargs mute -y
 {{ else if eq .chezmoi.hostname "nixos-portable" -}}
-bindsym F3 exec --no-startup-id $volumepath/volume volumeargs up $volumestep -y
-bindsym F4 exec --no-startup-id $volumepath/volume volumeargs down $volumestep -y
+bindsym F3 exec --no-startup-id $volumepath/volume $volumeargs up $volumestep -y
+bindsym F4 exec --no-startup-id $volumepath/volume $volumeargs down $volumestep -y
 {{ end -}}
 
 # stars picom composite manager
