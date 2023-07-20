@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 let
-  unstable = import <unstable> { };
+  unstable = import <nixpkgs-unstable> { };
 in
 {
   imports = builtins.concatMap import [
@@ -79,6 +79,8 @@ in
     xdotool
     mosquitto
     dig
+    acpi
+    sysstat
 
     # graphical programs
     jellyfin-media-player
@@ -100,7 +102,7 @@ in
     rustdesk
     chromium
     barrier
-    waydroid
+    bitwarden
 
     # Language servers
     sumneko-lua-language-server
@@ -111,6 +113,9 @@ in
     # libraries
     python310
     gnumake
+    libnotify
+
+    # clang
     boost
     armadillo
     pkgconfig
@@ -129,6 +134,8 @@ in
 
     # font
     meslo-lgs-nf
+
+    fusuma
   ] ++ (with unstable; [
     # unstable packages
 
