@@ -298,14 +298,13 @@ exec --no-startup-id ~/.config/i3/scripts/update_background.sh
 exec --no-startup-id redshift-gtk
 
 
-exec --no-startup-id ckb-next-daemon
-
 bindsym $mod+b exec --no-startup-id rofi-bluetooth
 
 exec --no-startup-id mullvad-vpn
 
 {{ if eq .chezmoi.hostname "nixos-tour" -}}
 exec --no-startup-id sudo ckb-next-daemon
+exec --no-startup-id ckb-next -b
 {{ end -}}
 
 # hide window decorations
