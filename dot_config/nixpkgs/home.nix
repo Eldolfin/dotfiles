@@ -139,6 +139,14 @@ in
     numpy
     ruff-lsp
     notebook
+    pynvim
+    jupyter-client
+    ueberzug
+    pillow
+    cairosvg
+    pnglatex
+    plotly
+    pyperclip
     ]))
 
     # font
