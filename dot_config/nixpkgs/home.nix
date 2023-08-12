@@ -36,6 +36,15 @@ in
     Install.WantedBy = [ "default.target" ];
   };
 
+  services = {
+    flameshot.enable = true;
+
+    gnome-keyring = {
+      enable = true;
+      components = [ "pkcs11" "secrets" "ssh" ];
+    };
+  };
+
   # neovim nightly (rebuilds everytime so it's too slow)
   #  programs.neovim.enable = true;
   #
@@ -81,6 +90,8 @@ in
     dig
     acpi
     sysstat
+    jq
+    niv
 
     # graphical programs
     jellyfin-media-player
@@ -103,6 +114,8 @@ in
     chromium
     barrier
     bitwarden
+    jellyfin-mpv-shim
+    sunshine
 
     # Language servers
     sumneko-lua-language-server
@@ -111,7 +124,6 @@ in
 
 
     # libraries
-    python310
     gnumake
     libnotify
 
@@ -131,6 +143,13 @@ in
     mangohud
     deno
     gccgo
+    winetricks
+    pyright
+    xorg.libXtst.out
+    mold
+
+    # python packages
+    (python310.withPackages (ps: with ps; [ numpy ruff-lsp]))
 
     # font
     meslo-lgs-nf
