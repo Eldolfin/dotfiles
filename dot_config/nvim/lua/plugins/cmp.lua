@@ -4,6 +4,7 @@ return {
   opts = function(_, opts)
     local cmp = require("cmp")
     opts.sources = cmp.config.sources({
+      { name = "copilot" },
       { name = "luasnip" },
       { name = "nvim_lsp" },
       { name = "buffer" },

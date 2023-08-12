@@ -21,33 +21,31 @@ opt.foldlevelstart = 99
 -- manual lsp installs, because nix
 local nvim_lsp = require("lspconfig")
 nvim_lsp['pylsp'].setup {
-  cmd = { 'pylsp' },
+  cmd = { '/home/oscar/.nix-profile/bin/pylsp' },
+}
+
+nvim_lsp['ruff_lsp'].setup {
+  cmd = { '/home/oscar/.nix-profile/bin/ruff-lsp' },
 }
 
 nvim_lsp['lua_ls'].setup {
-  cmd = {'lua-language-server'},
+  cmd = { '/home/oscar/.nix-profile/bin/lua-language-server' },
 }
 
 
 nvim_lsp['clangd'].setup {
-  cmd = { 'clangd' },
+  cmd = { '/run/current-system/sw/bin/clangd' },
+}
+
+nvim_lsp['rust_analyzer'].setup {
+  cmd = { '/run/current-system/sw/bin/rust-analyzer' },
+}
+
+nvim_lsp['rnix-lsp'].setup {
+  cmd = { '/home/oscar/.nix-profile/bin/rnix-lsp' },
 }
 
 
-nvim_lsp['dartls'].setup {
-  cmd = { 'dart', 'language-server', '--protocol=lsp' },
-  -- filetypes = { 'dart' },
-  -- init_options = {
-  --   onlyAnalyzeProjectsWithOpenFiles = true,
-  --   suggestFromUnimportedLibraries = true,
-  --   closingLabels = true,
-  --   outline = true,
-  --   flutterOutline = true,
-  -- },
-  -- settings = {
-  --   dart = {
-  --     completeFunctionCalls = true,
-  --     showTodos = true,
-  --   },
-  -- },
+nvim_lsp['pyright'].setup {
+  cmd = { '/home/oscar/.nix-profile/bin/pyright-langserver', '--stdio' },
 }

@@ -1110,7 +1110,7 @@ play_volume_changed() {
         ca_play "$SOUND_VOLUME_CHANGED" "Volume Changed"
     else
         if $USE_AMIXER; then
-            aplay "$SOUND_VOLUME_CHANGED"
+            amixer_play "$SOUND_VOLUME_CHANGED"
         else
             pa_play "$SOUND_VOLUME_CHANGED"
         fi
@@ -1188,7 +1188,7 @@ main() {
     )
 
     # Volume changed sound.
-    declare SOUND_VOLUME_CHANGED=${SOUND_VOLUME_CHANGED:-/home/oscar/Music/sounds/Tink.wav}
+    declare SOUND_VOLUME_CHANGED=${SOUND_VOLUME_CHANGED:-/home/oscar/Music/sounds/audio-volume-change.oga}
 
     # DBUS constants
     declare -r \
