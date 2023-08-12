@@ -106,7 +106,7 @@ in
     # Language servers
     sumneko-lua-language-server
     mypy
-    python3Packages.python-lsp-server
+    python310Packages.python-lsp-server
 
 
     # libraries
@@ -133,6 +133,7 @@ in
     pyright
     xorg.libXtst.out
     mold
+    obs-studio
 
     # python packages
     (python310.withPackages (ps: with ps; [ 
@@ -147,6 +148,7 @@ in
     pnglatex
     plotly
     pyperclip
+    pip
     ]))
 
     # font

@@ -18,6 +18,9 @@ opt.foldmethod = "expr"
 opt.foldexpr = "nvim_treesitter#foldexpr()"
 opt.foldlevelstart = 99
 
+-- set python interpreter path (nix)
+vim.g.python3_host_prog = "/home/oscar/.nix-profile/bin/python3"
+
 -- manual lsp installs, because nix
 local nvim_lsp = require("lspconfig")
 nvim_lsp['pylsp'].setup {
@@ -41,7 +44,7 @@ nvim_lsp['rust_analyzer'].setup {
   cmd = { '/run/current-system/sw/bin/rust-analyzer' },
 }
 
-nvim_lsp['rnix-lsp'].setup {
+nvim_lsp['rnix'].setup {
   cmd = { '/home/oscar/.nix-profile/bin/rnix-lsp' },
 }
 
