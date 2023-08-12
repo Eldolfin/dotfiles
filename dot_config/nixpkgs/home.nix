@@ -149,7 +149,11 @@ in
     mold
 
     # python packages
-    (python310.withPackages (ps: with ps; [ numpy ruff-lsp]))
+    (python310.withPackages (ps: with ps; [ 
+    numpy
+    ruff-lsp
+    notebook
+    ]))
 
     # font
     meslo-lgs-nf
