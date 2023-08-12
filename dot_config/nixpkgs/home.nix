@@ -4,8 +4,6 @@ let
   unstable = import <nixpkgs-unstable> { };
 in
 {
-  imports = builtins.concatMap import [
-  ];
 
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
@@ -41,15 +39,6 @@ in
       components = [ "pkcs11" "secrets" "ssh" ];
     };
   };
-
-  # neovim nightly (rebuilds everytime so it's too slow)
-  #  programs.neovim.enable = true;
-  #
-  #  nixpkgs.overlays = [
-  #    (import (fetchTarball {
-  #      url = "https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz";
-  #    }))
-  #  ];
 
   # fix for something
   nixpkgs.overlays = [
