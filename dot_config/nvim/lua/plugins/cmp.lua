@@ -5,10 +5,10 @@ return {
     local cmp = require("cmp")
     opts.sources = cmp.config.sources({
       { name = "copilot" },
-      { name = "luasnip" },
       { name = "nvim_lsp" },
-      { name = "buffer" },
       { name = "path" },
+      { name = "luasnip" },
+      { name = "buffer" },
       { name = "emoji" },
     })
   end,
