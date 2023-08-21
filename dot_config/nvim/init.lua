@@ -40,7 +40,7 @@ nvim_lsp['clangd'].setup {
   cmd = { '/run/current-system/sw/bin/clangd' },
 }
 
-nvim_lsp['rust_analyzer'].setup {
+nvim_lsp.rust_analyzer.setup {
   cmd = { '/run/current-system/sw/bin/rust-analyzer' },
 }
 

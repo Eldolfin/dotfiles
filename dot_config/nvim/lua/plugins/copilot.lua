@@ -1,14 +1,9 @@
 return {
-  -- "zbirenbaum/copilot.lua",
-  --
-  -- cmd = "Copilot",
-  -- build = ":Copilot auth",
-  -- opts = {
-  --   suggestion = { enabled = false },
-  --   panel = { enabled = false },
-  --   -- disable by default
-  --   filetypes = {
-  --     ["*"] = false,
-  --   },
-  -- },
+  "copilot.lua",
+  enable = false,
+  config = function()
+    require("copilot").setup({
+      filetypes = { "yaml" },
+    })
+  end
 }

@@ -144,6 +144,10 @@ alias gst="git status --short"
 alias gup="git pull --rebase"
 alias gsta"git stash push"
 alias gstp="git stash pop"
+alias gaa="git add --all"
+alias ga="git add"
+alias gpv="git push -v"
+alias gcsm="git commit -S -m"
 
 # cpv == rsync with good args
 cpv() {

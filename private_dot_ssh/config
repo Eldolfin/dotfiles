@@ -1,3 +1,7 @@
+Host mail.eldolfin.top
+    HostName mail.eldolfin.top
+    User ubuntu
+
 Host ssh.cri.epita.fr
     GSSAPIAuthentication yes
     GSSAPIDelegateCredentials yes
@@ -26,5 +30,8 @@ Host *
   ControlPath ~/.ssh/sockets/%r@%h-%p
 
 Host bitwarden
-    user ubuntu
+    User ubuntu
     HostName bitwarden.le-dauphin.tech
+
+Host eldolfin.top
+  IdentityFile ~/.ssh/id_ed25519

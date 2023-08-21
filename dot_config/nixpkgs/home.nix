@@ -78,6 +78,14 @@ in
     sysstat
     jq
     niv
+    joshuto
+    gnupg
+    dive
+    ncdu
+    bacon
+    gdb
+    evcxr
+    testdisk
 
     # graphical programs
     jellyfin-media-player
@@ -119,7 +127,6 @@ in
     pkgconfig
     stdenv.cc.cc.lib
     pre-commit
-    openjdk17
     cudatoolkit
     luajit
     wine
@@ -134,9 +141,14 @@ in
     xorg.libXtst.out
     mold
     obs-studio
+    handbrake
+    graalvm17-ce
+    vscode
+    dbeaver
 
     # python packages
     (python310.withPackages (ps: with ps; [ 
+    flask
     numpy
     ruff-lsp
     notebook
@@ -167,6 +179,7 @@ in
     # cli
     neovim
     podman-compose
+    act
 
     # libraries
     flutter
