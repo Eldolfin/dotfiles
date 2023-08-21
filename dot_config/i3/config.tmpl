@@ -249,8 +249,9 @@ bindsym $mod+Shift+s exec $scripts/i3-display-swap.sh
 
 
 # clipboard manager
-exec --no-startup-id copyq
-bindsym Control+Mod1+v exec copyq show && i3-msg "[id=$(xdotool getactivewindow)] floating enable" && i3-msg "[id=$(xdotool getactivewindow)] move position cursor"
+bindsym $mod+v exec --no-startup-id copyq show
+for_window [instance="copyq"] floating enable
+exec copyq
 
 # brightness
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl s -e 8%+
@@ -311,9 +312,9 @@ exec --no-startup-id ckb-next -b
 # default_border none
 
 # i3 gaps
-for_window [class="^.*"] border pixel 2
-gaps outer 3
-gaps inner 7
+# for_window [class="^.*"] border pixel 2
+# gaps outer 3
+# gaps inner 7
 
 # toggle lamp
 bindsym $mod+y exec timeout 0.5 mosquitto_pub -h 192.168.1.1 -t 'cmnd/tasmota_C1EEA3/Power' -m 'TOGGLE' || curl 'http://192.168.1.31/cm?cmnd=POWER+TOGGLE'
