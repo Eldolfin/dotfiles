@@ -110,6 +110,7 @@ in
     bitwarden
     jellyfin-mpv-shim
     sunshine
+    kdeconnect
 
     # Language servers
     sumneko-lua-language-server
