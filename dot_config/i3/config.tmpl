@@ -237,7 +237,7 @@ bindsym $mod+x exec --no-startup-id $scripts/lock.sh
 {{ if eq .chezmoi.hostname "nixos-tour" -}}
 
 # screen order
-exec --no-startup-id xrandr --output $primary_mon --primary --mode 1920x1080 --pos 0x0 --rotate normal --rate 144 --output $other_mon --mode 1920x1200 --pos 1920x0 --rotate normal
+exec --no-startup-id xrandr --output $primary_mon --primary --mode 1920x1080 --pos 0x0 --rotate normal --rate 144 --output $other_mon --mode 1920x1200 --pos 1920x0 --rotate left
 
 # adjust workspace too
 exec --no-startup-id i3-msg 'workspace 2; move workspace to output $other_mon'
