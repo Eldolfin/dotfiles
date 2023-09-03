@@ -86,6 +86,7 @@ in
     gdb
     evcxr
     testdisk
+    calcurse
 
     # graphical programs
     jellyfin-media-player
