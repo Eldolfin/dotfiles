@@ -112,6 +112,7 @@ in
     jellyfin-mpv-shim
     sunshine
     kdeconnect
+    jetbrains.rider
 
     # Language servers
     sumneko-lua-language-server
