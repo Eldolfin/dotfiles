@@ -124,6 +124,7 @@ in
     gnumake
     libnotify
     dotnet-sdk_7
+    omnisharp-roslyn
 
     # clang
     boost
