@@ -123,6 +123,7 @@ in
     # libraries
     gnumake
     libnotify
+    dotnet-sdk_7
 
     # clang
     boost
