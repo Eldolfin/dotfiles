@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 let
-  unstable = import <nixpkgs-unstable> { };
+  unstable = import <unstable> { };
 in
 {
 
@@ -25,7 +25,7 @@ in
 
   services = {
     flameshot.enable = true;
-  # bluetooth media control
+    # bluetooth media control
     mpris-proxy.enable = true;
 
     gnome-keyring = {
@@ -81,6 +81,10 @@ in
     evcxr
     testdisk
     calcurse
+    git-lfs
+    yarn
+    difftastic
+    navi
 
     # graphical programs
     jellyfin-media-player
@@ -107,6 +111,9 @@ in
     sunshine
     kdeconnect
     jetbrains.rider
+    freetube
+    insomnia
+    discord
 
     # Language servers
     sumneko-lua-language-server
@@ -119,7 +126,6 @@ in
     libnotify
     dotnet-sdk_7
     omnisharp-roslyn
-
     # clang
     boost
     armadillo
@@ -179,6 +185,7 @@ in
     neovim
     podman-compose
     act
+    bun
 
     # libraries
     flutter
