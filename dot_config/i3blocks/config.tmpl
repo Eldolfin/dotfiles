@@ -41,7 +41,11 @@ signal=3
 # The type defaults to "mem" if the instance is not specified.
 [memory]
 interval=30
+{{ if eq .chezmoi.hostname "nixos-tour" -}}
+command=echo "MEM $(~/.config/i3/scripts/i3memory)"
+{{ else if eq .chezmoi.hostname "nixos-portable" -}}
 command=echo "MEM $(~/.config/i3blocks/scripts/i3memory)"
+{{ end -}}
 
 # Disk usage
 #
@@ -50,22 +54,22 @@ command=echo "MEM $(~/.config/i3blocks/scripts/i3memory)"
 # (defaults to 10 for 10%).
 [disk]
 interval=30
+{{ if eq .chezmoi.hostname "nixos-tour" -}}
+command=echo "HOME $(~/.config/i3/scripts/i3disk)"
+{{ else if eq .chezmoi.hostname "nixos-portable" -}}
 command=echo "HOME $(~/.config/i3blocks/scripts/i3disk)"
+{{ end -}}
 
 
 
 {{ if eq .chezmoi.hostname "nixos-tour" -}}
-
 [eth]
 command=echo "📡 $(~/.config/i3blocks/scripts/ethernet)"
 interval=5
-
 {{ else if eq .chezmoi.hostname "nixos-portable" -}}
-
 [wifi]
 command=echo "📡 $(~/.config/i3blocks/scripts/i3wifi wlp59s0)"
 interval=5
-
 {{ end -}}
 
 
@@ -89,21 +93,15 @@ OUTLABEL=
 # see the script for details.
 [cpu_usage]
 command=~/.config/i3blocks/scripts/cpu_usage
-interval=10
+interval=5
 LABEL=CPU 
-min_width=CPU: 100.00%
+min_width=CPU 100.00%
 T_WARN=50
 T_CRIT=80
 DECIMALS=2
 COLOR_NORMAL=#FFFFFF
 #COLOR_WARN=#FFFC00
 #COLOR_CRIT=#FF0000
-
-#[temp]
-#command=~/.config/i3blocks/scripts/i3temp
-#interval=10
-#seperator=true
-
 
 {{ if eq .chezmoi.hostname "nixos-portable" -}}
 # Battery indicator
@@ -129,19 +127,8 @@ color=#b8bb26
 separator_block_width=10
 markup=pango
 
-# Backlight Level
-# [light]
-# command=echo "☀️️ $(light -G)%"
-# interval=once
-# signal=4
-
-## Weather
-# [weather]
-# command=~/scripts/i3weather
-# interval=1800
-
 # Date Time
 #
 [time]
-command=date '+%d/%m/%Y %H:%M:%S'
+command=date '+%A %d/%m/%Y %H:%M:%S'
 interval=1

@@ -23,16 +23,10 @@ in
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  # bluetooth media control
-  systemd.user.services.mpris-proxy = {
-    Unit.Description = "Mpris proxy";
-    Unit.After = [ "network.target" "sound.target" ];
-    Service.ExecStart = "${pkgs.bluez}/bin/mpris-proxy";
-    Install.WantedBy = [ "default.target" ];
-  };
-
   services = {
     flameshot.enable = true;
+  # bluetooth media control
+    mpris-proxy.enable = true;
 
     gnome-keyring = {
       enable = true;
