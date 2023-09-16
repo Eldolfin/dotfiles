@@ -2,7 +2,9 @@
 {
   imports = [
   ./basePackages.nix
-  #./personalPackages.nix
+{{ if or (eq .chezmoi.hostname "nixos-tour") (eq .chezmoi.hostname "nixos-portable") -}}
+  ./personalPackages.nix
+{{ end -}}
   ];
 
   # Home Manager needs a bit of information about you and the
