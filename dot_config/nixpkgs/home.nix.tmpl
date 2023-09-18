@@ -9,8 +9,13 @@
 
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
+{{ if or (eq .chezmoi.hostname "nixos-tour") (eq .chezmoi.hostname "nixos-portable") -}}
   home.username = "oscar";
   home.homeDirectory = "/home/oscar";
+{{ else -}}
+  home.username = "oscar.le-dauphin";
+  home.homeDirectory = "/home/oscar.le-dauphin/";
+{{ end -}}
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage

@@ -1,6 +1,9 @@
 #!/bin/sh
+{{ if or (eq .chezmoi.hostname "nixos-tour") (eq .chezmoi.hostname "nixos-portable") -}}
 echo -e "\033[0;32mAsking for sudo now so that it's not needed later\033[0m"
 sudo echo -e "\033[0;32mOk\033[0m"
+{{ end -}}
+
 {{ if eq .chezmoi.osRelease.id "arch" -}}
   sudo pacman -S \
                   alacritty \
@@ -36,6 +39,7 @@ sudo echo -e "\033[0;32mOk\033[0m"
   paru -S clipit librewolf-bin ttf-ubuntu-mono-nerd emote
 
 {{ else if eq .chezmoi.osRelease.id "nixos" -}}
+{{ if or (eq .chezmoi.hostname "nixos-tour") (eq .chezmoi.hostname "nixos-portable") -}}
   sudo mkdir /etc/nixos/git-repo
   sudo chown oscar /etc/nixos/git-repo
   git clone git@github.com:Eldolfin/nixos-config.git /etc/nixos/git-repo
@@ -48,22 +52,24 @@ sudo echo -e "\033[0;32mOk\033[0m"
   sudo nix-channel --add https://nixos.org/channels/nixpkgs-unstable unstable
   nix-channel --update
   nix-shell '<home-manager>' -A install
+{{ end -}}
   home-manager switch
 {{ end -}}
 
-# install oh my zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/romkatv/zsh4humans/v5/install)"
+# aint usefull for now
+# install z4h
+# sh -c "$(curl -fsSL https://raw.githubusercontent.com/romkatv/zsh4humans/v5/install)"
 # put back the zshrc
-mv -v .zshrc.pre-oh-my-zsh .zshrc
+#mv -v .zshrc.pre-oh-my-zsh .zshrc
 
 # download backgrounds
-echo -e "\033[0;32mDownloading backgrounds\033[0m"
-git clone git@github.com:Eldolfin/windows_backgrounds.git .backgrounds
-
-# download sounds
-echo -e "\033[0;32mDownloading sounds\033[0m"
-git clone git@github.com:Eldolfin/sounds.git Music/sounds
-
-# install nvim plugins
-echo -e "\033[0;32mInstalling nvim plugins\033[0m"
-nvim --headless +"\!sleep 1" +qall
+#echo -e "\033[0;32mDownloading backgrounds\033[0m"
+#git clone git@github.com:Eldolfin/windows_backgrounds.git .backgrounds
+#
+## download sounds
+#echo -e "\033[0;32mDownloading sounds\033[0m"
+#git clone git@github.com:Eldolfin/sounds.git Music/sounds
+#
+## install nvim plugins
+#echo -e "\033[0;32mInstalling nvim plugins\033[0m"
+#nvim --headless +"\!sleep 1" +qall

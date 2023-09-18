@@ -11,7 +11,7 @@
 
 set $mod Mod4
 set $statuscmd i3blocks
-set $scripts /home/oscar/.config/i3/scripts
+set $scripts ~/.config/i3/scripts
 set $primary_mon HDMI-0
 set $other_mon DVI-D-0
 
@@ -273,9 +273,9 @@ exec --no-startup-id emote
 exec --no-startup-id i3-battery-popup
 
 # sound effects
-bindsym $mod+Shift+Return exec --no-startup-id aplay /home/oscar/Music/sounds/boom.wav
+bindsym $mod+Shift+Return exec --no-startup-id aplay ~/Music/sounds/boom.wav
 
-set $volumepath /home/oscar/.config/i3/scripts/i3-volume
+set $volumepath ~/.config/i3/scripts/i3-volume
 set $statussig SIGUSR1
 set $volumestep 5
 set $volumeargs -P -n -t $statuscmd -u $statussig

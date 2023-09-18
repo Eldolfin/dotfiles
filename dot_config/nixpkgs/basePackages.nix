@@ -1,9 +1,4 @@
 { pkgs, ... }:
-
-
-let
-  unstable = import <unstable> { };
-in
 {
 home.packages = with pkgs; [
     # cli tools
@@ -27,6 +22,7 @@ home.packages = with pkgs; [
     lazygit
     bat
     ripgrep
+    neovim
 
     # graphical programs
     rofi
@@ -64,8 +60,5 @@ home.packages = with pkgs; [
     # font
     meslo-lgs-nf
     fusuma
-  ] ++ (with unstable; [
-    # cli
-    neovim
-  ]);
+  ];
   }
