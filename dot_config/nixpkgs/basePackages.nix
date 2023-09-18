@@ -33,6 +33,7 @@ home.packages = with pkgs; [
     emote
     dunst
     redshift
+    i3blocks
 
     # Language servers
     sumneko-lua-language-server
