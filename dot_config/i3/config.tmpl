@@ -47,9 +47,14 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec alacritty
+{{ if or (eq .chezmoi.hostname "nixos-tour") (eq .chezmoi.hostname "nixos-portable") -}}
 # start librewolf
 bindsym $mod+w exec librewolf
 bindsym $mod+Shift+w exec librewolf --private-window
+{{ else -}}
+bindsym $mod+w exec firefox
+bindsym $mod+Shift+w exec firefox --private-window
+{{ end -}}
 # start nvim
 bindsym $mod+n exec alacritty -e nvim
 
