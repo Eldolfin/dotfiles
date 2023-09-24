@@ -313,20 +313,19 @@ bindsym $mod+b exec --no-startup-id rofi-bluetooth
 
 exec --no-startup-id sudo ckb-next-daemon
 exec --no-startup-id ckb-next -b
+
+# kde connect
+# exec --no-startup-id kdeconnect-indicator
+# the daemon for kdeconnect :(
+# exec --no-startup-id dbus-daemon --session --address="unix:path=$XDG_RUNTIME_DIR/bus" &
 {{ end -}}
 
 # hide window decorations
 # default_border none
-
 # i3 gaps
 # for_window [class="^.*"] border pixel 2
 # gaps outer 3
 # gaps inner 7
 
 # toggle lamp
-bindsym $mod+y exec timeout 0.5 mosquitto_pub -h 192.168.1.1 -t 'cmnd/tasmota_C1EEA3/Power' -m 'TOGGLE' || curl 'http://192.168.1.31/cm?cmnd=POWER+TOGGLE'
-
-# kde connect
-exec --no-startup-id kdeconnect-indicator
-# the daemon for kdeconnect :(
-exec --no-startup-id dbus-daemon --session --address="unix:path=$XDG_RUNTIME_DIR/bus" & 
+# bindsym $mod+y exec timeout 0.5 mosquitto_pub -h 192.168.1.1 -t 'cmnd/tasmota_C1EEA3/Power' -m 'TOGGLE' || curl 'http://192.168.1.31/cm?cmnd=POWER+TOGGLE'
