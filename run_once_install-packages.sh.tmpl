@@ -40,18 +40,19 @@ sudo echo -e "\033[0;32mOk\033[0m"
 
 {{ else if eq .chezmoi.osRelease.id "nixos" -}}
 {{ if or (eq .chezmoi.hostname "nixos-tour") (eq .chezmoi.hostname "nixos-portable") -}}
-  sudo mkdir /etc/nixos/git-repo
-  sudo chown oscar /etc/nixos/git-repo
-  git clone git@github.com:Eldolfin/nixos-config.git /etc/nixos/git-repo
-  sudo mv -v /etc/nixos/configuration.nix /etc/nixos/configuration.nix.before-chezmoi-install
-  sudo ln /etc/nixos/git-repo/configuration.nix /etc/nixos/configuration.nix
-  sudo nixos-rebuild switch
+# This might as well be ran manually, or ask interactively because it's annoying
+  # sudo mkdir /etc/nixos/git-repo
+  # sudo chown oscar /etc/nixos/git-repo
+  # git clone git@github.com:Eldolfin/nixos-config.git /etc/nixos/git-repo
+  # sudo mv -v /etc/nixos/configuration.nix /etc/nixos/configuration.nix.before-chezmoi-install
+  # sudo ln /etc/nixos/git-repo/configuration.nix /etc/nixos/configuration.nix
+  # sudo nixos-rebuild switch
 
 # install home-manager
-  nix-channel --add https://github.com/nix-community/home-manager/archive/release-23.05.tar.gz home-manager
-  sudo nix-channel --add https://nixos.org/channels/nixpkgs-unstable unstable
-  nix-channel --update
-  nix-shell '<home-manager>' -A install
+  # nix-channel --add https://github.com/nix-community/home-manager/archive/release-23.05.tar.gz home-manager
+  # sudo nix-channel --add https://nixos.org/channels/nixpkgs-unstable unstable
+  # nix-channel --update
+  # nix-shell '<home-manager>' -A install
 {{ end -}}
   home-manager switch
 {{ end -}}
