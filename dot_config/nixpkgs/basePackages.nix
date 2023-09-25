@@ -29,7 +29,7 @@ home.packages = with pkgs; [
     rofi-bluetooth
     rofi-power-menu
     copyq
-    flameshot
+    # flameshot
     emote
     dunst
     redshift
@@ -38,8 +38,6 @@ home.packages = with pkgs; [
     # Language servers
     sumneko-lua-language-server
     mypy
-    python310Packages.python-lsp-server
-
 
     # libraries
     libnotify
@@ -53,9 +51,11 @@ home.packages = with pkgs; [
 
     # python packages
     (python310.withPackages (ps: with ps; [ 
-    ruff-lsp
-    pynvim
-    pip
+      python-lsp-server
+      ruff-lsp
+      pynvim
+      pip
+      numpy
     ]))
 
     # font

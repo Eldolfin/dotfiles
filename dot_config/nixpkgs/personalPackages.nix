@@ -76,7 +76,6 @@ home.packages = with pkgs; [
     # Language servers
     sumneko-lua-language-server
     mypy
-    python310Packages.python-lsp-server
 
 
     # libraries
@@ -110,21 +109,20 @@ home.packages = with pkgs; [
     dbeaver
 
     # python packages
-    (python310.withPackages (ps: with ps; [ 
-    flask
-    numpy
-    ruff-lsp
-    notebook
-    pynvim
-    jupyter-client
-    ueberzug
-    pillow
-    cairosvg
-    pnglatex
-    plotly
-    pyperclip
-    pip
-    ]))
+#    (python310.withPackages (ps: with ps; [
+#    flask
+#    ruff-lsp
+#    notebook
+#    pynvim
+#    jupyter-client
+#    ueberzug
+#    pillow
+#    cairosvg
+#    pnglatex
+#    plotly
+#    pyperclip
+#    pip
+#    ]))
 
     # font
     meslo-lgs-nf
@@ -140,7 +138,7 @@ home.packages = with pkgs; [
     ruff
 
     # cli
-    neovim
+    # neovim
     podman-compose
     act
     bun
