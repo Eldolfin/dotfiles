@@ -144,7 +144,7 @@ home.packages = with pkgs; [
     bun
 
     # libraries
-    flutter
+    # flutter
   ]);
 
   }
