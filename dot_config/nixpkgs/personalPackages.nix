@@ -107,6 +107,7 @@ home.packages = with pkgs; [
     graalvm17-ce
     vscodium
     dbeaver
+    rnix-lsp
 
     # python packages
 #    (python310.withPackages (ps: with ps; [
