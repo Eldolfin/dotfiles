@@ -41,10 +41,10 @@ markup=none
 # The type defaults to "mem" if the instance is not specified.
 [memory]
 interval=30
-{{ if eq .chezmoi.hostname "nixos-tour" -}}
-command=echo "MEM $(~/.config/i3/scripts/i3memory)"
-{{ else if eq .chezmoi.hostname "nixos-portable" -}}
+{{ if eq .chezmoi.hostname "nixos-portable" -}}
 command=echo "MEM $(~/.config/i3blocks/scripts/i3memory)"
+{{ else }}
+command=echo "MEM $(~/.config/i3/scripts/i3memory)"
 {{ end -}}
 
 # Disk usage
