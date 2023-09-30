@@ -30,11 +30,11 @@ markup=none
 
 
 # Display any packages to install
-[packages]
-command=echo "📦 $(nix-store --query --requisites /run/current-system | wc -l)"
-separator=true
-interval=1800
-signal=3
+#[packages]
+#command=echo "📦 $(nix-store --query --requisites /run/current-system | wc -l)"
+#separator=true
+#interval=1800
+#signal=3
 
 # Memory usage
 #
@@ -118,6 +118,7 @@ BAT_NUMBER=0
 # Volume indicator
 #
 # Displays both the master and the headphone volume
+{{ if or (eq .chezmoi.hostname "nixos-tour") (eq .chezmoi.hostname "nixos-portable") -}}
 [i3volume]
 label=
 command=~/.config/i3/scripts/i3-volume/volume output i3blocks
@@ -126,6 +127,7 @@ signal=10
 color=#b8bb26
 separator_block_width=10
 markup=pango
+{{ end- }}
 
 # Date Time
 #
