@@ -119,7 +119,8 @@ alias poly="./.apps/PolyMC-Linux-1.4.3-x86_64.AppImage"
 alias gupd="git add .; git commit -m \"update\"; git push"
 alias bell="tput bel"
 alias ll="ls -alh"
-alias cat="bat --plain"
+# no point
+# alias cat="bat --plain"
 alias la="timeout 0.5 mosquitto_pub -h 192.168.1.1 -t 'cmnd/tasmota_C1EEA3/Power' -m 'TOGGLE' || curl 'http://192.168.1.31/cm?cmnd=POWER+TOGGLE'"
 alias tlr="tldr --list | sk --preview 'tldr {1} --color=always' --preview-window right:75% | xargs tldr -q"
 alias black='xsetroot -solid "#000000"'
@@ -148,16 +149,12 @@ alias gstp="git stash pop"
 alias gaa="git add --all"
 alias ga="git add"
 alias gpv="git push -v"
-alias gcsm="git commit -S -m"
+alias gcsm="git commit -m"
 
 # cpv == rsync with good args
 cpv() {
     rsync -pogbr -hhh --backup-dir="/tmp/rsync-${USERNAME}" -e /dev/null --progress "$@"
 }
-
-# pacman
-alias pacin="sudo pacman -S"
-alias pacupd="sudo pacman -Syu"
 
 # fancy ctrl z for switching between vim/terminal
 fancy-ctrl-z () {
