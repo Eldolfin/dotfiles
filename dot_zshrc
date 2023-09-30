@@ -110,28 +110,26 @@ alias vim=nvim
 alias vi=vim
 alias svi="sudo -E -s nvim"
 alias vimdiff="nvim -d"
-alias htop=btop
 alias top=btop
 alias ls=exa
 alias tree="exa --tree"
 alias make="make -j"
-alias poly="./.apps/PolyMC-Linux-1.4.3-x86_64.AppImage"
 alias gupd="git add .; git commit -m \"update\"; git push"
 alias bell="tput bel"
 alias ll="ls -alh"
 # no point
 # alias cat="bat --plain"
-alias la="timeout 0.5 mosquitto_pub -h 192.168.1.1 -t 'cmnd/tasmota_C1EEA3/Power' -m 'TOGGLE' || curl 'http://192.168.1.31/cm?cmnd=POWER+TOGGLE'"
+# alias la="timeout 0.5 mosquitto_pub -h 192.168.1.1 -t 'cmnd/tasmota_C1EEA3/Power' -m 'TOGGLE' || curl 'http://192.168.1.31/cm?cmnd=POWER+TOGGLE'"
 alias tlr="tldr --list | sk --preview 'tldr {1} --color=always' --preview-window right:75% | xargs tldr -q"
 alias black='xsetroot -solid "#000000"'
-dodo() {
-  # wait for network to be available
-  while ! ifconfig | grep -F "192.168.1." > /dev/null; do;done
-  # shutdown computer and lamp
-  ssh -o ConnectTimeout=5 oscar@192.168.1.7 'sudo shutdown 0' & curl 'http://192.168.1.31/cm?cmnd=POWER+OFF'
-  wait
-  exit
-}
+# dodo() {
+#   # wait for network to be available
+#   while ! ifconfig | grep -F "192.168.1." > /dev/null; do;done
+#   # shutdown computer and lamp
+#   ssh -o ConnectTimeout=5 oscar@192.168.1.7 'sudo shutdown 0' & curl 'http://192.168.1.31/cm?cmnd=POWER+OFF'
+#   wait
+#   exit
+# }
 mkcd () {
   mkdir -p $@ && cd ${@:$#}
 }
