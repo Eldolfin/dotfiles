@@ -258,7 +258,7 @@ bindsym $mod+Shift+s exec $scripts/i3-display-swap.sh
 # clipboard manager
 bindsym $mod+v exec --no-startup-id copyq show
 for_window [instance="copyq"] floating enable
-exec copyq
+exec --no-startup-id copyq --start-server
 
 # brightness
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl s -e 8%+
