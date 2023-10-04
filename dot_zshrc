@@ -149,7 +149,7 @@ alias gaa="git add --all"
 alias ga="git add"
 alias gpv="git push -v"
 alias gcsm="git commit -m"
-alias epitagcc="gcc -std=c99 -pedantic -Werror -Wall -Wextra -Wvla -o main *.c"
+alias epitagcc="gcc -g -fsanitize=address -std=c99 -pedantic -Werror -Wall -Wextra -Wvla -o main *.c"
 
 # cpv == rsync with good args
 cpv() {
