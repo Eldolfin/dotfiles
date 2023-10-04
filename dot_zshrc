@@ -122,6 +122,7 @@ alias ll="ls -alh"
 # alias la="timeout 0.5 mosquitto_pub -h 192.168.1.1 -t 'cmnd/tasmota_C1EEA3/Power' -m 'TOGGLE' || curl 'http://192.168.1.31/cm?cmnd=POWER+TOGGLE'"
 alias tlr="tldr --list | sk --preview 'tldr {1} --color=always' --preview-window right:75% | xargs tldr -q"
 alias black='xsetroot -solid "#000000"'
+alias push=/home/oscar.le-dauphin/afs/pusher.sh
 # dodo() {
 #   # wait for network to be available
 #   while ! ifconfig | grep -F "192.168.1." > /dev/null; do;done
@@ -188,3 +189,4 @@ setopt glob_dots     # no special treatment for file names with a leading dot
 
 # Load Angular CLI autocompletion.
 # source <(ng completion script)
+#
