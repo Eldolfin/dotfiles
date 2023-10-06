@@ -34,9 +34,11 @@ home.packages = with pkgs; [
     dunst
     redshift
     i3blocks
+    neovide
 
     # Language servers
-    sumneko-lua-language-server
+    lua-language-server
+    # sumneko-lua-language-server
     mypy
 
     # libraries
@@ -47,7 +49,7 @@ home.packages = with pkgs; [
     stdenv.cc.cc.lib
     luajit
     stylua
-    vscodium
+    # vscodium
 
     # python packages
     (python310.withPackages (ps: with ps; [ 
