@@ -5,7 +5,7 @@ let
   unstable = import <unstable> { };
 in
 {
-home.packages = with pkgs; [
+  home.packages = with pkgs; [
     # DE
     i3blocks
     picom
@@ -109,24 +109,11 @@ home.packages = with pkgs; [
     dbeaver
     rnix-lsp
 
-    # python packages
-#    (python310.withPackages (ps: with ps; [
-#    flask
-#    ruff-lsp
-#    notebook
-#    pynvim
-#    jupyter-client
-#    ueberzug
-#    pillow
-#    cairosvg
-#    pnglatex
-#    plotly
-#    pyperclip
-#    pip
-#    ]))
-
     # font
     meslo-lgs-nf
+
+    man-pages
+    man-pages-posix
 
     fusuma
   ] ++ (with unstable; [
@@ -148,4 +135,4 @@ home.packages = with pkgs; [
     # flutter
   ]);
 
-  }
+}
