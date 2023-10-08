@@ -24,34 +24,34 @@ vim.g.python3_host_prog = "/home/oscar/.nix-profile/bin/python3"
 -- manual lsp installs, because nix
 local nvim_lsp = require("lspconfig")
 nvim_lsp['pylsp'].setup {
-  cmd = { '/home/oscar/.nix-profile/bin/pylsp' },
+    cmd = { '/home/oscar/.nix-profile/bin/pylsp' },
 }
 
 nvim_lsp['ruff_lsp'].setup {
-  cmd = { '/home/oscar/.nix-profile/bin/ruff-lsp' },
+    cmd = { '/home/oscar/.nix-profile/bin/ruff-lsp' },
 }
 
 nvim_lsp['lua_ls'].setup {
-  cmd = { '/home/oscar/.nix-profile/bin/lua-language-server' },
+    cmd = { '/home/oscar/.nix-profile/bin/lua-language-server' },
 }
 
 
 nvim_lsp['clangd'].setup {
-  cmd = { '/run/current-system/sw/bin/clangd' },
+    cmd = { '/run/current-system/sw/bin/clangd' },
 }
 
 nvim_lsp.rust_analyzer.setup {
-  cmd = { '/run/current-system/sw/bin/rust-analyzer' },
+    cmd = { '/run/current-system/sw/bin/rust-analyzer' },
 }
 
 nvim_lsp['rnix'].setup {
-  cmd = { '/home/oscar/.nix-profile/bin/rnix-lsp' },
+    cmd = { '/home/oscar/.nix-profile/bin/rnix-lsp' },
 }
 
 nvim_lsp['omnisharp'].setup {
-  cmd = { '/home/oscar/.nix-profile/bin/OmniSharp', '--languageserver', '--hostPID', tostring(vim.fn.getpid()) },
+    cmd = { '/home/oscar/.nix-profile/bin/OmniSharp', '--languageserver', '--hostPID', tostring(vim.fn.getpid()) },
 }
 
 nvim_lsp['pyright'].setup {
-  cmd = { '/home/oscar/.nix-profile/bin/pyright-langserver', '--stdio' },
+    cmd = { '/home/oscar/.nix-profile/bin/pyright-langserver', '--stdio' },
 }
