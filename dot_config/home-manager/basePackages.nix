@@ -26,6 +26,7 @@
     neovim
     cargo-watch
     inotify-tools
+    scrot # full screen-shot
 
     # graphical programs
     rofi
