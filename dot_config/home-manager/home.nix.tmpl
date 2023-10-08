@@ -6,9 +6,6 @@
   ./personalPackages.nix
 {{ end -}}
   ];
-
-  # Home Manager needs a bit of information about you and the
-  # paths it should manage.
 {{ if or (eq .chezmoi.hostname "nixos-tour") (eq .chezmoi.hostname "nixos-portable") -}}
   home.username = "oscar";
   home.homeDirectory = "/home/oscar";
@@ -29,7 +26,6 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-# programs.zsh.enable = true;
 
   services = {
     flameshot.enable = true;
