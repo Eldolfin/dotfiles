@@ -1,10 +1,10 @@
 { pkgs, ... }:
 {
   imports = [
-  ./basePackages.nix
 {{ if or (eq .chezmoi.hostname "nixos-tour") (eq .chezmoi.hostname "nixos-portable") -}}
   ./personalPackages.nix
 {{ end -}}
+  ./basePackages.nix
   ];
 {{ if or (eq .chezmoi.hostname "nixos-tour") (eq .chezmoi.hostname "nixos-portable") -}}
   home.username = "oscar";
