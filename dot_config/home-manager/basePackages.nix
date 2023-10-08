@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-home.packages = with pkgs; [
+  home.packages = with pkgs; [
     # cli tools
     tealdeer
     skim
@@ -15,6 +15,7 @@ home.packages = with pkgs; [
     fzf
     btop
     zsh
+    fish
     neofetch
     chezmoi
     zoxide
@@ -29,7 +30,6 @@ home.packages = with pkgs; [
     rofi-bluetooth
     rofi-power-menu
     copyq
-    # flameshot
     emote
     dunst
     redshift
@@ -38,7 +38,6 @@ home.packages = with pkgs; [
 
     # Language servers
     lua-language-server
-    # sumneko-lua-language-server
     mypy
 
     # libraries
@@ -49,10 +48,9 @@ home.packages = with pkgs; [
     stdenv.cc.cc.lib
     luajit
     stylua
-    # vscodium
 
     # python packages
-    (python310.withPackages (ps: with ps; [ 
+    (python310.withPackages (ps: with ps; [
       python-lsp-server
       ruff-lsp
       pynvim
@@ -64,4 +62,4 @@ home.packages = with pkgs; [
     meslo-lgs-nf
     fusuma
   ];
-  }
+}

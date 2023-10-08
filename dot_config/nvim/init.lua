@@ -55,3 +55,6 @@ nvim_lsp['omnisharp'].setup {
 nvim_lsp['pyright'].setup {
     cmd = { '/home/oscar/.nix-profile/bin/pyright-langserver', '--stdio' },
 }
+
+if vim.g.neovide then
+end
