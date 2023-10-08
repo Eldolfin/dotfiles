@@ -3,7 +3,7 @@ window:
 font:
   normal:
     family: "MesloLGS NF"
-  size: 14.0
+  size: 16.0
 
 bell:
   command:
