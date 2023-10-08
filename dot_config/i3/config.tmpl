@@ -323,6 +323,27 @@ exec --no-startup-id ckb-next -b
 # for_window [class="^.*"] border pixel 2
 # gaps outer 3
 # gaps inner 7
+# Gaps settings
+smart_gaps on
+
+#default gap sizes
+set $gapsinner 7
+set $gapsouter 2
+
+# set default gaps
+default_border pixel 3
+gaps inner $gapsinner
+gaps outer $gapsouter
+
+# Gaps on/off switching mode
+set $mode_gaps Toggle gaps: (1) on (2) off
+bindsym $mod+F1 mode "$mode_gaps"
+mode "$mode_gaps" {
+    bindsym 1 mode "default", gaps inner all set $gapsinner, gaps outer all set $gapsouter
+    bindsym 2 mode "default", gaps inner all set 1, gaps outer all set 1
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
 
 # toggle lamp
 # bindsym $mod+y exec timeout 0.5 mosquitto_pub -h 192.168.1.1 -t 'cmnd/tasmota_C1EEA3/Power' -m 'TOGGLE' || curl 'http://192.168.1.31/cm?cmnd=POWER+TOGGLE'
