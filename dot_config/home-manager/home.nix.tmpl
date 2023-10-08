@@ -45,6 +45,9 @@
     })
   ];
 
+    environment.sessionVariables = {
+    MOZ_USE_XINPUT2 = "1";
+    };
 
   # allowUnfree :(
   nixpkgs.config.allowUnfree = true;
