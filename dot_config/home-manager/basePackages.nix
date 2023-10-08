@@ -25,6 +25,7 @@
     ripgrep
     neovim
     cargo-watch
+    inotify-tools
 
     # graphical programs
     rofi
