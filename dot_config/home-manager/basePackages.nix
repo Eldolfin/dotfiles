@@ -24,6 +24,7 @@
     bat
     ripgrep
     neovim
+    cargo-watch
 
     # graphical programs
     rofi
