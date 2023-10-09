@@ -43,6 +43,7 @@ in
     yarn
     difftastic
     navi
+    tree
 
     # graphical programs
     jellyfin-media-player
