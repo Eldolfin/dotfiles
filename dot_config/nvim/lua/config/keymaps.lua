@@ -9,7 +9,7 @@ local function custom_make()
   vim.api.nvim_command('write')
   Job:new({
     command = "alacritty",
-    args = { "-e", "bash", "-c", "i3-msg floating enable; make || sleep 1d" },
+    args = { "-o", "font.size=10","-e", "bash", "-c", "i3-msg floating enable; make check || sleep 1d" },
   }):start()
 end
 
