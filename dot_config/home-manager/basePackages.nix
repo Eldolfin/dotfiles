@@ -37,6 +37,7 @@
     dunst
     redshift
     i3blocks
+    i3lock
     neovide
 
     # Language servers
