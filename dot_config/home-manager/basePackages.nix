@@ -27,6 +27,7 @@
     cargo-watch
     inotify-tools
     scrot # full screen-shot
+    cloc
 
     # graphical programs
     rofi
@@ -39,6 +40,7 @@
     i3blocks
     i3lock
     neovide
+    picom
 
     # Language servers
     lua-language-server
