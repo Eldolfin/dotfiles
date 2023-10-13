@@ -20,10 +20,8 @@ require("lazy").setup({
         -- { import = "lazyvim.plugins.extras.lang.typescript" },
         { import = "lazyvim.plugins.extras.lang.json" },
         -- { import = "lazyvim.plugins.extras.lang.python" },
-        { import = "lazyvim.plugins.extras.formatting.conform" },
         { import = "lazyvim.plugins.extras.lang.docker" },
         -- { import = "lazyvim.plugins.extras.lang.rust" },
-        -- use mini.starter instead of alpha
         { import = "plugins" },
     },
     defaults = {
