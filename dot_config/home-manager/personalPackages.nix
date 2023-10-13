@@ -44,6 +44,7 @@ in
     difftastic
     navi
     tree
+    dash
 
     # graphical programs
     jellyfin-media-player
