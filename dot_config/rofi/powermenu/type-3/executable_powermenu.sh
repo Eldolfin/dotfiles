@@ -14,7 +14,7 @@ dir="$HOME/.config/rofi/powermenu/type-3"
 theme='style-5'
 
 # CMDs
-uptime="$(uptime | head -c 9 | tail -c 8)"
+uptime="$(uptime | tr "," " " | cut -f6-7 -d" ")"
 host=$(hostname)
 
 # Options
@@ -49,7 +49,7 @@ confirm_exit() {
 
 # Pass variables to rofi dmenu
 run_rofi() {
-	echo -e "$lock\n$suspend\n$logout\n$reboot\n$shutdown" | rofi_cmd
+	echo -e "$shutdown\n$logout\n$reboot" | rofi_cmd
 }
 
 # Execute Command
