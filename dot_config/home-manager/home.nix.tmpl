@@ -31,7 +31,12 @@
     flameshot.enable = true;
     # bluetooth media control
     mpris-proxy.enable = true;
-    picom.enable = true;
+    picom = {
+        enable = true;
+        shadow = true;
+        inactiveOpacity = 0.97;
+        fade = true;
+    };
 
     gnome-keyring = {
       enable = true;
