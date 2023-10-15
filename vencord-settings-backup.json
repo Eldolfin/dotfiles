@@ -5,7 +5,7 @@
         "autoUpdateNotification": true,
         "useQuickCss": true,
         "themeLinks": [
-            "https://comfy-themes.github.io/Discord/betterdiscord/comfy.theme.css"
+            "https://raw.githubusercontent.com/catppuccin/discord/main/themes/frappe.theme.css"
         ],
         "enabledThemes": [
             "EmojiReplace.theme.css"
@@ -257,7 +257,7 @@
                 "enabled": true
             },
             "oneko": {
-                "enabled": true
+                "enabled": false
             },
             "OpenInApp": {
                 "enabled": false
@@ -324,7 +324,10 @@
                 "enabled": true
             },
             "RoleColorEverywhere": {
-                "enabled": true
+                "enabled": true,
+                "chatMentions": true,
+                "memberList": true,
+                "voiceUsers": true
             },
             "SearchReply": {
                 "enabled": false
@@ -456,7 +459,7 @@
             "authenticated": false,
             "url": "https://api.vencord.dev/",
             "settingsSync": false,
-            "settingsSyncVersion": 1697404236565
+            "settingsSyncVersion": 1697404577569
         }
     },
     "quickCss": ""
