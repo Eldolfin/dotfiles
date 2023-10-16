@@ -3,9 +3,9 @@
 SETUVAR VIRTUAL_ENV_DISABLE_PROMPT:true
 SETUVAR ZO_CMD:zo
 SETUVAR Z_CMD:z
-SETUVAR Z_DATA:/home/oscar/\x2elocal/share/z/data
-SETUVAR Z_DATA_DIR:/home/oscar/\x2elocal/share/z
-SETUVAR Z_EXCLUDE:\x5e/home/oscar\x24
+SETUVAR Z_DATA:$HOME/\x2elocal/share/z/data
+SETUVAR Z_DATA_DIR:$HOME/\x2elocal/share/z
+SETUVAR Z_EXCLUDE:\x5e$HOME\x24
 SETUVAR __done_exclude:\x5egit\x20\x28\x3f\x21push\x7cpull\x7cfetch\x29\x1e\x5echezmoi
 SETUVAR __fish_initialized:3400
 SETUVAR _fisher_franciscolourenco_2F_done_files:\x7e/\x2econfig/fish/conf\x2ed/done\x2efish
