@@ -5,6 +5,7 @@
   ./personalPackages.nix
 {{ end -}}
   ./basePackages.nix
+  ./services.nix
   ];
 {{ if or (eq .chezmoi.hostname "nixos-tour") (eq .chezmoi.hostname "nixos-portable") -}}
   home.username = "oscar";
@@ -27,32 +28,6 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  services = {
-    flameshot.enable = true;
-    # bluetooth media control
-    mpris-proxy.enable = true;
-    picom = {
-        enable = true;
-        shadow = true;
-        inactiveOpacity = 0.97;
-        fade = true;
-        fadeSteps = [0.2 0.2];
-        backend = "glx";
-        settings = {
-            "corner-radius" = 10;
-            "rounded-corners-exclude" = [
-                "window_type = 'dock'"
-                "window_type = 'desktop'"
-            ];
-        };
-    };
-
-    gnome-keyring = {
-      enable = true;
-      components = [ "pkcs11" "secrets" "ssh" ];
-    };
-  };
-
   # fix for something
   nixpkgs.overlays = [
     (self: super: {
@@ -60,6 +35,7 @@
     })
   ];
 
+# firefox + touchscreen
 systemd.user.sessionVariables = {
     MOZ_USE_XINPUT2 = "1";
     };
