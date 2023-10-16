@@ -62,8 +62,11 @@ bindsym --release $mod+n exec neovide --novsync --multigrid
 
 # A more modern dmenu replacement is rofi:
 bindsym $mod+d exec --no-startup-id ~/.config/rofi/scripts/launcher_t3
+{{ if or (eq .chezmoi.hostname "nixos-tour") (eq .chezmoi.hostname "nixos-portable") -}}
 bindsym $mod+Shift+e exec ~/.config/rofi/scripts/powermenu_t3
-#bindsym $mod+Shift+e exec "rofi -show p -modi p:'rofi-power-menu'"
+{{ else -}}
+bindsym $mod+Shift+e exec "rofi -show p -modi p:'rofi-power-menu'"
+{{ end -}}
 bindsym $mod+b exec --no-startup-id rofi-bluetooth
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
