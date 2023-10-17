@@ -111,6 +111,7 @@ in
     vscodium
     dbeaver
     rnix-lsp
+    criterion
 
     # font
     meslo-lgs-nf
