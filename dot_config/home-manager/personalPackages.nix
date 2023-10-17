@@ -45,6 +45,7 @@ in
     navi
     tree
     dash
+    bear
 
     # graphical programs
     jellyfin-media-player
