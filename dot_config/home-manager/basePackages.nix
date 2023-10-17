@@ -41,7 +41,6 @@
     i3lock
     neovide
     picom
-    armcord
 
 
     # Language servers
