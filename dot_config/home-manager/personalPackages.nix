@@ -114,6 +114,7 @@ in
     criterion
     python310Packages.bpython
     tree-sitter
+    luajitPackages.luarocks
 
     # font
     meslo-lgs-nf
