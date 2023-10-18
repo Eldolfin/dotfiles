@@ -112,6 +112,7 @@ in
     dbeaver
     rnix-lsp
     criterion
+    python310Packages.bpython
 
     # font
     meslo-lgs-nf
