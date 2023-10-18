@@ -113,6 +113,7 @@ in
     rnix-lsp
     criterion
     python310Packages.bpython
+    tree-sitter
 
     # font
     meslo-lgs-nf
