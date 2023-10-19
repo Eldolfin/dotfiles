@@ -47,6 +47,7 @@ in
     dash
     bear
     ffmpeg
+    cinnamon.nemo
 
     # graphical programs
     jellyfin-media-player
