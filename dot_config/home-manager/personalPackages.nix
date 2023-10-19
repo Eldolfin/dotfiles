@@ -46,6 +46,7 @@ in
     tree
     dash
     bear
+    ffmpeg
 
     # graphical programs
     jellyfin-media-player
