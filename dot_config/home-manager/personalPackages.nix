@@ -117,6 +117,7 @@ in
     python310Packages.bpython
     tree-sitter
     luajitPackages.luarocks
+    graphviz
 
     # font
     meslo-lgs-nf
