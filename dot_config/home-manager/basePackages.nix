@@ -28,6 +28,7 @@
     inotify-tools
     scrot # full screen-shot
     cloc
+    wol
 
     # graphical programs
     rofi
@@ -41,6 +42,7 @@
     i3lock
     neovide
     picom
+    moonlight-embedded
 
 
     # Language servers
