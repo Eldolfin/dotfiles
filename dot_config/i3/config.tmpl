@@ -53,6 +53,9 @@ bindsym $mod+Return exec alacritty
 # start librewolf
 bindsym $mod+w exec librewolf
 bindsym $mod+Shift+w exec librewolf --private-window
+exec --no-startup-id kdeconnect-indicator
+# the daemon for kdeconnect :(
+exec --no-startup-id dbus-daemon --session --address="unix:path=$XDG_RUNTIME_DIR/bus" &
 {{ else -}}
 bindsym $mod+w exec firefox
 bindsym $mod+Shift+w exec firefox --private-window
