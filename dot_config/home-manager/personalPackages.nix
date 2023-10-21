@@ -48,6 +48,8 @@ in
     bear
     ffmpeg
     cinnamon.nemo
+    cron
+    sunshine
 
     # graphical programs
     jellyfin-media-player
