@@ -118,6 +118,7 @@ in
     tree-sitter
     luajitPackages.luarocks
     graphviz
+    parallel
 
     # font
     meslo-lgs-nf
