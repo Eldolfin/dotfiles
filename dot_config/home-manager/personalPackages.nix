@@ -79,6 +79,7 @@ in
     freetube
     insomnia
     discord
+    polybar
 
     # Language servers
     sumneko-lua-language-server
