@@ -283,9 +283,9 @@ exec --no-startup-id sudo ckb-next-daemon
 exec --no-startup-id ckb-next -b
 
 # kde connect
-# exec --no-startup-id kdeconnect-indicator
+exec --no-startup-id kdeconnect-indicator
 # the daemon for kdeconnect :(
-# exec --no-startup-id dbus-daemon --session --address="unix:path=$XDG_RUNTIME_DIR/bus" &
+exec --no-startup-id dbus-daemon --session --address="unix:path=$XDG_RUNTIME_DIR/bus" &
 {{ end -}}
 
 # hide window decorations
