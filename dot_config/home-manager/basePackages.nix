@@ -1,6 +1,10 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
+    # i3 etc
+    i3lock
+    polybar
+
     # cli tools
     tealdeer
     skim
@@ -38,12 +42,9 @@
     emote
     dunst
     redshift
-    i3blocks
-    i3lock
     neovide
     picom
     moonlight-embedded
-
 
     # Language servers
     lua-language-server

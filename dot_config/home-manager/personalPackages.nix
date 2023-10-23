@@ -7,7 +7,6 @@ in
 {
   home.packages = with pkgs; [
     # DE
-    i3blocks
     picom
 
     # cli tools
@@ -79,7 +78,6 @@ in
     freetube
     insomnia
     discord
-    polybar
 
     # Language servers
     sumneko-lua-language-server
