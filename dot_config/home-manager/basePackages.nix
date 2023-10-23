@@ -3,7 +3,7 @@
   home.packages = with pkgs; [
     # i3 etc
     i3lock
-    polybar
+    polybarFull
 
     # cli tools
     tealdeer
