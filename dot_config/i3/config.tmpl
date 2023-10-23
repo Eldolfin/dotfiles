@@ -200,20 +200,6 @@ bindsym $mod+u resize grow height 10 px or 10 ppt
 bindsym $mod+i resize shrink height 10 px or 10 ppt
 bindsym $mod+o resize grow width 10 px or 10 ppt
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-bar {
-
-  {{ if eq .chezmoi.hostname "nixos-tour" -}}
-  tray_output $primary_mon
-  {{ end -}}
-    # output $primary_mon
-    # output $other_mon
-
-    # position top
-    status_command $statuscmd
-}
-
 # Multi-screen screenshots with scrot
 bindsym --release Print exec scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' # All screens
 
@@ -334,3 +320,5 @@ exec setxkbmap -option caps:swapescape
 {{ if eq .chezmoi.hostname "nixos-tour" -}}
 # exec --no-startup-id sudo sunshine
 {{ end -}}
+
+exec_always ~/.config/polybar/launch.sh
