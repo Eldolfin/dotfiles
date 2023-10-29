@@ -35,12 +35,11 @@ nvim_lsp['lua_ls'].setup {
     cmd = { '/home/oscar/.nix-profile/bin/lua-language-server' },
 }
 
-
 nvim_lsp['clangd'].setup {
     cmd = { '/run/current-system/sw/bin/clangd' },
 }
 
-nvim_lsp.rust_analyzer.setup {
+nvim_lsp['rust_analyzer'].setup {
     cmd = { '/run/current-system/sw/bin/rust-analyzer' },
 }
 
@@ -55,6 +54,7 @@ nvim_lsp['omnisharp'].setup {
 nvim_lsp['pyright'].setup {
     cmd = { '/home/oscar/.nix-profile/bin/pyright-langserver', '--stdio' },
 }
+
 
 if vim.g.neovide then
     vim.g.neovide_scale_factor = 1.0

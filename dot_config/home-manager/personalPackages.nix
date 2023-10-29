@@ -48,6 +48,7 @@ in
     cinnamon.nemo
     cron
     sunshine
+    vim
 
     # graphical programs
     jellyfin-media-player
