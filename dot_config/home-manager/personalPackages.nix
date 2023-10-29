@@ -1,6 +1,5 @@
 { pkgs, ... }:
 
-
 let
   unstable = import <unstable> { };
 in
@@ -92,10 +91,9 @@ in
     # clang
     boost
     armadillo
-    pkgconfig
-    stdenv.cc.cc.lib
+    pkg-config
     pre-commit
-    cudatoolkit
+    stdenv.cc.cc.lib
     luajit
     wine
     stylua
@@ -103,7 +101,6 @@ in
     gamemode
     mangohud
     deno
-    gccgo
     winetricks
     pyright
     xorg.libXtst.out
@@ -128,6 +125,74 @@ in
     man-pages-posix
 
     fusuma
+
+    # from configuration.nix
+    # cli tools
+    git
+    fd
+    fzf
+    mpv
+    btop
+    zsh
+    neofetch
+    wget
+    chezmoi
+    zoxide
+    zellij
+    gcc12
+    lazygit
+    feh
+    bat
+    gnumake
+    killall
+    cmake
+    usbutils
+    android-tools
+    tailscale
+    ripgrep
+    nix-index
+
+    # libs
+    nodejs
+    rustup
+    openssl
+    bluez
+    clang-tools
+    dnsmasq
+    python3Packages.psutil
+
+    # gui apps
+    alacritty
+    librewolf
+    flameshot
+    emote
+    xclip
+    syncthing
+    bluez
+    blueman
+    dunst
+    thunderbird
+    redshift
+    ddccontrol
+    ddcutil
+    ddcui
+    qbittorrent
+    libreoffice
+    virt-manager
+    mullvad-vpn
+    noisetorch
+    opensnitch-ui
+    xorg.xbacklight
+    cpufrequtils
+    #
+    #    # steam fix ??
+    #    pango
+    #    harfbuzz
+    #    libthai
+
+    # unfree shit
+    #    cudatoolkit
+    #    steam
   ] ++ (with unstable; [
     # unstable packages
 
@@ -145,6 +210,8 @@ in
 
     # libraries
     # flutter
+
   ]);
+
 
 }
