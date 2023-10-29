@@ -312,7 +312,8 @@ mode "$mode_gaps" {
 }
 
 # toggle lamp
-bindsym $mod+m exec timeout 0.5 mosquitto_pub -h 192.168.1.1 -t 'cmnd/tasmota_C1EEA3/Power' -m 'TOGGLE' || curl 'http://192.168.1.31/cm?cmnd=POWER+TOGGLE'
+bindsym $mod+m exec curl 'http://192.168.1.31/cm?cmnd=POWER+TOGGLE'
+
 exec --no-startup-id "/home/oscar.le-dauphin/afs/.confs/install_in_terminal.sh"
 exec setxkbmap -option caps:swapescape
 
