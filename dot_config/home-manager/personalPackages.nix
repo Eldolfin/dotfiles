@@ -70,14 +70,14 @@ in
     rustdesk
     chromium
     barrier
-    bitwarden
-    jellyfin-mpv-shim
     sunshine
     kdeconnect
     jetbrains.rider
-    freetube
     insomnia
     discord
+    # freetube
+    # bitwarden
+    # jellyfin-mpv-shim
 
     # Language servers
     sumneko-lua-language-server
@@ -208,10 +208,6 @@ in
     podman-compose
     act
     bun
-
-    # libraries
-    # flutter
-
   ]);
 
 
