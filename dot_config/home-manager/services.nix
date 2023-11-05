@@ -7,13 +7,17 @@
       enable = true;
       shadow = true;
       inactiveOpacity = 0.97;
-      opacityRules = [ "100:class_g = 'polybar'" ];
+      opacityRules = [ "100:class_g = 'i3lock'" ];
       fade = true;
       fadeSteps = [ 0.2 0.2 ];
       backend = "glx";
       settings = {
         "corner-radius" = 10;
         "rounded-corners-exclude" = [
+          "window_type = 'dock'"
+          "window_type = 'desktop'"
+        ];
+        "blur-background-exclude" = [
           "window_type = 'dock'"
           "window_type = 'desktop'"
         ];

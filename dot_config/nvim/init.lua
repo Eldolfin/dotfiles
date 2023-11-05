@@ -36,11 +36,11 @@ nvim_lsp['lua_ls'].setup {
 }
 
 nvim_lsp['clangd'].setup {
-    cmd = { '/run/current-system/sw/bin/clangd' },
+    cmd = { '/home/oscar/.nix-profile/bin/clangd' },
 }
 
 nvim_lsp['rust_analyzer'].setup {
-    cmd = { '/run/current-system/sw/bin/rust-analyzer' },
+    cmd = { '/home/oscar/.nix-profile/bin/rust-analyzer' },
 }
 
 nvim_lsp['rnix'].setup {

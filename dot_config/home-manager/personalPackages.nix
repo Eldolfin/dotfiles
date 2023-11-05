@@ -49,6 +49,7 @@ in
     cron
     sunshine
     vim
+    unzip
 
     # graphical programs
     jellyfin-media-player
