@@ -153,6 +153,7 @@ in
     tailscale
     ripgrep
     nix-index
+    ltrace
 
     # libs
     nodejs
