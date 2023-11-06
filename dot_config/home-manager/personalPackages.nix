@@ -163,6 +163,9 @@ in
     clang-tools
     dnsmasq
     python3Packages.psutil
+    criterion
+    gtest
+    gcovr
 
     # gui apps
     alacritty
