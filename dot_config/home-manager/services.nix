@@ -7,7 +7,7 @@
       enable = true;
       shadow = true;
       inactiveOpacity = 0.97;
-      opacityRules = [ "100:class_g = 'i3lock'" ];
+      opacityRules = [ "100:class_g = 'polybar'" ];
       fade = true;
       fadeSteps = [ 0.2 0.2 ];
       backend = "glx";
@@ -21,6 +21,7 @@
           "window_type = 'dock'"
           "window_type = 'desktop'"
         ];
+
       };
     };
 

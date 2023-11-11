@@ -4,11 +4,6 @@ let
   unstable = import <unstable> { };
 in
 {
-  services = {
-    xserver = {
-      xkbOptions = "caps:swapescape";
-    };
-  };
   home.packages = with pkgs; [
     # DE
     picom
