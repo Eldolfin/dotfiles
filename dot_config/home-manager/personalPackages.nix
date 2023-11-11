@@ -4,6 +4,11 @@ let
   unstable = import <unstable> { };
 in
 {
+  services = {
+    xserver = {
+      xkbOptions = "caps:swapescape";
+    };
+  };
   home.packages = with pkgs; [
     # DE
     picom
@@ -60,9 +65,6 @@ in
     ckb-next
     corectrl
     android-studio
-    rofi
-    rofi-bluetooth
-    rofi-power-menu
     lutris
     copyq
     godot_4
