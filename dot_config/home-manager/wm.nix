@@ -5,5 +5,6 @@
     rofi
     rofi-bluetooth
     rofi-power-menu
+    slock
   ];
 }
