@@ -119,6 +119,7 @@ in
     luajitPackages.luarocks
     graphviz
     parallel
+    black
 
     # font
     meslo-lgs-nf
