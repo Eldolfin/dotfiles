@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# android connection
+dbus-daemon --session --address="unix:path=$XDG_RUNTIME_DIR/bus" &
+kdeconnect-indicator &
+
+# corsair keyboard control
+sudo ckb-next-daemon &
+ckb-next -b &
+
+# clipboard manager
+copyq --start-server &
+
+disown
