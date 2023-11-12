@@ -1,5 +1,15 @@
 #!/bin/sh
 
+#!/usr/bin/env bash
+export SCRIPTPATH="$(
+	cd "$(dirname "$0")"
+	pwd -P
+)"
+$SCRIPTPATH/down
+
+# setup theme
+$SCRIPTPATH/themes/win-xp/up
+
 # android connection
 dbus-daemon --session --address="unix:path=$XDG_RUNTIME_DIR/bus" &
 kdeconnect-indicator &
