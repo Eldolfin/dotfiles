@@ -11,4 +11,7 @@ ckb-next -b &
 # clipboard manager
 copyq --start-server &
 
+# redshift
+redshift-gtk &
+
 disown

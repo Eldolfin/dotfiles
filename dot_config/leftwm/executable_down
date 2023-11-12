@@ -1,0 +1,5 @@
+#!/bin/sh
+
+killall .kdeconnectd-wrapped
+killall .kdeconnect-indicator
+killall redshift-gtk
