@@ -152,6 +152,7 @@ in
     ripgrep
     nix-index
     ltrace
+    bc
 
     # libs
     nodejs
