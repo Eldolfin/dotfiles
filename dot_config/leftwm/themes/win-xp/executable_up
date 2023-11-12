@@ -3,7 +3,6 @@ export SCRIPTPATH="$(
 	cd "$(dirname "$0")"
 	pwd -P
 )"
-ln -s $SCRIPTPATH/down /tmp/leftwm-theme-down
 
 #down the last running theme
 if [ -f "/tmp/leftwm-theme-down" ]; then
@@ -22,7 +21,10 @@ fi
 
 monitor="$(polybar -m | grep +0+0 | sed s/:.*// | tac)"
 leftwm-state -q -n -t $SCRIPTPATH/sizes.liquid | sed -r '/^\s*$/d' | while read -r width x y; do
-	barname="mainbar"
-	barname="mainbarhdpi"
+	if [ $(hostname) = "nixos-portable" ]; then
+		barname="mainbarhdpi"
+	else
+		barname="mainbar"
+	fi
 	monitor=$monitor offsetx=$x width=$width polybar -c $SCRIPTPATH/polybar.config $barname &>/dev/null &
 done
