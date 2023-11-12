@@ -24,4 +24,7 @@ copyq --start-server &
 # redshift
 redshift-gtk &
 
+# remote desktop
+sudo sunshine &
+
 disown

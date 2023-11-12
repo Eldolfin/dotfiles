@@ -4,3 +4,4 @@ killall .kdeconnectd-wrapped
 killall .kdeconnect-indicator
 killall .redshift-wrapped
 killall redshift-gtk
+sudo killall sunshine
