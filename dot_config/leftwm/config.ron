@@ -28,6 +28,7 @@
     scratchpad: [],
     window_rules: [
         (window_class: "copyq", window_title: None, spawn_on_tag: None, spawn_floating: true),
+        (window_title: "emote", spawn_on_tag: None, spawn_floating: true),
     ],
     disable_current_tag_swap: false,
     disable_tile_drag: true,
@@ -49,6 +50,7 @@
         (command: Execute, value: "./.config/i3/scripts/i3-volume/volume -P up 5", modifier: [], key: "XF86XK_AudioRaiseVolume"),
         (command: Execute, value: "./.config/i3/scripts/i3-volume/volume -P down 5", modifier: [], key: "F3"),
         (command: Execute, value: "./.config/i3/scripts/i3-volume/volume -P up 5", modifier: [], key: "F4"),
+        (command: Execute, value: "flameshot gui", modifier: [], key: "Print"),
         (command: CloseWindow, value: "", modifier: ["modkey", "Shift"], key: "q"),
         (command: SoftReload, value: "", modifier: ["modkey", "Shift"], key: "r"),
         (command: MoveToLastWorkspace, value: "", modifier: ["modkey", "Shift"], key: "w"),

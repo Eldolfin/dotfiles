@@ -5,3 +5,4 @@ killall .kdeconnect-indicator
 killall .redshift-wrapped
 killall redshift-gtk
 sudo killall sunshine
+killall .emote-wrapped

@@ -27,4 +27,7 @@ redshift-gtk &
 # remote desktop
 sudo sunshine &
 
+# emojis window
+emote &
+
 disown

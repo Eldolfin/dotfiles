@@ -1,5 +1,6 @@
 -- manual lsp installs, because nix
 local nvim_lsp = require("lspconfig")
+
 nvim_lsp["pylsp"].setup({
   cmd = { "/home/oscar/.nix-profile/bin/pylsp" },
 })
@@ -16,9 +17,12 @@ nvim_lsp["clangd"].setup({
   cmd = { "/home/oscar/.nix-profile/bin/clangd" },
 })
 
-nvim_lsp["rust_analyzer"].setup({
-  cmd = { "/home/oscar/.nix-profile/bin/rust-analyzer" },
-})
+local rt = require("rust-tools")
+-- this is to avoir overwriting rust-tools configs
+rt.config.options.server.cmd = { "/home/oscar/.nix-profile/bin/rust-analyzer" }
+-- nvim_lsp["rust_analyzer"].setup({
+--   cmd = { "/home/oscar/.nix-profile/bin/rust-analyzer" },
+-- })
 
 nvim_lsp["rnix"].setup({
   cmd = { "/home/oscar/.nix-profile/bin/rnix-lsp" },
