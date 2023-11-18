@@ -52,6 +52,7 @@ in
     unzip
 
     # graphical programs
+    arduino
     jellyfin-media-player
     prismlauncher
     virt-manager
