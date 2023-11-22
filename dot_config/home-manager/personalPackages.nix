@@ -52,7 +52,6 @@ in
     unzip
 
     # graphical programs
-    arduino
     jellyfin-media-player
     prismlauncher
     virt-manager
@@ -67,7 +66,7 @@ in
     gimp
     mumble
     rustdesk
-    chromium
+    ungoogled-chromium
     barrier
     sunshine
     kdeconnect
