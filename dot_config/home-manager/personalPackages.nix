@@ -67,6 +67,7 @@ in
     mumble
     rustdesk
     ungoogled-chromium
+    arduino
     barrier
     sunshine
     kdeconnect
