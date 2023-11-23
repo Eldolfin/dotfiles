@@ -30,4 +30,7 @@ sudo sunshine &
 # emojis window
 emote &
 
+killall flameshot
+flameshot &
+
 disown

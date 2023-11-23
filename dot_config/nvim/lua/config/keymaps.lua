@@ -39,3 +39,5 @@ if vim.g.neovide then
   end)
   vim.o.guifont = "MesloLGS NF:h14" -- text below applies for VimScript
 end
+
+vim.keymap.set("n", "<leader><F5>", vim.cmd.UndotreeToggle)
