@@ -28,7 +28,7 @@
     scratchpad: [],
     window_rules: [
         (window_class: "copyq", window_title: None, spawn_on_tag: None, spawn_floating: true),
-        (window_title: "emote", spawn_on_tag: None, spawn_floating: true),
+        (window_class: None, window_title: "emote", spawn_on_tag: None, spawn_floating: true),
     ],
     disable_current_tag_swap: false,
     disable_tile_drag: true,
@@ -112,6 +112,7 @@
         (command: IncreaseMainWidth, value: "1", modifier: ["modkey"], key: "i"),
         (command: DecreaseMainWidth, value: "1", modifier: ["modkey"], key: "o"),
         (command: ToggleFullScreen, value: "", modifier: ["modkey"], key: "f"),
+        (command: Execute, value: "alacritty -e nvim", modifier: ["modkey"], key: "n"),
     ],
     workspaces: [],
 )

@@ -111,7 +111,6 @@ in
     vscodium
     dbeaver
     rnix-lsp
-    criterion
     python310Packages.bpython
     tree-sitter
     luajitPackages.luarocks
@@ -133,6 +132,7 @@ in
     fd
     fzf
     mpv
+    vlc
     btop
     zsh
     neofetch
@@ -154,6 +154,7 @@ in
     nix-index
     ltrace
     bc
+    apksigner
 
     # libs
     nodejs
