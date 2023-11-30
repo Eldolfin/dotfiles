@@ -14,7 +14,7 @@ nvim_lsp["lua_ls"].setup({
 })
 
 nvim_lsp["clangd"].setup({
-  cmd = { "/home/oscar/.nix-profile/bin/clangd" },
+  cmd = { vim.fn.expand('$HOME/.nix-profile/bin/clangd') },
 })
 
 local rt = require("rust-tools")
