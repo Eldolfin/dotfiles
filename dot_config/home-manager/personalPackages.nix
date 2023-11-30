@@ -110,7 +110,6 @@ in
     graalvm17-ce
     vscodium
     dbeaver
-    rnix-lsp
     python310Packages.bpython
     tree-sitter
     luajitPackages.luarocks
@@ -191,11 +190,10 @@ in
     opensnitch-ui
     xorg.xbacklight
     cpufrequtils
-    #
-    #    # steam fix ??
-    #    pango
-    #    harfbuzz
-    #    libthai
+
+    # lsp
+    rnix-lsp
+    sqls
 
     # unfree shit
     #    cudatoolkit
