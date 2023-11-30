@@ -9,6 +9,7 @@
     polybarFull
 
     # cli tools
+    clang
     tealdeer
     skim
     jq
