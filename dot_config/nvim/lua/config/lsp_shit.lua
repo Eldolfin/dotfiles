@@ -5,9 +5,9 @@ nvim_lsp["pylsp"].setup({
   cmd = { "/home/oscar/.nix-profile/bin/pylsp" },
 })
 
-nvim_lsp["sqls"].setup({
-  cmd = { vim.fn.expand("$HOME/.nix-profile/bin/sqls") },
-})
+-- nvim_lsp["sqls"].setup({
+--   cmd = { vim.fn.expand("$HOME/.nix-profile/bin/sqls") },
+-- })
 
 nvim_lsp["lua_ls"].setup({
   cmd = { vim.fn.expand("$HOME/.nix-profile/bin/lua-language-server") },

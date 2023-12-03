@@ -91,7 +91,6 @@ in
     # clang
     boost
     armadillo
-    pkg-config
     pre-commit
     stdenv.cc.cc.lib
     luajit
@@ -107,15 +106,21 @@ in
     mold
     obs-studio
     handbrake
-    graalvm17-ce
+    graalvm-ce
     vscodium
     dbeaver
-    python310Packages.bpython
     tree-sitter
     luajitPackages.luarocks
     graphviz
     parallel
     black
+    python311Packages.bpython
+    python311Packages.scipy
+    python311Packages.matplotlib
+    python311Packages.jupyter-core
+    # python311Packages.notebook
+    python311Packages.psutil
+    nix-tree
 
     # font
     meslo-lgs-nf
@@ -162,13 +167,13 @@ in
     bluez
     clang-tools
     dnsmasq
-    python3Packages.psutil
     criterion
     gtest
     gcovr
 
     # gui apps
     alacritty
+    kitty
     librewolf
     flameshot
     emote
@@ -213,6 +218,4 @@ in
     act
     bun
   ]);
-
-
 }

@@ -2,6 +2,7 @@
 {
   imports = [
     ./wm.nix
+    ./shell.nix
   ];
   home.packages = with pkgs; [
     # i3 etc
@@ -18,7 +19,7 @@
     ncdu
     calcurse
     git-lfs
-    exa
+    eza
     fd
     fzf
     btop
@@ -58,19 +59,19 @@
     libnotify
     boost
     armadillo
-    pkgconfig
+    pkg-config
     stdenv.cc.cc.lib
     luajit
     stylua
 
     # python packages
-    (python310.withPackages (ps: with ps; [
-      python-lsp-server
-      ruff-lsp
-      pynvim
-      pip
-      numpy
-    ]))
+    python311
+    python311Packages.numpy
+    python311Packages.python-lsp-server
+    python311Packages.ruff-lsp
+    python311Packages.pynvim
+    python311Packages.pip
+
 
     # font
     meslo-lgs-nf
