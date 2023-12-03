@@ -239,6 +239,10 @@ format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
 [scala]
 symbol = " "
 
+[cmd_duration]
+style = "bg:#212736"
+format = '[took [$duration](fg:#769ff0 bg:#212736)]($style)'
+
 [time]
 format = '[[  $time ](fg:#a0a9cb bg:#1d2230)]($style)'
 disabled = false
