@@ -143,6 +143,7 @@ in
     wget
     chezmoi
     zoxide
+    eza
     zellij
     gcc12
     lazygit
@@ -195,6 +196,7 @@ in
     opensnitch-ui
     xorg.xbacklight
     cpufrequtils
+    pkg-config
 
     # lsp
     rnix-lsp

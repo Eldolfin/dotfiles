@@ -1,8 +1,14 @@
 { pkgs, ... }:
+
+let
+  unstable = import <nixpkgs-unstable> { };
+  home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/master.tar.gz";
+in
 {
   imports = [
     ./wm.nix
     ./shell.nix
+
   ];
   home.packages = with pkgs; [
     # i3 etc
@@ -19,7 +25,6 @@
     ncdu
     calcurse
     git-lfs
-    eza
     fd
     fzf
     btop
@@ -54,13 +59,12 @@
     # Language servers
     lua-language-server
     mypy
-    postgres-lsp
+    sqlfluff
 
     # libraries
     libnotify
     boost
     armadillo
-    pkg-config
     stdenv.cc.cc.lib
     luajit
     stylua
@@ -77,5 +81,8 @@
     # font
     meslo-lgs-nf
     fusuma
+
   ];
+
+
 }

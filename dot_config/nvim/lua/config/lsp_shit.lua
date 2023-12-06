@@ -9,6 +9,12 @@ nvim_lsp["pylsp"].setup({
 --   cmd = { vim.fn.expand("$HOME/.nix-profile/bin/sqls") },
 -- })
 
+nvim_lsp["sqlfluff"].setup({
+  cmd = { vim.fn.expand("$HOME/.nix-profile/bin/sqlfluff") },
+  filetypes = { "sql" },
+  single_file_support = true,
+})
+
 nvim_lsp["lua_ls"].setup({
   cmd = { vim.fn.expand("$HOME/.nix-profile/bin/lua-language-server") },
 })
@@ -36,10 +42,10 @@ nvim_lsp["pyright"].setup({
   cmd = { "/home/oscar/.nix-profile/bin/pyright-langserver", "--stdio" },
 })
 
-nvim_lsp["postgres_lsp"].setup({
-  name = "postgres_lsp",
-  cmd = { "postgres_lsp" },
-  filetypes = { "sql" },
-  single_file_support = true,
-  -- root_dir = util.root_pattern("root-file.txt"),
-})
+-- nvim_lsp["postgres_lsp"].setup({
+--   name = "postgres_lsp",
+--   cmd = { "postgres_lsp" },
+--   filetypes = { "sql" },
+--   single_file_support = true,
+--   -- root_dir = util.root_pattern("root-file.txt"),
+-- })

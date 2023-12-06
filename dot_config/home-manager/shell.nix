@@ -38,8 +38,8 @@
         vi = "nvim";
       };
     };
-    carapace.enable = true;
-    carapace.enableNushellIntegration = true;
+    # carapace.enable = true;
+    # carapace.enableNushellIntegration = true;
 
     starship = {
       enable = true;
