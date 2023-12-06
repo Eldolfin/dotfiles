@@ -35,3 +35,11 @@ nvim_lsp["omnisharp"].setup({
 nvim_lsp["pyright"].setup({
   cmd = { "/home/oscar/.nix-profile/bin/pyright-langserver", "--stdio" },
 })
+
+nvim_lsp["postgres_lsp"].setup({
+  name = "postgres_lsp",
+  cmd = { "postgres_lsp" },
+  filetypes = { "sql" },
+  single_file_support = true,
+  -- root_dir = util.root_pattern("root-file.txt"),
+})

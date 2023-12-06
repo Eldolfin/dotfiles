@@ -54,6 +54,7 @@
     # Language servers
     lua-language-server
     mypy
+    postgres-lsp
 
     # libraries
     libnotify
