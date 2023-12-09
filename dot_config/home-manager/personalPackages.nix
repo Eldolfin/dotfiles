@@ -72,6 +72,7 @@ in
     sunshine
     kdeconnect
     jetbrains.rider
+    jetbrains.datagrip
     insomnia
     discord
     # freetube
