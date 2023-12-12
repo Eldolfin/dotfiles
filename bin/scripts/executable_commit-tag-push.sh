@@ -6,6 +6,8 @@ fi
 
 TAG=$1
 
+set -xe
+
 git commit -m "$TAG"
 git tag -ma "$TAG"
 git push --follow-tags
