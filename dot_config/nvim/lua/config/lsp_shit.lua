@@ -23,9 +23,9 @@ nvim_lsp["clangd"].setup({
   cmd = { vim.fn.expand("$HOME/.nix-profile/bin/clangd") },
 })
 
-local rt = require("rust-tools")
+-- local rt = require("rust-tools")
 -- this is to avoir overwriting rust-tools configs
-rt.config.options.server.cmd = { "/home/oscar/.nix-profile/bin/rust-analyzer" }
+-- rt.config.options.server.cmd = { "/home/oscar/.nix-profile/bin/rust-analyzer" }
 -- nvim_lsp["rust_analyzer"].setup({
 --   cmd = { "/home/oscar/.nix-profile/bin/rust-analyzer" },
 -- })
