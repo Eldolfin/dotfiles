@@ -51,8 +51,8 @@ floating_modifier $mod
 bindsym $mod+Return exec alacritty
 {{ if or (eq .chezmoi.hostname "nixos-tour") (eq .chezmoi.hostname "nixos-portable") -}}
 # start librewolf
-bindsym $mod+w exec librewolf
-bindsym $mod+Shift+w exec librewolf --private-window
+bindsym $mod+e exec librewolf
+bindsym $mod+Shift+e exec librewolf --private-window
 exec --no-startup-id kdeconnect-indicator
 # the daemon for kdeconnect :(
 exec --no-startup-id dbus-daemon --session --address="unix:path=$XDG_RUNTIME_DIR/bus" &
@@ -66,11 +66,12 @@ bindsym --release $mod+n exec neovide --novsync --multigrid
 # A more modern dmenu replacement is rofi:
 bindsym $mod+d exec --no-startup-id ~/.config/rofi/scripts/launcher_t3
 {{ if or (eq .chezmoi.hostname "nixos-tour") (eq .chezmoi.hostname "nixos-portable") -}}
-bindsym $mod+Shift+e exec ~/.config/rofi/scripts/powermenu_t3
+bindsym $mod+Shift+x exec ~/.config/rofi/scripts/powermenu_t3
 {{ else -}}
-bindsym $mod+Shift+e exec "rofi -show p -modi p:'rofi-power-menu'"
+bindsym $mod+Shift+x exec "rofi -show p -modi p:'rofi-power-menu'"
 {{ end -}}
 bindsym $mod+b exec --no-startup-id rofi-bluetooth
+bindsym $mod+Shift+b exec --no-startup-id "bluetoothctl connect 88:C9:E8:42:A0:B1"
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
@@ -110,7 +111,7 @@ bindsym $mod+f fullscreen toggle
 # change container layout (stacked, tabbed, toggle split)
 # bindsym $mod+s layout stacking
 bindsym $mod+z layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+a layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -219,7 +220,7 @@ exec --no-startup-id ~/.screenlayout/normal.sh
 exec --no-startup-id i3-msg 'workspace 2; move workspace to output $other_mon'
 exec --no-startup-id i3-msg 'workspace 1; move workspace to output $primary_mon'
 
-bindsym $mod+Shift+s exec $scripts/i3-display-swap.sh
+bindsym $mod+w exec $scripts/i3-display-swap.sh
 
 {{ end -}}
 
