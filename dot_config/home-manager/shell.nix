@@ -31,15 +31,17 @@
         prepend /home/myuser/.apps |
         append /usr/bin/env
         )
+        $env.EDITOR = nvim
 
         def clone [] { pwd | alacritty -e nu -e $'echo $in'}
       '';
       shellAliases = {
         vi = "nvim";
+        gct = "~/bin/scripts/commit-tag-push.sh";
       };
     };
-    # carapace.enable = true;
-    # carapace.enableNushellIntegration = true;
+    carapace.enable = true;
+    carapace.enableNushellIntegration = true;
 
     starship = {
       enable = true;

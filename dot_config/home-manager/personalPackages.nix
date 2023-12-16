@@ -50,6 +50,7 @@ in
     sunshine
     vim
     unzip
+    emacs
 
     # graphical programs
     jellyfin-media-player
@@ -121,9 +122,13 @@ in
     python311Packages.jupyter-core
     # python311Packages.notebook
     python311Packages.psutil
+    python311Packages.pynvim
+    python311Packages.pip
+    python311Packages.pytest
     nix-tree
 
     # font
+    source-code-pro
     meslo-lgs-nf
 
     man-pages
@@ -147,6 +152,7 @@ in
     eza
     zellij
     gcc12
+    ninja
     lazygit
     feh
     bat
@@ -202,6 +208,13 @@ in
     # lsp
     rnix-lsp
     sqls
+    haskell-language-server
+
+    # Haskell
+    ghc
+
+    # Common lisp
+    sbcl
 
     # unfree shit
     #    cudatoolkit
