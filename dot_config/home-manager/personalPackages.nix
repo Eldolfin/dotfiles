@@ -79,6 +79,8 @@ in
     # freetube
     # bitwarden
     # jellyfin-mpv-shim
+    mattermost-desktop
+
 
     # Language servers
     sumneko-lua-language-server
@@ -109,7 +111,7 @@ in
     obs-studio
     handbrake
     graalvm-ce
-    vscodium
+    vscode
     dbeaver
     tree-sitter
     luajitPackages.luarocks
@@ -126,6 +128,8 @@ in
     python311Packages.pip
     python311Packages.pytest
     nix-tree
+    libguestfs
+    rustdesk
 
     # font
     source-code-pro

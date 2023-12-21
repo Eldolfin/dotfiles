@@ -6,8 +6,8 @@ font:
   size: 16.0
 
 bell:
-  # command:
-  #   program: aplay
-  #   args: ["/home/oscar/Music/sounds/Tink.wav"]
+  command:
+    program: aplay
+    args: ["/home/oscar/Music/sounds/Tink.wav"]
   duration: 30
   color: "#555555"

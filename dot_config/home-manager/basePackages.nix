@@ -13,6 +13,7 @@ in
   home.packages = with pkgs; [
     # i3 etc
     i3lock-fancy-rapid
+    i3blocks
     polybarFull
 
     # cli tools
