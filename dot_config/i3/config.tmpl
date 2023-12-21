@@ -323,4 +323,14 @@ exec setxkbmap -option caps:swapescape
 # exec --no-startup-id sudo sunshine
 {{ end -}}
 
-exec_always ~/.config/polybar/launch.sh
+# exec_always ~/.config/polybar/launch.sh
+
+bar {
+
+  {{ if eq .chezmoi.hostname "nixos-tour" -}}
+  tray_output $primary_mon
+  {{ end -}}
+
+    # position top
+    status_command $statuscmd
+}
