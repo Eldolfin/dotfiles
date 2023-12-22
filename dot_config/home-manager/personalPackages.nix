@@ -132,6 +132,7 @@ in
     rustdesk
     ansible
     vagrant
+    kdocker
 
     # font
     source-code-pro
