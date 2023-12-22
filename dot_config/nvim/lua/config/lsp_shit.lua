@@ -38,9 +38,9 @@ nvim_lsp["omnisharp"].setup({
   cmd = { "/home/oscar/.nix-profile/bin/OmniSharp", "--languageserver", "--hostPID", tostring(vim.fn.getpid()) },
 })
 
-nvim_lsp["pyright"].setup({
-  cmd = { "/home/oscar/.nix-profile/bin/pyright-langserver", "--stdio" },
-})
+-- nvim_lsp["pyright"].setup({
+--   cmd = { "/home/oscar/.nix-profile/bin/pyright-langserver", "--stdio" },
+-- })
 
 -- nvim_lsp["postgres_lsp"].setup({
 --   name = "postgres_lsp",

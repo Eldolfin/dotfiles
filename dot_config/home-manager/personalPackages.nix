@@ -130,6 +130,8 @@ in
     nix-tree
     libguestfs
     rustdesk
+    ansible
+    vagrant
 
     # font
     source-code-pro
