@@ -20,7 +20,7 @@ bindsym --release Shift+XF86AudioNext exec --no-startup-id xdotool key 0xfe53
 floating_modifier $mod
 
 bindsym $mod+Return exec alacritty
-bindsym $mod+minus scratchpad show
+bindsym $mod+g scratchpad show
 {{ if or (eq .chezmoi.hostname "nixos-tour") (eq .chezmoi.hostname "nixos-portable") -}}
 bindsym $mod+e exec librewolf
 bindsym $mod+Shift+e exec librewolf --private-window
