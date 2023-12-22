@@ -20,7 +20,6 @@ bindsym --release Shift+XF86AudioNext exec --no-startup-id xdotool key 0xfe53
 floating_modifier $mod
 
 bindsym $mod+Return exec alacritty
-bindsym $mod+g scratchpad show
 {{ if or (eq .chezmoi.hostname "nixos-tour") (eq .chezmoi.hostname "nixos-portable") -}}
 bindsym $mod+e exec librewolf
 bindsym $mod+Shift+e exec librewolf --private-window
@@ -245,7 +244,7 @@ exec setxkbmap -option caps:swapescape
 
 
 {{ if eq .chezmoi.hostname "nixos-tour" -}}
-# exec --no-startup-id sudo sunshine
+exec --no-startup-id sudo sunshine
 {{ end -}}
 
 # exec_always ~/.config/polybar/launch.sh
