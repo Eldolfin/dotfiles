@@ -133,6 +133,8 @@ in
     ansible
     vagrant
     kdocker
+    gitea-actions-runner
+    tmux
 
     # font
     source-code-pro
