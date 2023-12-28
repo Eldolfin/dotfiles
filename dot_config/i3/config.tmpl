@@ -34,7 +34,7 @@ bindsym --release $mod+n exec alacritty -e nvim
 
 bindsym $mod+d exec --no-startup-id ~/.config/rofi/scripts/launcher_t3
 {{ if or (eq .chezmoi.hostname "nixos-tour") (eq .chezmoi.hostname "nixos-portable") -}}
-bindsym $mod+Shift+x exec ~/.config/rofi/scripts/powermenu_t3
+bindsym $mod+Shift+x exec ~/.config/rofi/scripts/powermenu_t2
 {{ else -}}
 bindsym $mod+Shift+x exec "rofi -show p -modi p:'rofi-power-menu'"
 {{ end -}}
