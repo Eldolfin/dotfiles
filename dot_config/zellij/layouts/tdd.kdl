@@ -7,8 +7,10 @@ layout {
 
     pane split_direction="vertical" {
         pane {
+            name "Code"
             command "nu"
             args "-e" "lazygit status"
+            close_on_exit true
         }
         pane {
             name "Tests"
