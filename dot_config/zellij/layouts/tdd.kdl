@@ -1,0 +1,25 @@
+layout {
+    cwd "/home/oscar/42sh/"
+
+    pane size=1 borderless=true {
+        plugin location="zellij:tab-bar"
+    }
+
+    pane split_direction="vertical" {
+        pane {
+            command "nu"
+            args "-e" "lazygit status"
+        }
+        pane {
+            name "Tests"
+            command "nix-shell" 
+            args "tests/shell.nix" "--run" "tests/watch.sh"
+            size "20%"
+            close_on_exit true
+        }
+    }
+
+    pane size=2 borderless=true {
+        plugin location="zellij:status-bar"
+    }
+}
