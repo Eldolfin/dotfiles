@@ -51,6 +51,7 @@ in
     vim
     unzip
     emacs
+    xorg.xmodmap
 
     # graphical programs
     jellyfin-media-player
