@@ -1,0 +1,4 @@
+# BEGIN_KITTY_THEME
+# Adapta Nokto Maia
+include current-theme.conf
+# END_KITTY_THEME
