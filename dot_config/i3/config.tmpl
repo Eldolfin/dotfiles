@@ -4,7 +4,7 @@ set $scripts ~/.config/i3/scripts
 set $primary_mon HDMI-0
 set $other_mon DVI-D-0
 
-bindsym $mod+t exec alacritty -o font.size=10 -e btop -p 1
+bindsym $mod+t exec kitty btop -p 1
 
 font pango:MesloLGS NF 8
 
@@ -19,7 +19,7 @@ bindsym --release Shift+XF86AudioNext exec --no-startup-id xdotool key 0xfe53
 
 floating_modifier $mod
 
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec kitty
 {{ if or (eq .chezmoi.hostname "nixos-tour") (eq .chezmoi.hostname "nixos-portable") -}}
 bindsym $mod+e exec librewolf
 bindsym $mod+Shift+e exec librewolf --private-window
@@ -30,7 +30,7 @@ exec --no-startup-id kdocker thunderbird
 bindsym $mod+w exec firefox
 bindsym $mod+Shift+w exec firefox --private-window
 {{ end -}}
-bindsym --release $mod+n exec alacritty -e nvim
+bindsym --release $mod+n exec kitty zellij --layout tdd
 
 bindsym $mod+d exec --no-startup-id ~/.config/rofi/scripts/launcher_t3
 {{ if or (eq .chezmoi.hostname "nixos-tour") (eq .chezmoi.hostname "nixos-portable") -}}
