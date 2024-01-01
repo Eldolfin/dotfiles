@@ -89,6 +89,7 @@ in
 
 
     # libraries
+    libllvm
     gnumake
     libnotify
     dotnet-sdk_7
@@ -123,7 +124,7 @@ in
     python311Packages.scipy
     python311Packages.matplotlib
     python311Packages.jupyter-core
-    # python311Packages.notebook
+    python311Packages.notebook
     python311Packages.psutil
     python311Packages.pynvim
     python311Packages.pip

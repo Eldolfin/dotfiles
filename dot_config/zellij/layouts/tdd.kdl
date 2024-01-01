@@ -8,15 +8,15 @@ layout {
     pane split_direction="vertical" {
         pane {
             name "Code"
-            command "nu"
-            args "-e" "lazygit status"
+            command "nix-shell"
+            args "tests/shell.nix" "--run" "nu -e 'lazygit status'"
             close_on_exit true
         }
         pane {
             name "Tests"
-            command "nix-shell" 
+            command "nix-shell"
             args "tests/shell.nix" "--run" "tests/watch.sh"
-            size "20%"
+            size "30%"
             close_on_exit true
         }
     }
