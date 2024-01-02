@@ -21,10 +21,6 @@ fi
 
 monitor="$(polybar -m | grep +0+0 | sed s/:.*// | tac)"
 leftwm-state -q -n -t $SCRIPTPATH/sizes.liquid | sed -r '/^\s*$/d' | while read -r width x y; do
-	if [ $(hostname) = "nixos-portable" ]; then
-		barname="mainbarhdpi"
-	else
-		barname="mainbar"
-	fi
+	barname="mainbar"
 	monitor=$monitor offsetx=$x width=$width polybar -c $SCRIPTPATH/polybar.config $barname &>/dev/null &
 done
