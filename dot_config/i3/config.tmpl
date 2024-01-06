@@ -190,8 +190,10 @@ set $volumeargs -P -n -t $statuscmd -u $statussig
 bindsym XF86AudioRaiseVolume        exec --no-startup-id $volumepath/volume $volumeargs up $volumestep -y
 bindsym XF86AudioLowerVolume exec --no-startup-id $volumepath/volume $volumeargs down $volumestep -y
 bindsym XF86AudioMute        exec --no-startup-id $volumepath/volume $volumeargs mute -y
+{{ if eq .chezmoi.hostname "nixos-portable" -}}
 bindsym F2 exec --no-startup-id USE_AMIXER=1 $volumepath/volume $volumeargs down $volumestep -y
 bindsym F3 exec --no-startup-id USE_AMIXER=1 $volumepath/volume $volumeargs up $volumestep -y
+{{ end -}}
 
 # picom composite manager
 exec --no-startup-id picom -b # too slow when gaming :(
