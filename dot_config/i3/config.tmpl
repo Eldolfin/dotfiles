@@ -187,9 +187,16 @@ set $statussig SIGUSR1
 set $volumestep 5
 set $volumeargs -P -n -t $statuscmd -u $statussig
 
-bindsym XF86AudioRaiseVolume        exec --no-startup-id $volumepath/volume $volumeargs up $volumestep -y
-bindsym XF86AudioLowerVolume exec --no-startup-id $volumepath/volume $volumeargs down $volumestep -y
-bindsym XF86AudioMute        exec --no-startup-id $volumepath/volume $volumeargs mute -y
+# bindsym XF86AudioRaiseVolume        exec --no-startup-id $volumepath/volume $volumeargs up $volumestep -y
+# bindsym XF86AudioLowerVolume exec --no-startup-id $volumepath/volume $volumeargs down $volumestep -y
+# bindsym XF86AudioMute        exec --no-startup-id $volumepath/volume $volumeargs mute -y
+
+# with kde
+bindsym XF86AudioRaiseVolume exec --no-startup-id qdbus org.kde.kglobalaccel /component/kmix invokeShortcut "increase_volume"
+bindsym XF86AudioLowerVolume exec --no-startup-id qdbus org.kde.kglobalaccel /component/kmix invokeShortcut "decrease_volume"
+bindsym XF86AudioMute exec --no-startup-id qdbus org.kde.kglobalaccel /component/kmix invokeShortcut "mute"
+bindsym XF86AudioMicMute exec --no-startup-id qdbus org.kde.kglobalaccel /component/kmix invokeShortcut "mic_mute"
+
 {{ if eq .chezmoi.hostname "nixos-portable" -}}
 bindsym F2 exec --no-startup-id USE_AMIXER=1 $volumepath/volume $volumeargs down $volumestep -y
 bindsym F3 exec --no-startup-id USE_AMIXER=1 $volumepath/volume $volumeargs up $volumestep -y
