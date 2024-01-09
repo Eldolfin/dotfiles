@@ -7,10 +7,13 @@ in
 {
   imports = [
     ./wm.nix
-    ./shell.nix
+    # ./shell.nix
 
   ];
+  programs.starship.enable = true;
   home.packages = with pkgs; [
+    kitty
+
     # i3 etc
     i3lock-fancy-rapid
     i3blocks

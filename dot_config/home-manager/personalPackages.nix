@@ -192,7 +192,6 @@ in
 
     # gui apps
     alacritty
-    kitty
     librewolf
     flameshot
     emote
