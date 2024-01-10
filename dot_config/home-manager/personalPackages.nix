@@ -77,7 +77,7 @@ in
     jetbrains.datagrip
     insomnia
     discord
-    # freetube
+    freetube
     # bitwarden
     # jellyfin-mpv-shim
     mattermost-desktop
@@ -192,6 +192,7 @@ in
 
     # gui apps
     alacritty
+    kitty
     librewolf
     flameshot
     emote
