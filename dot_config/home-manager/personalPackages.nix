@@ -77,7 +77,7 @@ in
     jetbrains.datagrip
     insomnia
     discord
-    freetube
+    # freetube
     # bitwarden
     # jellyfin-mpv-shim
     mattermost-desktop
@@ -215,6 +215,7 @@ in
     xorg.xbacklight
     cpufrequtils
     pkg-config
+    whatsapp-for-linux
 
     # lsp
     rnix-lsp
