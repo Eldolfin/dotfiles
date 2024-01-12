@@ -77,7 +77,7 @@ in
     jetbrains.datagrip
     insomnia
     discord
-    # freetube
+    freetube
     # bitwarden
     # jellyfin-mpv-shim
     mattermost-desktop
