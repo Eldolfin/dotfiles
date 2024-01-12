@@ -1,3 +1,4 @@
+bind 'set show-all-if-ambiguous on'
 export EDITOR=nvim
 
 source $HOME/.config/bash/aliases.sh
