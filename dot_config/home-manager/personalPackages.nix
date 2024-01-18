@@ -81,6 +81,7 @@ in
     # bitwarden
     # jellyfin-mpv-shim
     mattermost-desktop
+    nextcloud-client
 
 
     # Language servers

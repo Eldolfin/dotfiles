@@ -1,5 +1,5 @@
 return {
   "mbbill/undotree",
   lazy = false,
-  enabled = false,
+  enabled = true,
 }
