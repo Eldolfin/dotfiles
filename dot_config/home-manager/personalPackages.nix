@@ -4,6 +4,10 @@ let
   unstable = import <unstable> { };
 in
 {
+
+  imports = [
+    ./lazyvim.nix
+  ];
   home.packages = with pkgs; [
     # DE
     picom
@@ -52,6 +56,7 @@ in
     unzip
     emacs
     xorg.xmodmap
+    ollama
 
     # graphical programs
     jellyfin-media-player
