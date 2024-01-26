@@ -2,7 +2,7 @@
 local nvim_lsp = require("lspconfig")
 
 nvim_lsp["pylsp"].setup({
-  cmd = { "/home/oscar/.nix-profile/bin/pylsp" },
+	cmd = { "/home/oscar/.nix-profile/bin/pylsp" },
 })
 
 -- nvim_lsp["sqls"].setup({
@@ -16,11 +16,18 @@ nvim_lsp["pylsp"].setup({
 -- })
 
 nvim_lsp["lua_ls"].setup({
-  cmd = { vim.fn.expand("$HOME/.nix-profile/bin/lua-language-server") },
+	cmd = { vim.fn.expand("$HOME/.nix-profile/bin/lua-language-server") },
 })
 
 nvim_lsp["clangd"].setup({
-  cmd = { vim.fn.expand("$HOME/.nix-profile/bin/clangd") },
+	cmd = { vim.fn.expand("$HOME/.nix-profile/bin/clangd") },
+	capabilities = {
+		offsetEncoding = { "utf-16" },
+	},
+})
+
+nvim_lsp["gopls"].setup({
+	cmd = { vim.fn.expand("$HOME/.nix-profile/bin/gopls") },
 })
 
 -- local rt = require("rust-tools")
@@ -31,11 +38,11 @@ nvim_lsp["clangd"].setup({
 -- })
 
 nvim_lsp["rnix"].setup({
-  cmd = { "/home/oscar/.nix-profile/bin/rnix-lsp" },
+	cmd = { "/home/oscar/.nix-profile/bin/rnix-lsp" },
 })
 
 nvim_lsp["omnisharp"].setup({
-  cmd = { "/home/oscar/.nix-profile/bin/OmniSharp", "--languageserver", "--hostPID", tostring(vim.fn.getpid()) },
+	cmd = { "/home/oscar/.nix-profile/bin/OmniSharp", "--languageserver", "--hostPID", tostring(vim.fn.getpid()) },
 })
 
 -- nvim_lsp["pyright"].setup({

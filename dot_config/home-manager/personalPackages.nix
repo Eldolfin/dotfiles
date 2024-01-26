@@ -222,11 +222,16 @@ in
     cpufrequtils
     pkg-config
     whatsapp-for-linux
+    jetbrains.clion
+    steam
 
     # lsp
     rnix-lsp
     sqls
     haskell-language-server
+    go
+    gopls
+    gotools
 
     # Haskell
     ghc
