@@ -80,6 +80,8 @@ in
     kdeconnect
     jetbrains.rider
     jetbrains.datagrip
+    jetbrains.idea-community
+    jetbrains.clion
     insomnia
     discord
     freetube
@@ -222,7 +224,6 @@ in
     cpufrequtils
     pkg-config
     whatsapp-for-linux
-    jetbrains.clion
     steam
 
     # lsp
@@ -232,6 +233,7 @@ in
     go
     gopls
     gotools
+
 
     # Haskell
     ghc

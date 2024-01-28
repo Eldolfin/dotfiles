@@ -45,6 +45,10 @@ nvim_lsp["omnisharp"].setup({
 	cmd = { "/home/oscar/.nix-profile/bin/OmniSharp", "--languageserver", "--hostPID", tostring(vim.fn.getpid()) },
 })
 
+nvim_lsp["hls"].setup({
+	cmd = { "haskell-language-server-wrapper", "--lsp" },
+})
+
 -- nvim_lsp["pyright"].setup({
 --   cmd = { "/home/oscar/.nix-profile/bin/pyright-langserver", "--stdio" },
 -- })
