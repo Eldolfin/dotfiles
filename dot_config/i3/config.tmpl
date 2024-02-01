@@ -180,9 +180,15 @@ set $statussig SIGUSR1
 set $volumestep 5
 set $volumeargs -P -n -t $statuscmd -u $statussig
 
-bindsym XF86AudioRaiseVolume        exec --no-startup-id $volumepath/volume $volumeargs up $volumestep -y
-bindsym XF86AudioLowerVolume exec --no-startup-id $volumepath/volume $volumeargs down $volumestep -y
-bindsym XF86AudioMute        exec --no-startup-id $volumepath/volume $volumeargs mute -y
+# when using pulseaudio
+# bindsym XF86AudioRaiseVolume        exec --no-startup-id $volumepath/volume $volumeargs up $volumestep -y
+# bindsym XF86AudioLowerVolume exec --no-startup-id $volumepath/volume $volumeargs down $volumestep -y
+# bindsym XF86AudioMute        exec --no-startup-id $volumepath/volume $volumeargs mute -y
+
+# when using pipewire
+bindsym XF86AudioRaiseVolume exec pamixer -i 5
+bindsym XF86AudioRaiseVolume exec pamixer -d 5
+bindsym XF86AudioMute        exec pamixer -t
 
 {{ if eq .chezmoi.hostname "nixos-portable" -}}
 bindsym F2 exec --no-startup-id USE_AMIXER=1 $volumepath/volume $volumeargs down $volumestep -y
