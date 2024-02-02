@@ -14,9 +14,6 @@ in
   home.packages = with pkgs; [
     kitty
 
-    # switch emulator
-    yuzu
-
     # i3 etc
     i3lock-fancy-rapid
     i3blocks

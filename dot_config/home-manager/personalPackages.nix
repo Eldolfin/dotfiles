@@ -57,6 +57,7 @@ in
     emacs
     xorg.xmodmap
     ollama
+    pamixer
 
     # graphical programs
     jellyfin-media-player
