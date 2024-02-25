@@ -187,3 +187,7 @@ setopt glob_dots     # no special treatment for file names with a leading dot
 # Load Angular CLI autocompletion.
 # source <(ng completion script)
 #
+
+autoload -Uz compinit
+zstyle ':completion:*' menu select
+fpath+=~/.zfunc

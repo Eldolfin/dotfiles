@@ -1,6 +1,4 @@
 layout {
-    cwd "/home/oscar/42sh/"
-
     pane size=1 borderless=true {
         plugin location="zellij:tab-bar"
     }
@@ -8,14 +6,7 @@ layout {
     pane split_direction="vertical" {
         pane {
             name "Code"
-            command "nix-shell"
-            args "tests/shell.nix" "--run"  "bash"
-        }
-        pane {
-            name "Tests"
-            command "nix-shell"
-            args "tests/shell.nix" "--run"  "tests/watch.sh"
-            size "30%"
+            command "nvim"
             close_on_exit true
         }
     }

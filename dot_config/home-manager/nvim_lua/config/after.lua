@@ -1,3 +1,4 @@
+require("config.neotest_config")
 -- enable folding
 local opt = vim.opt
 opt.foldmethod = "expr"

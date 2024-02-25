@@ -41,7 +41,6 @@ in
     lazygit
     bat
     ripgrep
-    neovim
     cargo-watch
     inotify-tools
     scrot # full screen-shot
@@ -74,12 +73,6 @@ in
     stylua
 
     # python packages
-    python311
-    python311Packages.numpy
-    python311Packages.python-lsp-server
-    python311Packages.ruff-lsp
-    python311Packages.pynvim
-    python311Packages.pip
 
 
     # font

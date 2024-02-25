@@ -15,6 +15,7 @@ alias gcsm="git commit -m"
 
 alias bell="tput bel"
 alias make="make -j"
+alias clone='$TERM --working-directory "$PWD" &!'
 
 mkcd() {
 	mkdir -p $@ && cd ${@:$#}
