@@ -13,7 +13,7 @@ in
   programs.starship.enable = true;
   home.packages = with pkgs; [
     # kitty
-
+neovim
     # i3 etc
     i3lock-fancy-rapid
     i3blocks
