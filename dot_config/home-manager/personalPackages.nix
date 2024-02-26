@@ -85,16 +85,10 @@ in
       insomnia
       vesktop
       freetube
-      # bitwarden
+      bitwarden
       # jellyfin-mpv-shim
       mattermost-desktop
       nextcloud-client
-
-
-      # Language servers
-      sumneko-lua-language-server
-      mypy
-
 
       # libraries
       libllvm
@@ -215,12 +209,7 @@ in
       whatsapp-for-linux
       steam
 
-      # lsp
-      rnix-lsp
-      sqls
-      haskell-language-server
       go
-      gopls
       gotools
 
 
@@ -238,9 +227,6 @@ in
 
       # graphical programs
       blender
-
-      # Language servers
-      ruff
 
       # cli
       # neovim
