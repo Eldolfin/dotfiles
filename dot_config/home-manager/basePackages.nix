@@ -12,22 +12,22 @@ in
   ];
   programs.starship.enable = true;
   home.packages = with pkgs; [
-    kitty
+    # kitty
 
     # i3 etc
     i3lock-fancy-rapid
     i3blocks
-    polybarFull
+    # polybarFull
 
     # cli tools
+    eza
     clang-tools
-    tealdeer
+    # tealdeer
     skim
     jq
     joshuto
     dive
     ncdu
-    calcurse
     git-lfs
     fd
     fzf
@@ -43,9 +43,9 @@ in
     ripgrep
     cargo-watch
     inotify-tools
-    scrot # full screen-shot
+    # scrot # full screen-shot
     cloc
-    wol
+    # wol
 
     # graphical programs
     rofi
