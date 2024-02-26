@@ -6,14 +6,15 @@ in
 {
 
   imports = [
-    # ./lazyvim.nix # switched to nixvim
+    ./lazyvim.nix # switched to nixvim
     ./pkgs/dev.nix
-    ./pkgs/nixvim.nix
+    # ./pkgs/nixvim.nix
   ];
   home.packages = with pkgs;
     [
       # DE
       picom
+      neovim
 
       # cli tools
       tealdeer

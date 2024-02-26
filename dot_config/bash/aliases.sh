@@ -18,6 +18,7 @@ alias make="make -j"
 alias clone='$TERM --working-directory "$PWD" &!'
 
 alias gctp=~/bin/scripts/commit-tag-push.sh
+alias homeswitch=~/bin/scripts/homeswitch.sh
 
 mkcd() {
 	mkdir -p $@ && cd ${@:$#}

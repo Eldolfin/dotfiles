@@ -24,7 +24,11 @@ in
       todo-comments.enable = true;
       refactoring.enable = true;
       rainbow-delimiters.enable = true;
-      nvim-cmp.enable = true;
+      nvim-cmp = {
+	enable = true;
+	mappingPresets = [ "insert" "cmdline" ];
+	preselect = "Item";
+      };
       notify.enable = true;
       neo-tree.enable = true;
       rust-tools.enable = true;
@@ -32,6 +36,7 @@ in
       nvim-autopairs.enable = true;
       none-ls.enable = true;
       multicursors.enable = true;
+      copilot-lua.enable = true; 
       noice = {
 	enable = true;
       };
