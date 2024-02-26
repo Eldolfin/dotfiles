@@ -17,6 +17,8 @@ alias bell="tput bel"
 alias make="make -j"
 alias clone='$TERM --working-directory "$PWD" &!'
 
+alias gctp=~/bin/scripts/commit-tag-push.sh
+
 mkcd() {
 	mkdir -p $@ && cd ${@:$#}
 }

@@ -101,6 +101,7 @@ v() {
 neovide-tweaked () {
     (neovide "$@" --nofork --multigrid && clone)&!;exit
 }
+source ~/.config/bash/aliases.sh
 alias clone="alacritty -e zsh -c \"cd \$(pwd); zsh -i\"&!"
 #alias nvim=neovide-tweaked
 alias vim=nvim
