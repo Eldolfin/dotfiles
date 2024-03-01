@@ -22,14 +22,14 @@ floating_modifier $mod
 
 bindsym $mod+Return exec $term
 {{ if or (eq .chezmoi.hostname "nixos-tour") (eq .chezmoi.hostname "nixos-portable") -}}
-bindsym $mod+e exec librewolf || firefox
-bindsym $mod+Shift+e exec librewolf --private-window || firefox --private-window
+bindsym $mod+e exec librewolf
+bindsym $mod+Shift+e exec librewolf --private-window
 exec --no-startup-id kdeconnect-indicator
 exec --no-startup-id dbus-daemon --session --address="unix:path=$XDG_RUNTIME_DIR/bus"
 exec --no-startup-id kdocker thunderbird
 {{ else -}}
-bindsym $mod+w exec firefox
-bindsym $mod+Shift+w exec firefox --private-window
+bindsym $mod+e exec firefox
+bindsym $mod+Shift+e exec firefox --private-window
 {{ end -}}
 bindsym --release $mod+n exec $term -e zellij --layout tdd
 
