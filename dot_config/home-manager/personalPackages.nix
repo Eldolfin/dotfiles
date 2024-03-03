@@ -93,6 +93,7 @@ in
 
       # libraries
       libllvm
+      llvmPackages_17.libcxxabi
       gnumake
       libnotify
       dotnet-sdk_7
@@ -178,7 +179,6 @@ in
       nodejs
       rustup
       openssl
-      clang-tools
       dnsmasq
       criterion
       gtest

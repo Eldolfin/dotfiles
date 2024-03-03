@@ -21,7 +21,7 @@ in
 
     # cli tools
     eza
-    clang-tools
+    clang-tools_17
     # tealdeer
     skim
     jq
