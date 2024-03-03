@@ -19,6 +19,7 @@ alias clone='$TERM --working-directory "$PWD" &!'
 
 alias gctp=~/bin/scripts/commit-tag-push.sh
 alias homeswitch=~/bin/scripts/homeswitch.sh
+alias systemswitch=~/bin/scripts/systemswitch.sh
 
 mkcd() {
 	mkdir -p $@ && cd ${@:$#}
