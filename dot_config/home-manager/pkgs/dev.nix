@@ -23,7 +23,7 @@
     # python
     poetry
     poethepoet
-    python312Full
+    python311Full
     python311Packages.pip
     python311Packages.bpython
     python311Packages.scipy
