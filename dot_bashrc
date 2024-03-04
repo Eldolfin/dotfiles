@@ -1,10 +1,11 @@
-zsh && exit
 bind 'set show-all-if-ambiguous on'
 
 export EDITOR=nvim
 export PGDATA="$HOME/postgres_data"
 export PGHOST="/tmp"
 export DB_USERNAME="$USER"
+export PATH="$PATH:$HOME/bin/executables/"
+zsh && exit
 
 source $HOME/.config/bash/aliases.sh
 source ~/.local/share/blesh/ble.sh
