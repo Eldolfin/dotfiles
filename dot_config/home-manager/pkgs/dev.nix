@@ -14,8 +14,11 @@
 
     qtcreator # ide
 
-# c/c++
+    # c/c++
     valgrind
+
+    # go
+    gopls
 
     # python
     poetry
@@ -37,6 +40,14 @@
     jetbrains.datagrip
     jetbrains.idea-community
     jetbrains.clion
+
+    #nix
+    rnix-lsp
+    nixpkgs-fmt
+
+    # kubernetes
+    kubectl
+    minikube
   ];
   nixpkgs.config.allowBroken = true; # for ue4
 }
