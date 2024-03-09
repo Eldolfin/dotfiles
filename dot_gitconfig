@@ -8,3 +8,5 @@
 	required = true
 [core]
 	autocrlf = input
+[push]
+	autoSetupRemote = true

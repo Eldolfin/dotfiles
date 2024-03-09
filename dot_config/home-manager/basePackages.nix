@@ -7,6 +7,7 @@ in
 {
   imports = [
     ./wm.nix
+    ./pkgs/terminal.nix
     # ./shell.nix
 
   ];
@@ -53,9 +54,6 @@ in
     # wol
 
     # graphical programs
-    rofi
-    rofi-bluetooth
-    rofi-power-menu
     copyq
     emote
     dunst

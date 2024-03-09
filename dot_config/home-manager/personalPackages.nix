@@ -8,6 +8,8 @@ in
   imports = [
     ./lazyvim.nix # switched to nixvim
     ./pkgs/dev.nix
+    ./pkgs/gaming.nix
+    ./pkgs/hyprland.nix
     # ./pkgs/nixvim.nix
   ];
   home.packages = with pkgs;
@@ -185,8 +187,6 @@ in
       gcovr
 
       # gui apps
-      alacritty
-      kitty
       librewolf
       flameshot
       emote

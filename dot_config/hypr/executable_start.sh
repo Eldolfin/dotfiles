@@ -11,4 +11,4 @@ waybar &
 
 dunst &
 
-librewolf &
+chromium &

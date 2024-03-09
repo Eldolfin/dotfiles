@@ -55,6 +55,7 @@ z4h init || return
 
 # Extend PATH.
 path=(~/bin $HOME/bin /usr/local/bin /home/oscar/.cargo/bin/ /home/oscar/.local/bin $PATH /home/oscar/.npm-global/bin $path)
+export PATH="$PATH:$HOME/bin/executables/"
 EDITOR="nvim"
 
 SKIM_DEFAULT_COMMAND="fd --type f"
