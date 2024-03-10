@@ -1,9 +1,15 @@
 { config, pkgs, ... }:
 {
   home.packages = with pkgs; [
-    jetbrains.idea-ultimate
-    maven
+    # java
+    # jetbrains.idea-community
+    # jetbrains.idea-ultimate
+    # maven
     openjdk17
+
+    # rust
+    # evcxr
+    rustup
 
     # for leptos
     trunk
@@ -12,15 +18,18 @@
     cargo-generate
     sass # for css
 
-    qtcreator # ide
-
     # c/c++
+    # jetbrains.clion
     valgrind
 
     # go
+    go
     gopls
+    gotools
 
     # python
+    # jetbrains.pycharm-professional
+    mypy
     python310Packages.python-lsp-server
     poetry
     poethepoet
@@ -37,18 +46,35 @@
 
     # c#
     mono
-    jetbrains.pycharm-professional
-    jetbrains.datagrip
-    jetbrains.idea-community
-    jetbrains.clion
+    jetbrains.rider
 
-    #nix
+    # nix
     rnix-lsp
     nixpkgs-fmt
 
     # kubernetes
     kubectl
     minikube
+
+    # android
+    # android-studio
+    # android-tools
+
+    # Haskell
+    ghc
+
+    # Common lisp
+    # sbcl
+
+    # sql
+    # sqlfluff
+    # dbeaver
+
+    # Language servers
+    lua-language-server
+
+    # Arduino
+    # arduino
   ];
   nixpkgs.config.allowBroken = true; # for ue4
 }

@@ -1,21 +1,18 @@
 { pkgs, ... }:
 
-let
-  unstable = import <unstable> { };
-in
 {
-
   imports = [
-    ./lazyvim.nix # switched to nixvim
+    ./pkgs/lazyvim.nix # switched to nixvim
     ./pkgs/dev.nix
     ./pkgs/gaming.nix
     ./pkgs/hyprland.nix
     # ./pkgs/nixvim.nix
   ];
+  nixpkgs.config.permittedInsecurePackages = [
+    "nix-2.15.3"
+  ];
   home.packages = with pkgs;
     [
-      # DE
-      picom
       neovim
 
       # cli tools
@@ -44,7 +41,6 @@ in
       ncdu
       bacon
       gdb
-      evcxr
       testdisk
       calcurse
       git-lfs
@@ -73,15 +69,12 @@ in
       signal-desktop
       ckb-next
       corectrl
-      android-studio
-      lutris
       copyq
       godot_4
       gimp
       mumble
       rustdesk
       ungoogled-chromium
-      arduino
       barrier
       sunshine
       kdeconnect
@@ -120,7 +113,6 @@ in
       handbrake
       # graalvm-ce
       vscode
-      dbeaver
       tree-sitter
       luajitPackages.luarocks
       graphviz
@@ -128,9 +120,6 @@ in
       black
       nix-tree
       libguestfs
-      rustdesk
-      ansible
-      vagrant
       kdocker
       gitea-actions-runner
       tmux
@@ -168,7 +157,6 @@ in
       killall
       cmake
       usbutils
-      android-tools
       tailscale
       ripgrep
       nix-index
@@ -179,7 +167,6 @@ in
 
       # libs
       nodejs
-      rustup
       openssl
       dnsmasq
       criterion
@@ -208,23 +195,7 @@ in
       cpufrequtils
       pkg-config
       whatsapp-for-linux
-      steam
 
-      go
-      gotools
-
-
-      # Haskell
-      ghc
-
-      # Common lisp
-      sbcl
-
-      # unfree shit
-      #    cudatoolkit
-      #    steam
-    ] ++ (with unstable; [
-      # unstable packages
 
       # graphical programs
       blender
@@ -234,5 +205,5 @@ in
       podman-compose
       act
       bun
-    ]);
+    ];
 }

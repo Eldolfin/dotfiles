@@ -1,12 +1,7 @@
 { pkgs, ... }:
-
-let
-  unstable = import <nixpkgs-unstable> { };
-  home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/master.tar.gz";
-in
 {
   imports = [
-    ./wm.nix
+    ./pkgs/wm.nix
     ./pkgs/terminal.nix
     # ./shell.nix
 
@@ -62,11 +57,6 @@ in
     picom
     moonlight-embedded
 
-    # Language servers
-    lua-language-server
-    mypy
-    sqlfluff
-
     # libraries
     libnotify
     boost
@@ -74,8 +64,6 @@ in
     stdenv.cc.cc.lib
     luajit
     stylua
-
-    # python packages
 
 
     # font
