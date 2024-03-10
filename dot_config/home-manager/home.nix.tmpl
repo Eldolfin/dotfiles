@@ -6,7 +6,6 @@
 {{ end -}}
   ./basePackages.nix
   ./services.nix
-  ./pkgs/wm.nix
   ];
 {{ if or (eq .chezmoi.hostname "nixos-tour") (eq .chezmoi.hostname "nixos-portable") -}}
   home.username = "oscar";
