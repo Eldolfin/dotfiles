@@ -75,6 +75,9 @@
 
     # Arduino
     # arduino
+
+    # misc
+    # graphviz
   ];
   nixpkgs.config.allowBroken = true; # for ue4
 }
