@@ -11,4 +11,4 @@ source $HOME/.config/bash/aliases.sh
 source ~/.local/share/blesh/ble.sh
 eval "$(zoxide init bash --cmd cd)"
 
-source /home/oscar/.bash_completions/mounette.sh
+# source /home/oscar/.bash_completions/mounette.sh
