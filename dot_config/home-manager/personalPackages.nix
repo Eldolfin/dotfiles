@@ -115,7 +115,6 @@
       vscode
       tree-sitter
       luajitPackages.luarocks
-      graphviz
       parallel
       black
       nix-tree
