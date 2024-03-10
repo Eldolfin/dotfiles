@@ -14,4 +14,6 @@ waybar &
 
 dunst &
 
+copyq --start-server &
+
 chromium &
