@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -xe
+
 # init wallpaper daemon
 swww init &
 # set wallpaper
