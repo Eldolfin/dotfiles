@@ -8,6 +8,7 @@
       waybar
       swww
       rofi-wayland
-
+      wl-clipboard
+      wl-clipboard-x11
     ];
 }

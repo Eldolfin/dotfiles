@@ -176,7 +176,6 @@
       librewolf
       flameshot
       emote
-      xclip
       syncthing
       dunst
       thunderbird
