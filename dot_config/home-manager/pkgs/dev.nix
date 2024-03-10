@@ -30,7 +30,7 @@
     # python
     # jetbrains.pycharm-professional
     mypy
-    python310Packages.python-lsp-server
+    # python310Packages.python-lsp-server
     poetry
     poethepoet
     python311Full
