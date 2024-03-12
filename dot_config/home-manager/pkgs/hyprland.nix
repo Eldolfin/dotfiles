@@ -10,5 +10,7 @@
       rofi-wayland
       wl-clipboard
       wl-clipboard-x11
+      grim
+      slurp
     ];
 }
