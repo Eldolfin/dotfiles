@@ -3,12 +3,12 @@
 set -xe
 
 # init wallpaper daemon
-swww init
+swww init || true
 
 # set wallpaper
 files=(~/.backgrounds/*)
 WALLPAPER=$(printf "%s\n" "${files[RANDOM % ${#files[@]}]}")
-swww img $WALLPAPER &
+swww img $WALLPAPER
 
 waybar &
 # ags -c ~/.config/ags/config.js &
