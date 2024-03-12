@@ -1,9 +1,9 @@
 -- manual lsp installs, because nix
 local nvim_lsp = require("lspconfig")
 
-nvim_lsp["pylsp"].setup({
-	cmd = { "/home/oscar/.nix-profile/bin/pylsp" },
-})
+-- nvim_lsp["pylsp"].setup({
+-- 	cmd = { "/home/oscar/.nix-profile/bin/pylsp" },
+-- })
 
 -- nvim_lsp["sqls"].setup({
 --   cmd = { vim.fn.expand("$HOME/.nix-profile/bin/sqls") },
