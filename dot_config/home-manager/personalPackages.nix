@@ -80,6 +80,7 @@
       kdeconnect
       insomnia
       vesktop
+      discord
       freetube
       bitwarden
       # jellyfin-mpv-shim
