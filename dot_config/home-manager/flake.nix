@@ -32,5 +32,22 @@
         # import your home.nix
         modules = [ ./home.nix ];
       };
+
+      homeConfigurations."oscar.le-dauphin" = home-manager.lib.homeManagerConfiguration {
+        pkgs = import nixpkgs {
+          inherit system;
+          config = {
+            permittedInsecurePackages = [
+              "nix-2.15.3"
+            ];
+          };
+        };
+
+        # pass inputs as specialArgs
+        extraSpecialArgs = { inherit inputs; };
+
+        # import your home.nix
+        modules = [ ./home.nix ];
+      };
     };
 }

@@ -16,7 +16,8 @@
     # kitty
     neovim
     # i3 etc
-    i3lock-fancy-rapid
+    # i3lock-fancy-rapid
+    i3lock
     i3blocks
     # polybarFull
 
