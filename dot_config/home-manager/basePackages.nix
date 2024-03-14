@@ -3,7 +3,7 @@
   imports = [
     ./pkgs/wm.nix
     ./pkgs/terminal.nix
-    # ./shell.nix
+    ./pkgs/lazyvim.nix
 
   ];
   programs.starship.enable = true;

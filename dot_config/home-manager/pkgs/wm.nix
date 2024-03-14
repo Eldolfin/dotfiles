@@ -6,5 +6,6 @@
     rofi-power-menu
     slock
     picom
+    rofi
   ];
 }
