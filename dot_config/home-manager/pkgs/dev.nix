@@ -3,7 +3,7 @@
   home.packages = with pkgs; [
     # java
     # jetbrains.idea-community
-    # jetbrains.idea-ultimate
+    jetbrains.idea-ultimate
     # maven
     openjdk17
 
