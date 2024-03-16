@@ -79,7 +79,7 @@
       sunshine
       kdeconnect
       insomnia
-      vesktop
+      # vesktop # discord with mods but it's crashing
       discord
       freetube
       bitwarden
