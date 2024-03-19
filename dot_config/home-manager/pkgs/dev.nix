@@ -21,6 +21,7 @@
     # c/c++
     # jetbrains.clion
     valgrind
+    clang-tools
 
     # go
     go
