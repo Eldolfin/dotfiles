@@ -20,7 +20,7 @@ nvim_lsp["lua_ls"].setup({
 })
 
 nvim_lsp["clangd"].setup({
-	cmd = { vim.fn.expand("$HOME/.nix-profile/bin/clangd") },
+	cmd = { vim.fn.expand("/run/current-system/sw/bin/clangd") },
 	capabilities = {
 		offsetEncoding = { "utf-16" },
 	},
