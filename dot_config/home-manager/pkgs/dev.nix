@@ -87,6 +87,7 @@
 
     # misc
     # graphviz
+    clang-tools_17
   ];
   nixpkgs.config.allowBroken = true; # for ue4
 }
