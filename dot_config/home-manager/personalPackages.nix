@@ -60,6 +60,7 @@
       xorg.xmodmap
       ollama
       pamixer
+      xclip
 
       # graphical programs
       jellyfin-media-player
