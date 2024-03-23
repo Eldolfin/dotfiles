@@ -31,7 +31,8 @@ exec --no-startup-id kdocker thunderbird
 bindsym $mod+e exec firefox
 bindsym $mod+Shift+e exec firefox --private-window
 {{ end -}}
-bindsym --release $mod+n exec $term -e zellij --layout tdd
+# bindsym --release $mod+n exec $term -e zellij --layout tdd
+bindsym --release $mod+n exec neovide
 
 bindsym $mod+d exec --no-startup-id ~/.config/rofi/scripts/launcher_t3
 {{ if or (eq .chezmoi.hostname "nixos-tour") (eq .chezmoi.hostname "nixos-portable") -}}
