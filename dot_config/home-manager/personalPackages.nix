@@ -64,6 +64,8 @@
 
       # graphical programs
       jellyfin-media-player
+      # jellyfin-mpv-shim
+      kodi-wayland
       prismlauncher
       virt-manager
       gparted
@@ -84,7 +86,6 @@
       discord
       freetube
       bitwarden
-      # jellyfin-mpv-shim
       mattermost-desktop
       nextcloud-client
 
