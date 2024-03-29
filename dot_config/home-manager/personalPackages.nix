@@ -68,6 +68,7 @@
       jellyfin-mpv-shim
       mpv
       mpvScripts.uosc
+      mpvScripts.thumbfast
       kodi-wayland
       vlc
 
