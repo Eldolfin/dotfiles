@@ -11,6 +11,16 @@
   nixpkgs.config.permittedInsecurePackages = [
     "nix-2.15.3"
   ];
+  nixpkgs.overlays = [
+    (self: super: {
+      mpv = super.mpv.override {
+        scripts = [
+          self.mpvScripts.uosc
+          self.mpvScripts.thumbfast
+        ];
+      };
+    })
+  ];
   home.packages = with pkgs;
     [
       neovim
@@ -67,8 +77,6 @@
       jellyfin-media-player
       jellyfin-mpv-shim
       mpv
-      mpvScripts.uosc
-      mpvScripts.thumbfast
       kodi-wayland
       vlc
 
