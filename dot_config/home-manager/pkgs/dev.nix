@@ -48,9 +48,9 @@
     # c#
     mono
     jetbrains.rider
+    dotnet-sdk_7
 
     # nix
-    rnix-lsp
     nixpkgs-fmt
 
     # kubernetes
