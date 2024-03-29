@@ -89,7 +89,6 @@
 
       # libraries
       libllvm
-      llvmPackages_17.libcxxabi
       gnumake
       libnotify
       dotnet-sdk_7
