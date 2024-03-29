@@ -1,7 +1,7 @@
 {
   programs.mpv.scripts = [
-    self.mpvScripts.uosc
-    self.mpvScripts.thumbfast
+    mpvScripts.uosc
+    mpvScripts.thumbfast
   ];
   home.packages = with pkgs;
     [
