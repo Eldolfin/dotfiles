@@ -62,10 +62,16 @@
       pamixer
       xclip
 
-      # graphical programs
+
+      # movies
       jellyfin-media-player
       jellyfin-mpv-shim
+      mpv
+      mpvScripts.uosc
       kodi-wayland
+      vlc
+
+      # graphical programs
       prismlauncher
       virt-manager
       gparted
@@ -140,8 +146,6 @@
       git
       fd
       fzf
-      mpv
-      vlc
       btop
       zsh
       neofetch
