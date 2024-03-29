@@ -64,7 +64,7 @@
 
       # graphical programs
       jellyfin-media-player
-      # jellyfin-mpv-shim
+      jellyfin-mpv-shim
       kodi-wayland
       prismlauncher
       virt-manager
