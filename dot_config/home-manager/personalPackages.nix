@@ -11,15 +11,9 @@
   nixpkgs.config.permittedInsecurePackages = [
     "nix-2.15.3"
   ];
-  nixpkgs.overlays = [
-    (self: super: {
-      mpv = super.mpv.override {
-        scripts = [
-          self.mpvScripts.uosc
-          self.mpvScripts.thumbfast
-        ];
-      };
-    })
+  programs.mpv.scripts = [
+    self.mpvScripts.uosc
+    self.mpvScripts.thumbfast
   ];
   home.packages = with pkgs;
     [
