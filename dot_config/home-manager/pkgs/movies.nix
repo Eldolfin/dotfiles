@@ -1,5 +1,5 @@
 {
-  programs.mpv.scripts = [
+  programs.mpv.scripts = with pkgs;[
     mpvScripts.uosc
     mpvScripts.thumbfast
   ];
