@@ -6,14 +6,11 @@
     ./pkgs/dev.nix
     ./pkgs/gaming.nix
     ./pkgs/hyprland.nix
+    ./pkgs/movies.nix
     # ./pkgs/nixvim.nix
   ];
   nixpkgs.config.permittedInsecurePackages = [
     "nix-2.15.3"
-  ];
-  programs.mpv.scripts = [
-    self.mpvScripts.uosc
-    self.mpvScripts.thumbfast
   ];
   home.packages = with pkgs;
     [
@@ -65,14 +62,6 @@
       ollama
       pamixer
       xclip
-
-
-      # movies
-      jellyfin-media-player
-      jellyfin-mpv-shim
-      mpv
-      kodi-wayland
-      vlc
 
       # graphical programs
       prismlauncher
