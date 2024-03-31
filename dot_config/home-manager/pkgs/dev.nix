@@ -1,6 +1,9 @@
 { config, pkgs, ... }:
 {
   home.packages = with pkgs; [
+# jetbrains
+    jetbrains-toolbox
+
     # java
     # jetbrains.idea-community
     jetbrains.idea-ultimate
