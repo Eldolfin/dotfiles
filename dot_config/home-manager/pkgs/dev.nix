@@ -70,6 +70,7 @@
     # ocaml
     ocaml
     ocamlPackages.ocaml-lsp
+    ocamlPackages.ocamlformat
 
     # Common lisp
     # sbcl
