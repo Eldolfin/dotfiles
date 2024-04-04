@@ -49,6 +49,9 @@ nvim_lsp["hls"].setup({
 	cmd = { "haskell-language-server-wrapper", "--lsp" },
 })
 
+nvim_lsp["ocamllsp"].setup({
+	cmd = { "ocamllsp" },
+})
 -- nvim_lsp["pyright"].setup({
 --   cmd = { "/home/oscar/.nix-profile/bin/pyright-langserver", "--stdio" },
 -- })
