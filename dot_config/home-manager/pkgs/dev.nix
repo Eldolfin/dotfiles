@@ -67,6 +67,10 @@
     # Haskell
     ghc
 
+    # ocaml
+    ocaml
+    ocamlPackages.ocaml-lsp
+
     # Common lisp
     # sbcl
 
