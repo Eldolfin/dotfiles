@@ -22,7 +22,7 @@
     sass # for css
 
     # c/c++
-    # jetbrains.clion
+    jetbrains.clion
     valgrind
     clang-tools
 
