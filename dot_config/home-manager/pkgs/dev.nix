@@ -1,6 +1,9 @@
 { config, pkgs, ... }:
 {
   home.packages = with pkgs; [
+# jetbrains
+    jetbrains-toolbox
+
     # java
     # jetbrains.idea-community
     jetbrains.idea-ultimate
@@ -19,7 +22,7 @@
     sass # for css
 
     # c/c++
-    # jetbrains.clion
+    jetbrains.clion
     valgrind
     clang-tools
 
@@ -64,6 +67,11 @@
     # Haskell
     ghc
 
+    # ocaml
+    ocaml
+    ocamlPackages.ocaml-lsp
+    ocamlPackages.ocamlformat
+
     # Common lisp
     # sbcl
 
@@ -79,6 +87,7 @@
 
     # misc
     # graphviz
+    clang-tools_17
   ];
   nixpkgs.config.allowBroken = true; # for ue4
 }

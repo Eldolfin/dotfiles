@@ -15,6 +15,7 @@
   home.packages = with pkgs;
     [
       neovim
+i3lock-fancy-rapid
 
       # cli tools
       tealdeer
