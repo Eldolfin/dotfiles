@@ -114,7 +114,7 @@ alias ls=exa
 alias tree="exa --tree"
 alias make="make -j"
 alias gupd="git add .; git commit -m \"update\"; git push"
-alias bell="tput bel"
+alias bell="tput bel && aplay ~/Music/sounds/Tink.wav"
 alias ll="ls -alh"
 # no point
 # alias cat="bat --plain"
