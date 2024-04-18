@@ -62,7 +62,7 @@
 
     # android
     # android-studio
-    # android-tools
+    android-tools # adb, fastboot etc
 
     # Haskell
     ghc
