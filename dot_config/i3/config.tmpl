@@ -28,8 +28,8 @@ exec --no-startup-id kdeconnect-indicator
 exec --no-startup-id dbus-daemon --session --address="unix:path=$XDG_RUNTIME_DIR/bus"
 exec --no-startup-id kdocker thunderbird
 {{ else -}}
-bindsym $mod+e exec firefox
-bindsym $mod+Shift+e exec firefox --private-window
+bindsym $mod+e exec firefox || librewolf
+bindsym $mod+Shift+e exec firefox --private-window || librewolf --private-window
 {{ end -}}
 # bindsym --release $mod+n exec $term -e zellij --layout tdd
 bindsym --release $mod+n exec neovide
@@ -264,3 +264,6 @@ bindsym $mod+Shift+P move scratchpad
 
 # Show the first scratchpad window
 bindsym $mod+p scratchpad show
+
+# screen layout
+exec --no-startup-id ~/.screenlayout/normal.sh
