@@ -7,6 +7,7 @@
     # java
     # jetbrains.idea-community
     jetbrains.idea-ultimate
+    jetbrains.pycharm-community
     # maven
     openjdk17
 
