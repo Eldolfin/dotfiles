@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   imports = [
-{{ if or (eq .chezmoi.hostname "nixos-tour") (eq .chezmoi.hostname "nixos-portable") -}}
+{{ if or (eq .chezmoi.hostname "oscar-tour") (eq .chezmoi.hostname "nixos-portable") -}}
   ./personalPackages.nix
 {{ end -}}
   ./basePackages.nix
