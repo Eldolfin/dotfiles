@@ -113,7 +113,6 @@
       obs-studio
       handbrake
       # graalvm-ce
-      vscode
       tree-sitter
       luajitPackages.luarocks
       parallel
