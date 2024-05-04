@@ -139,7 +139,7 @@
       fzf
       btop
       zsh
-      neofetch
+        fastfetch
       wget
       chezmoi
       zoxide
