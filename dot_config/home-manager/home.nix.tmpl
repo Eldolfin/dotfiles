@@ -7,7 +7,7 @@
   ./basePackages.nix
   ./services.nix
   ];
-{{ if or (eq .chezmoi.hostname "nixos-tour") (eq .chezmoi.hostname "nixos-portable") -}}
+{{ if or (eq .chezmoi.hostname "oscar-tour") (eq .chezmoi.hostname "nixos-portable") -}}
   home.username = "oscar";
   home.homeDirectory = "/home/oscar";
 {{ else -}}
