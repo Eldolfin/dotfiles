@@ -83,6 +83,7 @@
 
     # zig
     zig
+    zls
 
     # Language servers
     lua-language-server
