@@ -81,6 +81,9 @@
     # sqlfluff
     # dbeaver
 
+    # zig
+    zig
+
     # Language servers
     lua-language-server
 
