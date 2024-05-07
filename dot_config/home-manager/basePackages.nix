@@ -22,6 +22,7 @@
     # polybarFull
 
     # cli tools
+    fastfetch
     eza
     # tealdeer
     skim
