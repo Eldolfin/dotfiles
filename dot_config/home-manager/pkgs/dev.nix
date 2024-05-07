@@ -85,6 +85,10 @@
     zig
     zls
 
+    # php
+    php83Packages.composer
+    php83
+
     # Language servers
     lua-language-server
 
