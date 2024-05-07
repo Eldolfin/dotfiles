@@ -7,7 +7,7 @@
     ./pkgs/gaming.nix
     # ./pkgs/hyprland.nix
     ./pkgs/movies.nix
-    ./pkgs/editing.nix
+    # ./pkgs/editing.nix
     # ./pkgs/nixvim.nix
   ];
   nixpkgs.config.permittedInsecurePackages = [
