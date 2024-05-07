@@ -41,7 +41,7 @@ markup=none
 # The type defaults to "mem" if the instance is not specified.
 [memory]
 interval=30
-{{ if eq .chezmoi.hostname "nixos-portable" -}}
+{{ if eq .chezmoi.hostname "oscar-portable" -}}
 command=echo "MEM $(~/.config/i3blocks/scripts/i3memory)"
 {{ else }}
 command=echo "MEM $(~/.config/i3/scripts/i3memory)"
@@ -54,15 +54,15 @@ command=echo "MEM $(~/.config/i3/scripts/i3memory)"
 # (defaults to 10 for 10%).
 [disk]
 interval=30
-{{ if eq .chezmoi.hostname "nixos-tour" -}}
+{{ if eq .chezmoi.hostname "oscar-tour" -}}
 command=echo "HOME $(~/.config/i3/scripts/i3disk)"
-{{ else if eq .chezmoi.hostname "nixos-portable" -}}
+{{ else if eq .chezmoi.hostname "oscar-portable" -}}
 command=echo "HOME $(~/.config/i3blocks/scripts/i3disk)"
 {{ end -}}
 
 
 
-{{ if eq .chezmoi.hostname "nixos-portable" -}}
+{{ if eq .chezmoi.hostname "oscar-portable" -}}
 [wifi]
 command=echo "📡 $(~/.config/i3blocks/scripts/i3wifi wlp59s0)"
 interval=5
@@ -103,7 +103,7 @@ COLOR_NORMAL=#FFFFFF
 #COLOR_WARN=#FFFC00
 #COLOR_CRIT=#FF0000
 
-{{ if eq .chezmoi.hostname "nixos-portable" -}}
+{{ if eq .chezmoi.hostname "oscar-portable" -}}
 # Battery indicator
 #
 # The battery instance defaults to 0.
@@ -118,7 +118,7 @@ BAT_NUMBER=0
 # Volume indicator
 #
 # Displays both the master and the headphone volume
-{{ if or (eq .chezmoi.hostname "nixos-tour") (eq .chezmoi.hostname "nixos-portable") -}}
+{{ if or (eq .chezmoi.hostname "oscar-tour") (eq .chezmoi.hostname "oscar-portable") -}}
 [i3volume]
 label=
 command=~/.config/i3/scripts/i3-volume/volume output i3blocks
