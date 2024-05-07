@@ -21,7 +21,7 @@ bindsym --release Shift+XF86AudioNext exec --no-startup-id xdotool key 0xfe53
 floating_modifier $mod
 
 bindsym $mod+Return exec $term
-{{ if or (eq .chezmoi.hostname "nixos-tour") (eq .chezmoi.hostname "nixos-portable") -}}
+{{ if or (eq .chezmoi.hostname "oscar-tour") (eq .chezmoi.hostname "oscar-portable") -}}
 bindsym $mod+e exec librewolf
 bindsym $mod+Shift+e exec librewolf --private-window
 exec --no-startup-id kdeconnect-indicator
@@ -35,7 +35,7 @@ bindsym $mod+Shift+e exec firefox --private-window || librewolf --private-window
 bindsym --release $mod+n exec neovide
 
 bindsym $mod+d exec --no-startup-id ~/.config/rofi/scripts/launcher_t3
-{{ if or (eq .chezmoi.hostname "nixos-tour") (eq .chezmoi.hostname "nixos-portable") -}}
+{{ if or (eq .chezmoi.hostname "oscar-tour") (eq .chezmoi.hostname "oscar-portable") -}}
 bindsym $mod+Shift+x exec ~/.config/rofi/scripts/powermenu_t2
 {{ else -}}
 bindsym $mod+Shift+x exec "rofi -show p -modi p:'rofi-power-menu'"
@@ -142,7 +142,7 @@ bindsym --release Shift+Print exec flameshot gui
 bindsym $mod+x exec --no-startup-id $scripts/lock.sh
 
 
-{{ if eq .chezmoi.hostname "nixos-tour" -}}
+{{ if eq .chezmoi.hostname "oscar-tour" -}}
 
 exec --no-startup-id ~/.screenlayout/normal.sh
 
@@ -191,7 +191,7 @@ bindsym XF86AudioMute        exec --no-startup-id $volumepath/volume $volumeargs
 # bindsym XF86AudioLowerVolume exec pamixer -d 5
 # bindsym XF86AudioMute        exec pamixer -t
 
-{{ if eq .chezmoi.hostname "nixos-portable" -}}
+{{ if eq .chezmoi.hostname "oscar-portable" -}}
 bindsym F2 exec --no-startup-id USE_AMIXER=1 $volumepath/volume $volumeargs down $volumestep -y
 bindsym F3 exec --no-startup-id USE_AMIXER=1 $volumepath/volume $volumeargs up $volumestep -y
 {{ end -}}
@@ -205,7 +205,7 @@ exec --no-startup-id ~/.config/i3/scripts/update_background.sh
 # start redshift
 # exec --no-startup-id redshift-gtk
 
-{{ if eq .chezmoi.hostname "nixos-tour" -}}
+{{ if eq .chezmoi.hostname "oscar-tour" -}}
 exec --no-startup-id sudo ckb-next-daemon
 exec --no-startup-id ckb-next -b
 
@@ -243,7 +243,7 @@ exec --no-startup-id "/home/oscar.le-dauphin/afs/.confs/install_in_terminal.sh"
 exec setxkbmap -option caps:escape
 
 
-{{ if eq .chezmoi.hostname "nixos-tour" -}}
+{{ if eq .chezmoi.hostname "oscar-tour" -}}
 exec --no-startup-id sudo sunshine
 {{ end -}}
 
@@ -251,7 +251,7 @@ exec --no-startup-id sudo sunshine
 
 bar {
 
-  {{ if eq .chezmoi.hostname "nixos-tour" -}}
+  {{ if eq .chezmoi.hostname "oscar-tour" -}}
   tray_output $primary_mon
   {{ end -}}
 
