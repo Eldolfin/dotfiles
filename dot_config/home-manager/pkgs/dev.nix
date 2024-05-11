@@ -57,7 +57,7 @@
 
     # nix
     nixpkgs-fmt
-    rnix-lsp
+    nil
 
     # kubernetes
     kubectl
