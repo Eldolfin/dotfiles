@@ -41,7 +41,7 @@ nvim_lsp["omnisharp"].setup({
 	cmd = { "/home/oscar/.nix-profile/bin/OmniSharp", "--languageserver", "--hostPID", tostring(vim.fn.getpid()) },
 })
 
-nvim_lsp["nil"].setup({
+nvim_lsp["nil_ls"].setup({
 	cmd = { "nil" },
 })
 
