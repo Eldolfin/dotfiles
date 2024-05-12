@@ -41,11 +41,7 @@ markup=none
 # The type defaults to "mem" if the instance is not specified.
 [memory]
 interval=30
-{{ if eq .chezmoi.hostname "oscar-portable" -}}
-command=echo "MEM $(~/.config/i3blocks/scripts/i3memory)"
-{{ else }}
 command=echo "MEM $(~/.config/i3/scripts/i3memory)"
-{{ end -}}
 
 # Disk usage
 #
@@ -54,11 +50,7 @@ command=echo "MEM $(~/.config/i3/scripts/i3memory)"
 # (defaults to 10 for 10%).
 [disk]
 interval=30
-{{ if eq .chezmoi.hostname "oscar-tour" -}}
 command=echo "HOME $(~/.config/i3/scripts/i3disk)"
-{{ else if eq .chezmoi.hostname "oscar-portable" -}}
-command=echo "HOME $(~/.config/i3blocks/scripts/i3disk)"
-{{ end -}}
 
 
 
