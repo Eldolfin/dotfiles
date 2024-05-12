@@ -100,6 +100,7 @@
     # graphviz
     clang-tools_17
     nodePackages.live-server
+    sshfs
   ];
   nixpkgs.config.allowBroken = true; # for ue4
 }
