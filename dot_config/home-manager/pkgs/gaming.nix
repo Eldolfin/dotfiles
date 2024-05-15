@@ -4,5 +4,6 @@
     lutris
     steam
     gamescope
+    libusb1 # for minecraft 
   ];
 }
