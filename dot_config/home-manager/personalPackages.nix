@@ -81,8 +81,8 @@
       sunshine
       kdeconnect
       insomnia
-      # vesktop # discord with mods but it's crashing
-      discord
+      # discord
+      armcord
       freetube
       bitwarden
       mattermost-desktop
