@@ -89,6 +89,7 @@
       nextcloud-client
 
       # libraries
+      glfw3
       libllvm
       gnumake
       libnotify
