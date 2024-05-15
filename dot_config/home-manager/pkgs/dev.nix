@@ -3,12 +3,12 @@
   home.packages = with pkgs; [
     vscode-fhs
 # jetbrains
-    jetbrains-toolbox
+    # jetbrains-toolbox
 
     # java
     # jetbrains.idea-community
-    jetbrains.idea-ultimate
-    jetbrains.pycharm-community
+    # jetbrains.idea-ultimate
+    # jetbrains.pycharm-community
     # maven
     openjdk17
 
@@ -24,7 +24,7 @@
     sass # for css
 
     # c/c++
-    jetbrains.clion
+    # jetbrains.clion
     valgrind
     clang-tools
 
