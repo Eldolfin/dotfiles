@@ -6,7 +6,8 @@ duration = 30
 size = 10.0
 
 [font.normal]
-family = "MesloLGS NF"
+# family = "MesloLGS NF"
+family = "JetBrainsMono Nerd Font"
 
 [window]
 opacity = 0.98
