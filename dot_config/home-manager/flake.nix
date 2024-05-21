@@ -7,8 +7,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # gnome widgets
-    ags.url = "github:Aylur/ags";
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
