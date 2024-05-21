@@ -52,7 +52,7 @@
 
     # c#
     mono
-    jetbrains.rider
+    # jetbrains.rider
     dotnet-sdk_7
 
     # nix
