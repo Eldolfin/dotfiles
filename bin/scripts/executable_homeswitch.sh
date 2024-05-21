@@ -8,3 +8,5 @@ echo "Rebuilding home manager..."
 nh home switch ~/.config/home-manager/
 chezmoi re-add ~/.config/home-manager/
 popd
+
+notify-send "Home switch complete 🎉"
