@@ -118,7 +118,7 @@
 
   # Normal LazyVim config here, see https://github.com/LazyVim/starter/tree/main/lua
   xdg.configFile."nvim/init.lua".source = ./nvim_config/init.lua;
-  xdg.configFile."nvim/lua".source = ./nvim_config/lua;
+  # xdg.configFile."nvim/lua".source = ./nvim_config/lua;
   xdg.configFile."nvim/ftdetect".source = ./nvim_config/ftdetect;
   xdg.configFile."nvim/syntax".source = ./nvim_config/syntax;
 }
