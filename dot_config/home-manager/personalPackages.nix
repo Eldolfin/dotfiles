@@ -8,6 +8,7 @@
     # ./pkgs/hyprland.nix
     ./pkgs/movies.nix
     ./pkgs/zsh.nix
+    ./pkgs/cliTools.nix
     # ./pkgs/editing.nix
     # ./pkgs/nixvim.nix
   ];
@@ -17,8 +18,6 @@
 
   home.packages = with pkgs;
     [
-      neovim
-
       # graphical programs
       prismlauncher
       virt-manager
