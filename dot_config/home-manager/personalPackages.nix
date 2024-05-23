@@ -7,6 +7,7 @@
     ./pkgs/gaming.nix
     # ./pkgs/hyprland.nix
     ./pkgs/movies.nix
+    ./pkgs/zsh.nix
     # ./pkgs/editing.nix
     # ./pkgs/nixvim.nix
   ];
