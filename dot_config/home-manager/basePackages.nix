@@ -29,7 +29,7 @@
     ncdu
     git-lfs
     fd
-    fish
+    # fish
     neofetch
     chezmoi
     zoxide
