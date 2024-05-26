@@ -141,14 +141,11 @@ bindsym --release Shift+Print exec flameshot gui
 
 bindsym $mod+x exec --no-startup-id $scripts/lock.sh
 
-
 {{ if eq .chezmoi.hostname "oscar-tour" -}}
-
 exec --no-startup-id ~/.screenlayout/normal.sh
+{{ end -}}
 
 bindsym $mod+w exec $scripts/i3-display-swap.sh
-
-{{ end -}}
 
 
 # clipboard manager
