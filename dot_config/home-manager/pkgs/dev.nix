@@ -35,6 +35,7 @@
 
     # python
     # jetbrains.pycharm-professional
+    # jupyter-all
     mypy
     poetry
     poethepoet
@@ -44,7 +45,6 @@
     python311Packages.bpython
     python311Packages.scipy
     python311Packages.matplotlib
-    python311Packages.jupyter-core
     python311Packages.notebook
     python311Packages.numpy
     python311Packages.pytest
