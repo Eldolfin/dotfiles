@@ -4,9 +4,9 @@
         enable = true;
         settings = {
             font = {
+                size = 16;
                 normal = {
                     family = "JetBrainsMono Nerd Font";
-                    size = 16;
                 };
             };
         };
