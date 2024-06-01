@@ -101,6 +101,8 @@
     clang-tools_17
     nodePackages.live-server
     sshfs
+    gh
+    git
   ];
   nixpkgs.config.allowBroken = true; # for ue4
 }
