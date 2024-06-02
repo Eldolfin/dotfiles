@@ -1,8 +1,7 @@
-{ config, pkgs, ... }:
-{
+{ config, pkgs, ... }: {
   home.packages = with pkgs; [
     vscode-fhs
-# jetbrains
+    # jetbrains
     # jetbrains-toolbox
 
     # java
@@ -14,6 +13,7 @@
 
     # rust
     # evcxr
+    # rust-analyzer
     rustup
 
     # for leptos
