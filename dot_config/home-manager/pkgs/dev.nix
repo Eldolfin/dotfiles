@@ -49,6 +49,7 @@
     python311Packages.numpy
     python311Packages.pytest
     python311Packages.psutil
+    python311Packages.grip # github markdown preview
 
     # c#
     mono
