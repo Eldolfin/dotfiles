@@ -29,5 +29,7 @@
       enable = true;
       components = [ "pkcs11" "secrets" "ssh" ];
     };
+
+    copyq.enable = true;
   };
 }

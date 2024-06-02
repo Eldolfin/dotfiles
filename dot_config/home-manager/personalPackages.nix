@@ -25,7 +25,6 @@
       signal-desktop
       ckb-next
       corectrl
-      copyq
       godot_4
       gimp
       mumble

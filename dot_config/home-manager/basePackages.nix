@@ -40,7 +40,6 @@
     # wol
 
     # graphical programs
-    copyq
     emote
     dunst
     redshift
