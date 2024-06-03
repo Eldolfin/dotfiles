@@ -93,6 +93,7 @@
 
     # Language servers
     lua-language-server
+    nodePackages_latest.typescript-language-server
 
     # Arduino
     # arduino
