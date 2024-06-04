@@ -7,5 +7,7 @@
     rofi-power-menu
     slock
     picom
+    wl-clipboard-rs
+
   ];
 }
