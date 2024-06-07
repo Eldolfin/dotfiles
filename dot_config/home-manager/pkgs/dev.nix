@@ -8,7 +8,7 @@
     # jetbrains.idea-community
     jetbrains.idea-ultimate
     # jetbrains.pycharm-community
-    # maven
+    maven
     openjdk17
 
     # rust
