@@ -10,6 +10,6 @@
     slock
     picom
     wl-clipboard-rs
-
+    swaybg
   ];
 }
