@@ -26,13 +26,16 @@ bindsym $mod+e exec librewolf
 bindsym $mod+Shift+e exec librewolf --private-window
 exec --no-startup-id kdeconnect-indicator
 exec --no-startup-id dbus-daemon --session --address="unix:path=$XDG_RUNTIME_DIR/bus"
-exec --no-startup-id kdocker thunderbird
 {{ else -}}
 bindsym $mod+e exec firefox || librewolf
 bindsym $mod+Shift+e exec firefox --private-window || librewolf --private-window
 {{ end -}}
+
+// exec --no-startup-id thunderbird
+exec --no-startup-id i3-msg 'workspace 4:Mail; exec thunderbird'
+
 # bindsym --release $mod+n exec $term -e zellij --layout tdd
-bindsym --release $mod+n exec neovide
+# bindsym --release $mod+n exec neovide
 
 bindsym $mod+d exec --no-startup-id ~/.config/rofi/scripts/launcher_t3
 {{ if or (eq .chezmoi.hostname "oscar-tour") (eq .chezmoi.hostname "oscar-portable") -}}
