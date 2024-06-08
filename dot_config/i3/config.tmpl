@@ -31,8 +31,12 @@ bindsym $mod+e exec firefox || librewolf
 bindsym $mod+Shift+e exec firefox --private-window || librewolf --private-window
 {{ end -}}
 
-// exec --no-startup-id thunderbird
-exec --no-startup-id i3-msg 'workspace 4:Mail; exec thunderbird'
+exec --no-startup-id thunderbird
+assign [class="Librewolf"] $ws1
+assign [class="Firefox"] $ws1
+assign [class="Chromium"] $ws1
+assign [class="Alacritty"] $ws1
+assign [class="Thunderbird"] $ws4
 
 # bindsym --release $mod+n exec $term -e zellij --layout tdd
 # bindsym --release $mod+n exec neovide
