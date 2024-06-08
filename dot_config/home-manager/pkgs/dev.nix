@@ -106,5 +106,4 @@
     gh
     git
   ];
-  nixpkgs.config.allowBroken = true; # for ue4
 }

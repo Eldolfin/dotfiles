@@ -29,11 +29,11 @@
   programs.home-manager.enable = true;
 
   # fix for something
-  nixpkgs.overlays = [
-    (self: super: {
-      fcitx-engines = pkgs.fcitx5;
-    })
-  ];
+#  nixpkgs.overlays = [
+#    (self: super: {
+#      fcitx-engines = pkgs.fcitx5;
+#    })
+#  ];
 
 # firefox + touchscreen
 systemd.user.sessionVariables = {
@@ -41,5 +41,5 @@ systemd.user.sessionVariables = {
     };
 
   # allowUnfree :(
-  nixpkgs.config.allowUnfree = true;
+  # nixpkgs.config.allowUnfree = true;
 }
