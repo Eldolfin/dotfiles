@@ -150,7 +150,8 @@ bindsym $mod+w exec $scripts/i3-display-swap.sh
 
 # clipboard manager
 bindsym $mod+v exec --no-startup-id copyq show
-for_window [instance="copyq"] floating enable
+# for_window [instance="copyq"] floating enable
+for_window [app_id="com.github.hluk.copyq"] floating enable
 exec --no-startup-id copyq --start-server
 
 # brightness
