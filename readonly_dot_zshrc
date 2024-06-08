@@ -47,6 +47,9 @@ if [[ $options[zle] = on ]]; then
   eval "$(/nix/store/0qygwgixvg42d5lhfkj18b1zvclmcvc4-fzf-0.52.1/bin/fzf --zsh)"
 fi
 
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
+
 eval "$(/nix/store/azpqwyw4bmgzxwb33nm0jg2iwz3yaqd2-zoxide-0.9.4/bin/zoxide init zsh )"
 
 if [[ $TERM != "dumb" ]]; then
