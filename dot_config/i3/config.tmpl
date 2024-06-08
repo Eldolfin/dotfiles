@@ -32,11 +32,11 @@ bindsym $mod+Shift+e exec firefox --private-window || librewolf --private-window
 {{ end -}}
 
 exec --no-startup-id thunderbird
-assign [class="LibreWolf"] $ws1
-assign [class="Firefox"] $ws1
-assign [class="Chromium"] $ws1
-assign [class="Alacritty"] $ws2
-assign [class="Thunderbird"] $ws4
+assign [class="^LibreWolf$"]   number 1
+assign [class="^Firefox$"]     number 1
+assign [class="^Chromium$"]    number 1
+assign [class="^Alacritty$"]   number 2
+assign [class="^Thunderbird$"] number 4
 
 # bindsym --release $mod+n exec $term -e zellij --layout tdd
 # bindsym --release $mod+n exec neovide
