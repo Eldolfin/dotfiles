@@ -34,13 +34,13 @@
     sunshine
     kdeconnect
     insomnia
-    # discord
-    armcord
-    discord
     freetube
     bitwarden
     mattermost-desktop
     nextcloud-client
+    # armcord
+    # discord
+    webcord-vencord
 
     # libraries
     glfw
