@@ -4,7 +4,7 @@ set -e
 
 pushd ~/.config/home-manager/
 # nvim "+Telescope find_files"
-hx
+hx .
 git add . && git commit -m "Update home manager" || true
 echo "Rebuilding home manager..."
 nh home switch ~/.config/home-manager/
