@@ -187,9 +187,9 @@ set $volumestep 5
 set $volumeargs -P -n -t $statuscmd -u $statussig
 
 # when using pulseaudio
-bindsym XF86AudioRaiseVolume        exec --no-startup-id $volumepath/volume $volumeargs up $volumestep -y
-bindsym XF86AudioLowerVolume exec --no-startup-id $volumepath/volume $volumeargs down $volumestep -y
-bindsym XF86AudioMute        exec --no-startup-id $volumepath/volume $volumeargs mute -y
+bindsym XF86AudioRaiseVolume exec --no-startup-id USE_AMIXER=1 $volumepath/volume $volumeargs up $volumestep -y
+bindsym XF86AudioLowerVolume exec --no-startup-id USE_AMIXER=1 $volumepath/volume $volumeargs down $volumestep -y
+bindsym XF86AudioMute        exec --no-startup-id USE_AMIXER=1 $volumepath/volume $volumeargs mute -y
 
 # when using pipewire
 # bindsym XF86AudioRaiseVolume exec pamixer -i 5
