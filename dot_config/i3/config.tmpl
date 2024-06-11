@@ -158,7 +158,7 @@ bindsym $mod+w exec $scripts/i3-display-swap.sh
 # clipboard manager
 bindsym $mod+v exec --no-startup-id copyq show
 # for_window [instance="copyq"] floating enable
-for_window [app_id="com.github.hluk.copyq"] floating enable
+# for_window [app_id="com.github.hluk.copyq"] floating enable
 exec --no-startup-id copyq --start-server
 
 # brightness
@@ -273,16 +273,16 @@ bindsym $mod+p scratchpad show
 # screen layout
 exec --no-startup-id ~/.screenlayout/normal.sh
 
-input type:touchpad {
-    natural_scroll enabled
-}
+# input type:touchpad {
+# natural_scroll enabled
+# }
 
-input "type:keyboard" {
-    xkb_layout gb
-    xkb_options caps:escape
-    repeat_delay 250
-    repeat_rate 50
-}
+# # input "type:keyboard" {
+# #     xkb_layout gb
+# #     xkb_options caps:escape
+# #     repeat_delay 250
+# #     repeat_rate 50
+# }
 
 
 # sway fx config
