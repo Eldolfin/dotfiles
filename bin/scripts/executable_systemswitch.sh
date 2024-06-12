@@ -7,8 +7,9 @@ trap 'notify-send "System switch failed 😢"' ERR
 pushd /etc/nixos/
 $EDITOR .
 echo "Rebuilding system..."
+git add . && git commit -m "System switch"
 nh os switch /etc/nixos
-git add . && git commit -m "System switch" && git push
+git push
 popd
 
 notify-send "System switch complete 🎉"
