@@ -181,7 +181,7 @@ exec --no-startup-id i3-battery-popup
 bindsym $mod+Shift+Return exec --no-startup-id aplay Music/sounds/boom.wav
 
 set $volumepath ~/.config/i3/scripts/i3-volume
-set $statussig SIGUSR1
+set $statussig 10
 set $volumestep 5
 set $volumeargs -P -n -t $statuscmd -u $statussig
 
