@@ -21,15 +21,10 @@ bindsym --release Shift+XF86AudioNext exec --no-startup-id xdotool key 0xfe53
 floating_modifier $mod
 
 bindsym $mod+Return exec $term
-{{ if or (eq .chezmoi.hostname "oscar-tour") (eq .chezmoi.hostname "oscar-portable") -}}
 bindsym $mod+e exec firefox
 bindsym $mod+Shift+e exec firefox --private-window
 exec --no-startup-id kdeconnect-indicator
 exec --no-startup-id dbus-daemon --session --address="unix:path=$XDG_RUNTIME_DIR/bus"
-{{ else -}}
-bindsym $mod+e exec firefox || firefox
-bindsym $mod+Shift+e exec firefox --private-window || firefox --private-window
-{{ end -}}
 
 # exec --no-startup-id thunderbird
 # assign [class="^Firefox$"]     number 1
@@ -41,11 +36,7 @@ bindsym $mod+Shift+e exec firefox --private-window || firefox --private-window
 # bindsym --release $mod+n exec neovide
 
 bindsym $mod+d exec --no-startup-id ~/.config/rofi/scripts/launcher_t3
-{{ if or (eq .chezmoi.hostname "oscar-tour") (eq .chezmoi.hostname "oscar-portable") -}}
-bindsym $mod+Shift+x exec ~/.config/rofi/scripts/powermenu_t2
-{{ else -}}
 bindsym $mod+Shift+x exec "rofi -show p -modi p:'rofi-power-menu'"
-{{ end -}}
 bindsym $mod+b exec --no-startup-id rofi-bluetooth
 bindsym $mod+Shift+b exec --no-startup-id "bluetoothctl connect 88:C9:E8:42:A0:B1"
 
@@ -147,9 +138,7 @@ bindsym --release Shift+Print exec flameshot gui
 
 bindsym $mod+x exec --no-startup-id $scripts/lock.sh
 
-{{ if eq .chezmoi.hostname "oscar-tour" -}}
 exec --no-startup-id ~/.screenlayout/normal.sh
-{{ end -}}
 
 bindsym $mod+w exec $scripts/i3-display-swap.sh
 
@@ -195,10 +184,8 @@ bindsym XF86AudioMute        exec --no-startup-id USE_AMIXER=1 $volumepath/volum
 # bindsym XF86AudioLowerVolume exec pamixer -d 5
 # bindsym XF86AudioMute        exec pamixer -t
 
-{{ if eq .chezmoi.hostname "oscar-portable" -}}
 bindsym F2 exec --no-startup-id USE_AMIXER=1 $volumepath/volume $volumeargs down $volumestep -y
 bindsym F3 exec --no-startup-id USE_AMIXER=1 $volumepath/volume $volumeargs up $volumestep -y
-{{ end -}}
 
 # put a random background
 # exec --no-startup-id ~/.config/i3/scripts/update_background.sh
@@ -206,13 +193,11 @@ bindsym F3 exec --no-startup-id USE_AMIXER=1 $volumepath/volume $volumeargs up $
 # start redshift
 # exec --no-startup-id redshift-gtk
 
-{{ if eq .chezmoi.hostname "oscar-tour" -}}
 exec --no-startup-id sudo ckb-next-daemon
 exec --no-startup-id ckb-next -b
 
 exec --no-startup-id kdeconnect-indicator
 exec --no-startup-id dbus-daemon --session --address="unix:path=$XDG_RUNTIME_DIR/bus" &
-{{ end -}}
 
 # hide window decorations
 # default_border none
@@ -244,17 +229,10 @@ exec --no-startup-id "/home/oscar.le-dauphin/afs/.confs/install_in_terminal.sh"
 exec setxkbmap -option caps:escape
 
 
-{{ if eq .chezmoi.hostname "oscar-tour" -}}
-# exec --no-startup-id sudo sunshine
-{{ end -}}
 
 # exec_always ~/.config/polybar/launch.sh
 
 bar {
-
-  {{ if eq .chezmoi.hostname "oscar-tour" -}}
-  tray_output $primary_mon
-  {{ end -}}
 
     # position top
     status_command $statuscmd
