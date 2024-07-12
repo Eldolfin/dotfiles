@@ -10,3 +10,5 @@
 	autocrlf = input
 [push]
 	autoSetupRemote = true
+[init]
+	defaultBranch = main
